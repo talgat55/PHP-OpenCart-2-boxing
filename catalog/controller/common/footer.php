@@ -19,7 +19,7 @@ class ControllerCommonFooter extends Controller {
 		$data['text_order'] = $this->language->get('text_order');
 		$data['text_wishlist'] = $this->language->get('text_wishlist');
 		$data['text_newsletter'] = $this->language->get('text_newsletter');
-
+        $data['scripts'] = $this->document->getScripts();
 		$this->load->model('catalog/information');
 
 		$data['informations'] = array();
