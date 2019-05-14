@@ -1,5 +1,9 @@
 <?php
 class ControllerCommonHeader extends Controller {
+    public function  replaceWorkTime($data){
+
+        return str_replace([' Пн – ',' Вс –'],[' <span>Пн –</span>','<span>Вс –</span>'], $data);
+    }
 	public function index() {
 		// Analytics
 		$this->load->model('extension/extension');
@@ -55,7 +59,11 @@ class ControllerCommonHeader extends Controller {
 
 			$data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
 		} else {
-			$data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+
+		  //  $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+		    $data['text_wishlist'] = (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0);
+
+
 		}
 
 		$data['text_shopping_cart'] = $this->language->get('text_shopping_cart');
@@ -87,44 +95,16 @@ class ControllerCommonHeader extends Controller {
 		$data['checkout'] = $this->url->link('checkout/checkout', '', true);
 		$data['contact'] = $this->url->link('information/contact');
 		$data['telephone'] = $this->config->get('config_telephone');
+		$data['work_time_redy'] =   $this->replaceWorkTime($this->config->get('config_langdata')['1']['open']);
 
 		// Menu
-		$this->load->model('catalog/category');
+
 
 		$this->load->model('catalog/product');
 
 		$data['categories'] = array();
 
-		$categories = $this->model_catalog_category->getCategories(0);
 
-		foreach ($categories as $category) {
-			if ($category['top']) {
-				// Level 2
-				$children_data = array();
-
-				$children = $this->model_catalog_category->getCategories($category['category_id']);
-
-				foreach ($children as $child) {
-					$filter_data = array(
-						'filter_category_id'  => $child['category_id'],
-						'filter_sub_category' => true
-					);
-
-					$children_data[] = array(
-						'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
-						'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
-					);
-				}
-
-				// Level 1
-				$data['categories'][] = array(
-					'name'     => $category['name'],
-					'children' => $children_data,
-					'column'   => $category['column'] ? $category['column'] : 1,
-					'href'     => $this->url->link('product/category', 'path=' . $category['category_id'])
-				);
-			}
-		}
 
 		$data['language'] = $this->load->controller('common/language');
 		$data['currency'] = $this->load->controller('common/currency');

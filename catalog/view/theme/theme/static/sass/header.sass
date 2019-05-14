@@ -5,3 +5,191 @@
 #logo
   img
     height: 200px
+//
+// Top bar
+//
+#top-bar
+  padding: 7px 0
+  background-color: #3f4047
+  color: #fff
+  font-size: 15px
+  font-family: $font_regular
+  .list-information
+    margin: 0
+    padding: 0
+    li
+      display: inline
+      padding-right: 50px
+      a,
+      p
+        margin-bottom: 0
+        display: inline-block
+
+        vertical-align: middle
+        height: 19px
+      a
+        text-decoration: none
+        transition: all .3s
+        height: auto
+        color: #fff
+
+      img
+        padding-right: 15px
+
+    li:last-child
+      padding-right: 0
+
+  .work-time
+    display: inline-block
+    span
+      color: #ffc770
+      font-family: $font_medium
+  .navigation
+    margin: 0
+    padding: 0
+    display: inline-block
+    float: right
+    li
+      display: inline
+      a
+        color: #fff
+
+
+//
+// Header
+//
+header
+  padding: 20px 0
+  .top
+    padding-top: 40px
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    -webkit-flex-direction: row
+    -ms-flex-direction: row
+    flex-direction: row
+    -webkit-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-justify-content: space-between
+    -ms-flex-pack: justify
+    justify-content: space-between
+    -webkit-align-content: center
+    -ms-flex-line-pack: center
+    align-content: center
+    -webkit-align-items: center
+    -ms-flex-align: center
+    align-items: center
+    > div
+      display: inline-block
+    .phone-block
+      img
+        vertical-align: top
+        padding-top: 7px
+
+      .lists-phones
+        margin: 0
+        padding: 0 0 0 20px
+        display: inline-block
+        li
+          list-style: none
+          a
+            font-size: 24px
+            color: #000
+            text-decoration: none
+            font-family: $font_medium
+            transition: all .3s
+            &:hover
+              color: $main_color
+
+    .request-call-block
+      .link-call
+        font-family: $font_regular
+        display: inline-block
+        font-size: 18px
+        padding: 10px 30px
+        background-color: $main_color
+        border-radius: 25px
+        color: #fff
+        transition: all .3s
+        &:hover
+          text-decoration: none
+          background-color: #000
+
+    .cart-block
+      #cart
+        width: auto
+        padding-right: 50px
+      button
+        background: transparent
+        border: none
+      a
+        text-decoration: none
+        p
+          margin-bottom: 0
+          display: inline-block
+          font-size: 15px
+          font-family: $font_regular
+          color: #000
+          padding-left: 10px
+      #cart-total,
+      .wish-block .count
+        font-size: 10px
+        color: #fff
+        font-family: $font_medium
+        background-color: $main_color
+        border-radius: 50%
+        width: 18px
+        text-align: center
+        height: 18px
+        display: inline-block
+        vertical-align: middle
+        position: absolute
+        top: 2px
+        left: 27px
+        line-height: 20px
+      .wish-block
+        text-decoration: none
+        display: inline-block
+        position: relative
+        p
+          padding-left: 10px
+          margin: 0
+          display: inline-block
+        .count
+          top: -2px
+          left: 19px
+
+  .bottom
+    padding-top: 42px
+    #search
+      +placeholder
+        border-radius: 0
+        font-size: 15px
+        color: #8d8d8d
+      input
+        border: 1px solid #d6d6d6
+        border-radius: 0
+        font-size: 15px
+        color: #8d8d8d
+        &:active,
+        &:focus
+          outline: none
+          box-shadow: none
+      button.btn.btn-default.btn-lg
+        border-left: none
+        border-radius: 0
+        padding-right: 30px
+        padding-left: 30px
+        transition: all .3s
+        i
+          color: $main_color
+        &:hover
+          background-color: #000
+          color: #fff
+          i
+            color: #fff
+
+
+
+

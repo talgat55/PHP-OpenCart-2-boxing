@@ -1,2 +1,231 @@
+@font-face {
+  font-family: 'Gotham Pro Medium';
+  src: local("Gotham Pro Medium"), local("GothamPro-Medium"), url("../fonts/GothamPro-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamPro-Medium.woff") format("woff"), url("../fonts/GothamPro-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Gotham Pro';
+  src: local("Gotham Pro"), local("GothamPro"), url("../fonts/GothamPro.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamPro.woff") format("woff"), url("../fonts/GothamPro.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Gotham Pro Light';
+  src: local("Gotham Pro Light"), local("GothamPro-Light"), url("../fonts/GothamPro-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamPro-Light.woff") format("woff"), url("../fonts/GothamPro-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Gotham Pro Bold';
+  src: local("Gotham Pro Bold"), local("GothamPro-Bold"), url("../fonts/GothamPro-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamPro-Bold.woff") format("woff"), url("../fonts/GothamPro-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+body {
+  font-family: "Gotham Pro Light";
+  font-size: 17px;
+  line-height: 1.5; }
+
+@media (min-width: 1260px) {
+  .container {
+    width: 1260px; } }
+
 #logo img {
   height: 200px; }
+
+#top-bar {
+  padding: 7px 0;
+  background-color: #3f4047;
+  color: #fff;
+  font-size: 15px;
+  font-family: "Gotham Pro"; }
+  #top-bar .list-information {
+    margin: 0;
+    padding: 0; }
+    #top-bar .list-information li {
+      display: inline;
+      padding-right: 50px; }
+      #top-bar .list-information li a,
+      #top-bar .list-information li p {
+        margin-bottom: 0;
+        display: inline-block;
+        vertical-align: middle;
+        height: 19px; }
+      #top-bar .list-information li a {
+        text-decoration: none;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+        height: auto;
+        color: #fff; }
+      #top-bar .list-information li img {
+        padding-right: 15px; }
+    #top-bar .list-information li:last-child {
+      padding-right: 0; }
+  #top-bar .work-time {
+    display: inline-block; }
+    #top-bar .work-time span {
+      color: #ffc770;
+      font-family: "Gotham Pro Medium"; }
+  #top-bar .navigation {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    float: right; }
+    #top-bar .navigation li {
+      display: inline; }
+      #top-bar .navigation li a {
+        color: #fff; }
+
+header {
+  padding: 20px 0; }
+  header .top {
+    padding-top: 40px;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+            align-items: center; }
+    header .top > div {
+      display: inline-block; }
+    header .top .phone-block img {
+      vertical-align: top;
+      padding-top: 7px; }
+    header .top .phone-block .lists-phones {
+      margin: 0;
+      padding: 0 0 0 20px;
+      display: inline-block; }
+      header .top .phone-block .lists-phones li {
+        list-style: none; }
+        header .top .phone-block .lists-phones li a {
+          font-size: 24px;
+          color: #000;
+          text-decoration: none;
+          font-family: "Gotham Pro Medium";
+          -webkit-transition: all .3s;
+          -o-transition: all .3s;
+          transition: all .3s; }
+          header .top .phone-block .lists-phones li a:hover {
+            color: #df5a5a; }
+    header .top .request-call-block .link-call {
+      font-family: "Gotham Pro";
+      display: inline-block;
+      font-size: 18px;
+      padding: 10px 30px;
+      background-color: #df5a5a;
+      -webkit-border-radius: 25px;
+              border-radius: 25px;
+      color: #fff;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s; }
+      header .top .request-call-block .link-call:hover {
+        text-decoration: none;
+        background-color: #000; }
+    header .top .cart-block #cart {
+      width: auto;
+      padding-right: 50px; }
+    header .top .cart-block button {
+      background: transparent;
+      border: none; }
+    header .top .cart-block a {
+      text-decoration: none; }
+      header .top .cart-block a p {
+        margin-bottom: 0;
+        display: inline-block;
+        font-size: 15px;
+        font-family: "Gotham Pro";
+        color: #000;
+        padding-left: 10px; }
+    header .top .cart-block #cart-total,
+    header .top .cart-block .wish-block .count {
+      font-size: 10px;
+      color: #fff;
+      font-family: "Gotham Pro Medium";
+      background-color: #df5a5a;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      width: 18px;
+      text-align: center;
+      height: 18px;
+      display: inline-block;
+      vertical-align: middle;
+      position: absolute;
+      top: 2px;
+      left: 27px;
+      line-height: 20px; }
+    header .top .cart-block .wish-block {
+      text-decoration: none;
+      display: inline-block;
+      position: relative; }
+      header .top .cart-block .wish-block p {
+        padding-left: 10px;
+        margin: 0;
+        display: inline-block; }
+      header .top .cart-block .wish-block .count {
+        top: -2px;
+        left: 19px; }
+  header .bottom {
+    padding-top: 42px; }
+    header .bottom #search::-webkit-input-placeholder {
+      -webkit-border-radius: 0;
+              border-radius: 0;
+      font-size: 15px;
+      color: #8d8d8d; }
+    header .bottom #search:-moz-placeholder {
+      border-radius: 0;
+      font-size: 15px;
+      color: #8d8d8d; }
+    header .bottom #search::-moz-placeholder {
+      border-radius: 0;
+      font-size: 15px;
+      color: #8d8d8d; }
+    header .bottom #search:-ms-input-placeholder {
+      border-radius: 0;
+      font-size: 15px;
+      color: #8d8d8d; }
+    header .bottom #search input {
+      border: 1px solid #d6d6d6;
+      -webkit-border-radius: 0;
+              border-radius: 0;
+      font-size: 15px;
+      color: #8d8d8d; }
+      header .bottom #search input:active, header .bottom #search input:focus {
+        outline: none;
+        -webkit-box-shadow: none;
+                box-shadow: none; }
+    header .bottom #search button.btn.btn-default.btn-lg {
+      border-left: none;
+      -webkit-border-radius: 0;
+              border-radius: 0;
+      padding-right: 30px;
+      padding-left: 30px;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s; }
+      header .bottom #search button.btn.btn-default.btn-lg i {
+        color: #df5a5a; }
+      header .bottom #search button.btn.btn-default.btn-lg:hover {
+        background-color: #000;
+        color: #fff; }
+        header .bottom #search button.btn.btn-default.btn-lg:hover i {
+          color: #fff; }
