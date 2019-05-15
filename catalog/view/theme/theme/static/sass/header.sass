@@ -5,6 +5,7 @@
 #logo
   img
     height: 200px
+    margin: 0 auto
 //
 // Top bar
 //
@@ -82,39 +83,7 @@ header
     align-items: center
     > div
       display: inline-block
-    .phone-block
-      img
-        vertical-align: top
-        padding-top: 7px
 
-      .lists-phones
-        margin: 0
-        padding: 0 0 0 20px
-        display: inline-block
-        li
-          list-style: none
-          a
-            font-size: 24px
-            color: #000
-            text-decoration: none
-            font-family: $font_medium
-            transition: all .3s
-            &:hover
-              color: $main_color
-
-    .request-call-block
-      .link-call
-        font-family: $font_regular
-        display: inline-block
-        font-size: 18px
-        padding: 10px 30px
-        background-color: $main_color
-        border-radius: 25px
-        color: #fff
-        transition: all .3s
-        &:hover
-          text-decoration: none
-          background-color: #000
 
     .cart-block
       #cart
@@ -162,33 +131,7 @@ header
 
   .bottom
     padding-top: 42px
-    #search
-      +placeholder
-        border-radius: 0
-        font-size: 15px
-        color: #8d8d8d
-      input
-        border: 1px solid #d6d6d6
-        border-radius: 0
-        font-size: 15px
-        color: #8d8d8d
-        &:active,
-        &:focus
-          outline: none
-          box-shadow: none
-      button.btn.btn-default.btn-lg
-        border-left: none
-        border-radius: 0
-        padding-right: 30px
-        padding-left: 30px
-        transition: all .3s
-        i
-          color: $main_color
-        &:hover
-          background-color: #000
-          color: #fff
-          i
-            color: #fff
+
 
 
 

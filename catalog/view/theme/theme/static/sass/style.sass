@@ -2,8 +2,9 @@ $font_medium: 'Gotham Pro Medium'
 $font_regular: 'Gotham Pro'
 $font_light: 'Gotham Pro Light'
 $font_bold: 'Gotham Pro Bold'
+$font_black: 'Gotham Pro Black'
 $main_color: #df5a5a
-
+$gray_color: #3f4047
 =placeholder
   &::-webkit-input-placeholder
     @content
@@ -51,6 +52,14 @@ $main_color: #df5a5a
   url('../fonts/GothamPro-Bold.ttf') format('truetype')
   font-weight: bold
   font-style: normal
+@font-face
+  font-family: 'Gotham Pro Black'
+  src: local('Gotham Pro Black'), local('GothamPro-Black'),
+  url('../fonts/GothamPro-Black.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/GothamPro-Black.woff') format('woff'),
+  url('../fonts/GothamPro-Black.ttf') format('truetype')
+  font-weight: 900
+  font-style: normal
 
 
 body
@@ -58,7 +67,74 @@ body
   font-size: 17px
   line-height: 1.5
 
+//
+// Linked styles
+//
+footer,
+header .top
+  .phone-block
+    img
+      vertical-align: top
+      padding-top: 7px
 
+    .lists-phones
+      margin: 0
+      padding: 0 0 0 20px
+      display: inline-block
+      li
+        list-style: none
+        a
+          font-size: 24px
+          color: #000
+          text-decoration: none
+          font-family: $font_medium
+          transition: all .3s
+          &:hover
+            color: $main_color
+
+  .request-call-block
+    .link-call
+      font-family: $font_regular
+      display: inline-block
+      font-size: 18px
+      padding: 10px 30px
+      background-color: $main_color
+      border-radius: 25px
+      color: #fff
+      transition: all .3s
+      &:hover
+        text-decoration: none
+        background-color: #000
+
+footer .search-block,
+header .bottom
+  .search
+    +placeholder
+      border-radius: 0
+      font-size: 15px
+      color: #8d8d8d
+    input
+      border: 1px solid #d6d6d6
+      border-radius: 0
+      font-size: 15px
+      color: #8d8d8d
+      &:active,
+      &:focus
+        outline: none
+        box-shadow: none
+    button.btn.btn-default.btn-lg
+      border-left: none
+      border-radius: 0
+      padding-right: 30px
+      padding-left: 30px
+      transition: all .3s
+      i
+        color: $main_color
+      &:hover
+        background-color: #000
+        color: #fff
+        i
+          color: #fff
 
 
 @media  (min-width: 1260px)

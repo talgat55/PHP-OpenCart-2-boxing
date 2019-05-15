@@ -78,7 +78,7 @@ class ControllerCommonHeader extends Controller {
 		$data['text_logout'] = $this->language->get('text_logout');
 		$data['text_checkout'] = $this->language->get('text_checkout');
 		$data['text_page'] = $this->language->get('text_page');
-		$data['text_category'] = $this->language->get('text_category');
+
 		$data['text_all'] = $this->language->get('text_all');
 
 		$data['home'] = $this->url->link('common/home');

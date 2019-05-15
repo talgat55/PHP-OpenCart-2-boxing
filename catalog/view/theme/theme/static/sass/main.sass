@@ -1,0 +1,90 @@
+//
+// Home page
+//
+.common-home
+  #content
+    padding: 0
+
+
+//
+// Menu
+//
+.home-page
+  #menu
+    overflow: hidden
+    .navbar-header
+      background-color: $gray_color
+      padding: 15px 25px
+      width: 285px
+
+      .navbar-toggle
+        display: inline-block
+        float: right
+        margin: 0
+        border: 0
+        padding: 2px
+        pointer-events: none
+
+      #category
+        font-size: 15px
+        text-transform: uppercase
+        font-family: $font_regular
+        color: #fff
+
+    .navbar-collapse.collapse
+      border: 1px solid #d6d6d6
+      padding: 0
+      .nav.navbar-nav
+        padding: 30px
+        li
+          display: block
+          float: none
+          a
+            padding: 11px 0
+            font-size: 16px
+            color: #000
+            border-bottom: 1px solid #ededed
+            transition: all .3s
+            &:hover
+              background: transparent
+              color: $main_color
+
+        li:last-child
+          a
+            border: none
+
+
+
+//
+// Home slider
+//
+
+.home-page
+  .home-slider
+    margin: 0
+    padding: 0
+    height: 422px
+    overflow: hidden
+    li
+      list-style: none
+      float: left
+      a
+        position: relative
+        display: block
+        .text
+          position: absolute
+          bottom: 0
+          left: 50%
+          transform: translateX(-50%)
+          width: 450px
+          font-family: $font_black
+          text-transform: uppercase
+          font-size: 60px
+      img
+        width: 100%
+
+
+
+
+
+

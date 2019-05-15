@@ -22,17 +22,128 @@
   font-weight: bold;
   font-style: normal; }
 
+@font-face {
+  font-family: 'Gotham Pro Black';
+  src: local("Gotham Pro Black"), local("GothamPro-Black"), url("../fonts/GothamPro-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamPro-Black.woff") format("woff"), url("../fonts/GothamPro-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal; }
+
 body {
   font-family: "Gotham Pro Light";
   font-size: 17px;
   line-height: 1.5; }
+
+footer .phone-block img,
+header .top .phone-block img {
+  vertical-align: top;
+  padding-top: 7px; }
+
+footer .phone-block .lists-phones,
+header .top .phone-block .lists-phones {
+  margin: 0;
+  padding: 0 0 0 20px;
+  display: inline-block; }
+  footer .phone-block .lists-phones li,
+  header .top .phone-block .lists-phones li {
+    list-style: none; }
+    footer .phone-block .lists-phones li a,
+    header .top .phone-block .lists-phones li a {
+      font-size: 24px;
+      color: #000;
+      text-decoration: none;
+      font-family: "Gotham Pro Medium";
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s; }
+      footer .phone-block .lists-phones li a:hover,
+      header .top .phone-block .lists-phones li a:hover {
+        color: #df5a5a; }
+
+footer .request-call-block .link-call,
+header .top .request-call-block .link-call {
+  font-family: "Gotham Pro";
+  display: inline-block;
+  font-size: 18px;
+  padding: 10px 30px;
+  background-color: #df5a5a;
+  -webkit-border-radius: 25px;
+          border-radius: 25px;
+  color: #fff;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  footer .request-call-block .link-call:hover,
+  header .top .request-call-block .link-call:hover {
+    text-decoration: none;
+    background-color: #000; }
+
+footer .search-block .search::-webkit-input-placeholder,
+header .bottom .search::-webkit-input-placeholder {
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  font-size: 15px;
+  color: #8d8d8d; }
+
+footer .search-block .search:-moz-placeholder,
+header .bottom .search:-moz-placeholder {
+  border-radius: 0;
+  font-size: 15px;
+  color: #8d8d8d; }
+
+footer .search-block .search::-moz-placeholder,
+header .bottom .search::-moz-placeholder {
+  border-radius: 0;
+  font-size: 15px;
+  color: #8d8d8d; }
+
+footer .search-block .search:-ms-input-placeholder,
+header .bottom .search:-ms-input-placeholder {
+  border-radius: 0;
+  font-size: 15px;
+  color: #8d8d8d; }
+
+footer .search-block .search input,
+header .bottom .search input {
+  border: 1px solid #d6d6d6;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  font-size: 15px;
+  color: #8d8d8d; }
+  footer .search-block .search input:active, footer .search-block .search input:focus,
+  header .bottom .search input:active,
+  header .bottom .search input:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+
+footer .search-block .search button.btn.btn-default.btn-lg,
+header .bottom .search button.btn.btn-default.btn-lg {
+  border-left: none;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  padding-right: 30px;
+  padding-left: 30px;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  footer .search-block .search button.btn.btn-default.btn-lg i,
+  header .bottom .search button.btn.btn-default.btn-lg i {
+    color: #df5a5a; }
+  footer .search-block .search button.btn.btn-default.btn-lg:hover,
+  header .bottom .search button.btn.btn-default.btn-lg:hover {
+    background-color: #000;
+    color: #fff; }
+    footer .search-block .search button.btn.btn-default.btn-lg:hover i,
+    header .bottom .search button.btn.btn-default.btn-lg:hover i {
+      color: #fff; }
 
 @media (min-width: 1260px) {
   .container {
     width: 1260px; } }
 
 #logo img {
-  height: 200px; }
+  height: 200px;
+  margin: 0 auto; }
 
 #top-bar {
   padding: 7px 0;
@@ -107,40 +218,6 @@ header {
             align-items: center; }
     header .top > div {
       display: inline-block; }
-    header .top .phone-block img {
-      vertical-align: top;
-      padding-top: 7px; }
-    header .top .phone-block .lists-phones {
-      margin: 0;
-      padding: 0 0 0 20px;
-      display: inline-block; }
-      header .top .phone-block .lists-phones li {
-        list-style: none; }
-        header .top .phone-block .lists-phones li a {
-          font-size: 24px;
-          color: #000;
-          text-decoration: none;
-          font-family: "Gotham Pro Medium";
-          -webkit-transition: all .3s;
-          -o-transition: all .3s;
-          transition: all .3s; }
-          header .top .phone-block .lists-phones li a:hover {
-            color: #df5a5a; }
-    header .top .request-call-block .link-call {
-      font-family: "Gotham Pro";
-      display: inline-block;
-      font-size: 18px;
-      padding: 10px 30px;
-      background-color: #df5a5a;
-      -webkit-border-radius: 25px;
-              border-radius: 25px;
-      color: #fff;
-      -webkit-transition: all .3s;
-      -o-transition: all .3s;
-      transition: all .3s; }
-      header .top .request-call-block .link-call:hover {
-        text-decoration: none;
-        background-color: #000; }
     header .top .cart-block #cart {
       width: auto;
       padding-right: 50px; }
@@ -186,46 +263,152 @@ header {
         left: 19px; }
   header .bottom {
     padding-top: 42px; }
-    header .bottom #search::-webkit-input-placeholder {
-      -webkit-border-radius: 0;
-              border-radius: 0;
+
+.common-home #content {
+  padding: 0; }
+
+.home-page #menu {
+  overflow: hidden; }
+  .home-page #menu .navbar-header {
+    background-color: #3f4047;
+    padding: 15px 25px;
+    width: 285px; }
+    .home-page #menu .navbar-header .navbar-toggle {
+      display: inline-block;
+      float: right;
+      margin: 0;
+      border: 0;
+      padding: 2px;
+      pointer-events: none; }
+    .home-page #menu .navbar-header #category {
       font-size: 15px;
-      color: #8d8d8d; }
-    header .bottom #search:-moz-placeholder {
-      border-radius: 0;
-      font-size: 15px;
-      color: #8d8d8d; }
-    header .bottom #search::-moz-placeholder {
-      border-radius: 0;
-      font-size: 15px;
-      color: #8d8d8d; }
-    header .bottom #search:-ms-input-placeholder {
-      border-radius: 0;
-      font-size: 15px;
-      color: #8d8d8d; }
-    header .bottom #search input {
-      border: 1px solid #d6d6d6;
-      -webkit-border-radius: 0;
-              border-radius: 0;
-      font-size: 15px;
-      color: #8d8d8d; }
-      header .bottom #search input:active, header .bottom #search input:focus {
-        outline: none;
-        -webkit-box-shadow: none;
-                box-shadow: none; }
-    header .bottom #search button.btn.btn-default.btn-lg {
-      border-left: none;
-      -webkit-border-radius: 0;
-              border-radius: 0;
-      padding-right: 30px;
-      padding-left: 30px;
+      text-transform: uppercase;
+      font-family: "Gotham Pro";
+      color: #fff; }
+  .home-page #menu .navbar-collapse.collapse {
+    border: 1px solid #d6d6d6;
+    padding: 0; }
+    .home-page #menu .navbar-collapse.collapse .nav.navbar-nav {
+      padding: 30px; }
+      .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li {
+        display: block;
+        float: none; }
+        .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li a {
+          padding: 11px 0;
+          font-size: 16px;
+          color: #000;
+          border-bottom: 1px solid #ededed;
+          -webkit-transition: all .3s;
+          -o-transition: all .3s;
+          transition: all .3s; }
+          .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li a:hover {
+            background: transparent;
+            color: #df5a5a; }
+      .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li:last-child a {
+        border: none; }
+
+.home-page .home-slider {
+  margin: 0;
+  padding: 0;
+  height: 422px;
+  overflow: hidden; }
+  .home-page .home-slider li {
+    list-style: none;
+    float: left; }
+    .home-page .home-slider li a {
+      position: relative;
+      display: block; }
+      .home-page .home-slider li a .text {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+        width: 450px;
+        font-family: "Gotham Pro Black";
+        text-transform: uppercase;
+        font-size: 60px; }
+    .home-page .home-slider li img {
+      width: 100%; }
+
+footer {
+  background-color: #f7f7f7;
+  padding: 50px 0; }
+  footer .information-block .footer-list-links {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2; }
+    footer .information-block .footer-list-links li a {
+      color: #3f4047;
+      text-decoration: none;
       -webkit-transition: all .3s;
       -o-transition: all .3s;
       transition: all .3s; }
-      header .bottom #search button.btn.btn-default.btn-lg i {
-        color: #df5a5a; }
-      header .bottom #search button.btn.btn-default.btn-lg:hover {
-        background-color: #000;
-        color: #fff; }
-        header .bottom #search button.btn.btn-default.btn-lg:hover i {
-          color: #fff; }
+      footer .information-block .footer-list-links li a:hover {
+        color: #df5a5a;
+        text-decoration: none; }
+  footer .email-block {
+    margin: 0 auto;
+    display: table; }
+    footer .email-block h4 {
+      color: #adadad; }
+    footer .email-block a {
+      text-decoration: none;
+      font-family: "Gotham Pro";
+      color: #3f4047; }
+  footer .search-block {
+    padding: 30px 0; }
+  footer .link-call {
+    display: table !important;
+    margin: 30px auto 0 auto; }
+  footer .social-block {
+    display: table;
+    margin: 0 0 0 auto; }
+    footer .social-block .list-soc-link {
+      margin: 0;
+      padding: 0; }
+      footer .social-block .list-soc-link li {
+        display: inline-block; }
+        footer .social-block .list-soc-link li a {
+          width: 35px;
+          height: 35px;
+          display: inline-block;
+          border: 2px solid #fff;
+          -webkit-border-radius: 50%;
+                  border-radius: 50%;
+          text-align: center;
+          -webkit-transition: all .3s;
+          -o-transition: all .3s;
+          transition: all .3s;
+          margin-right: 15px; }
+          footer .social-block .list-soc-link li a i {
+            color: #b8b8b8;
+            display: inline-block;
+            vertical-align: bottom; }
+          footer .social-block .list-soc-link li a:hover {
+            background-color: #df5a5a; }
+            footer .social-block .list-soc-link li a:hover i {
+              color: #fff; }
+  footer .delivery-block {
+    margin: 67px 0 0 auto;
+    display: table; }
+    footer .delivery-block .list-delivery-images {
+      margin: 0;
+      padding: 0; }
+      footer .delivery-block .list-delivery-images li {
+        list-style: none;
+        display: inline-block;
+        padding-right: 20px; }
+      footer .delivery-block .list-delivery-images li:first-child {
+        display: block;
+        padding-bottom: 20px;
+        padding-right: 0; }
+  footer .delivery-block h4,
+  footer .information-block h4,
+  footer .social-block h4 {
+    font-family: "Gotham Pro Medium";
+    font-size: 20px;
+    color: #3f4047;
+    margin-bottom: 40px;
+    margin-top: 0; }

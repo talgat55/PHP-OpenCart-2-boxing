@@ -4,6 +4,8 @@ class ControllerCommonHome extends Controller {
 		$this->document->setTitle($this->config->get('config_meta_title'));
 		$this->document->setDescription($this->config->get('config_meta_description'));
 		$this->document->setKeywords($this->config->get('config_meta_keyword'));
+        $this->load->language('common/home');
+        $data['text_category'] = $this->language->get('text_category');
         $this->load->model('catalog/category');
 		if (isset($this->request->get['route'])) {
 			$this->document->addLink($this->config->get('config_url'), 'canonical');
@@ -39,6 +41,15 @@ class ControllerCommonHome extends Controller {
                 );
             }
         }
+        // banner
+        $this->load->model('design/banner');
+        $this->load->model('tool/image');
+        $results = $this->model_design_banner->getBanner('7');
+
+        foreach ($results as $key => $result){
+            $results[$key]['image'] = $this->model_tool_image->resize($result['image'], '1266', '585');
+        }
+        $data['banner'] = $results;
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
