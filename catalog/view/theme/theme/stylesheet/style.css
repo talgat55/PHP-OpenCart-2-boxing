@@ -137,6 +137,61 @@ header .bottom .search button.btn.btn-default.btn-lg {
     header .bottom .search button.btn.btn-default.btn-lg:hover i {
       color: #fff; }
 
+.hidden-title {
+  margin: 0;
+  height: 0;
+  overflow: hidden; }
+
+.block-title {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  margin-bottom: 75px; }
+  .block-title .sub-title {
+    margin-top: 0;
+    font-size: 30px;
+    font-family: "Gotham Pro Medium";
+    color: #3f4047;
+    margin-bottom: 0; }
+  .block-title .link-to-all {
+    display: inline-block;
+    color: #3f4047;
+    font-size: 16px;
+    font-family: "Gotham Pro";
+    padding: 10px 30px;
+    border: 1.5px solid #d0d0d0;
+    -webkit-border-radius: 25px;
+            border-radius: 25px;
+    margin-left: 40px;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out; }
+    .block-title .link-to-all:hover {
+      text-decoration: none;
+      color: #fff;
+      background-color: #df5a5a;
+      border-color: #df5a5a; }
+
 @media (min-width: 1260px) {
   .container {
     width: 1260px; } }
@@ -331,6 +386,156 @@ header {
         font-size: 60px; }
     .home-page .home-slider li img {
       width: 100%; }
+
+.latest-block .product-layout {
+  margin-bottom: 30px; }
+  .latest-block .product-layout .product-thumb {
+    border: 1px solid #e8e8e8;
+    padding: 30px 30px 20px 30px; }
+    .latest-block .product-layout .product-thumb .top-block {
+      padding-bottom: 30px;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: -webkit-box;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+              flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      -webkit-box-pack: justify;
+              justify-content: space-between;
+      -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+      align-content: stretch;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      -webkit-box-align: center;
+              align-items: center; }
+      .latest-block .product-layout .product-thumb .top-block .sku {
+        color: #3f4047;
+        font-size: 14px;
+        font-family: "Gotham Pro"; }
+      .latest-block .product-layout .product-thumb .top-block .wish a {
+        font-size: 16px;
+        color: #3f4047; }
+    .latest-block .product-layout .product-thumb .caption {
+      padding-top: 30px; }
+      .latest-block .product-layout .product-thumb .caption .title {
+        font-size: 20px;
+        font-family: "Gotham Pro";
+        padding-top: 20px;
+        min-height: 85px;
+        text-align: left;
+        margin: 0; }
+        .latest-block .product-layout .product-thumb .caption .title a {
+          color: #3f4047;
+          text-decoration: none;
+          -webkit-transition: all .3s;
+          -o-transition: all .3s;
+          transition: all .3s; }
+          .latest-block .product-layout .product-thumb .caption .title a:hover {
+            text-decoration: none;
+            color: #df5a5a; }
+      .latest-block .product-layout .product-thumb .caption .price {
+        padding-top: 25px;
+        font-family: "Gotham Pro Medium";
+        font-size: 24px;
+        color: #3f4047;
+        margin-bottom: 0; }
+      .latest-block .product-layout .product-thumb .caption .categories span {
+        font-size: 16px;
+        color: #fff;
+        background-color: #df5a5a;
+        padding: 5px 15px;
+        -webkit-border-radius: 20px;
+                border-radius: 20px; }
+
+.instagram-section {
+  background: url("../image/main/bg-instagram.jpg");
+  background-repeat: no-repeat !important;
+  padding-top: 65px; }
+  .instagram-section .title {
+    font-size: 60px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Gotham Pro Black";
+    line-height: .9; }
+    .instagram-section .title::after {
+      content: "";
+      display: block;
+      background: url("../image/main/inst-line.png");
+      background-repeat: no-repeat !important;
+      height: 14px;
+      width: 470px; }
+  .instagram-section .link-subscribe {
+    font-family: "Gotham Pro Medium";
+    font-size: 16px;
+    color: #fff;
+    display: inline-block;
+    padding: 8px 20px;
+    position: absolute;
+    right: 0;
+    margin-top: 66px;
+    border: 1.5px solid #fff;
+    -webkit-border-radius: 25px;
+            border-radius: 25px;
+    text-transform: uppercase;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    z-index: 2; }
+    .instagram-section .link-subscribe:hover {
+      background-color: #df5a5a;
+      border-color: #df5a5a;
+      text-decoration: none; }
+  .instagram-section .img-glove {
+    position: relative;
+    top: 60px;
+    z-index: 1; }
+
+.subscribe-section {
+  background: url(../image/main/bg-form.jpg);
+  background-repeat: no-repeat !important;
+  -webkit-background-size: cover !important;
+          background-size: cover !important;
+  padding: 70px 0; }
+  .subscribe-section .title {
+    margin: 0;
+    font-size: 60px;
+    color: #fff;
+    font-family: "Gotham Pro Black"; }
+    .subscribe-section .title span {
+      font-family: "Gotham Pro";
+      color: #b8b8b8; }
+  .subscribe-section form {
+    margin-top: 6px; }
+    .subscribe-section form .form-wrapper .form-group {
+      position: relative; }
+      .subscribe-section form .form-wrapper .form-group input {
+        display: inline-block;
+        -webkit-border-radius: 0;
+                border-radius: 0;
+        outline: none;
+        padding: 22px 20px; }
+      .subscribe-section form .form-wrapper .form-group button {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        background: transparent;
+        padding: 11px 16px;
+        outline: none;
+        -webkit-box-shadow: none;
+                box-shadow: none; }
+        .subscribe-section form .form-wrapper .form-group button:active, .subscribe-section form .form-wrapper .form-group button:focus {
+          outline: none; }
 
 footer {
   background-color: #f7f7f7;

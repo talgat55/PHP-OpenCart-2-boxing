@@ -1,4 +1,5 @@
 <?php echo $header; ?>
+<h1 class="hidden-title">Главная страница</h1>
 <div class="container">
     <div class="row"><?php echo $column_left; ?>
         <?php if ($column_left && $column_right) { ?>
@@ -71,10 +72,50 @@
 
             <section class="clearfix">
                 <?php echo $content_top; ?><?php echo $content_bottom; ?>
+
             </section>
 
 
         </div>
         <?php echo $column_right; ?></div>
 </div>
+<section class="clearfix instagram-section">
+        <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-xs-12 ">
+                <h3 class="title">
+                    ПОДПИШИСЬ<br>
+                    В ИНСТАГРАМ
+                </h3>
+                <a href="#" class="link-subscribe">
+                    Хочу подписаться
+                </a>
+                <img class="img-glove" src="/catalog/view/theme/theme/image/main/glove.png" alt="Перчатка "/>
+            </div>
+            <div class="col-sm-6 col-xs-12 ">
+
+            </div>
+        </div>
+        </div>
+</section>
+<section class="clearfix  subscribe-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-xs-12">
+                <h3 class="title">
+                    ПОДПИШИСЬ
+                    <span>
+                        НА НОВОСТИ
+                    </span>
+                </h3>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <?php echo $sobfeedback_id33; ?>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
 <?php echo $footer; ?>

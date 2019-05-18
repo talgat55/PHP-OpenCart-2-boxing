@@ -57,7 +57,8 @@ class ControllerCommonHome extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
-
+        $sobfeedback = new sobfeedback($this->registry);
+        $data['sobfeedback_id33'] = $sobfeedback->initFeedback(33);
 
 		$this->response->setOutput($this->load->view('common/home', $data));
 	}

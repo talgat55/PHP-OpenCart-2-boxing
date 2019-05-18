@@ -7,7 +7,7 @@ jQuery(document).ready(function () {
 
 
     homeSlider();
-
+    clickWishBlock();
 
     // end redy function
 });
@@ -28,4 +28,14 @@ function homeSlider() {
             pauseOnHover: false
         });
     }
+}
+
+//-------------------------------
+//  Click on wish block
+//-------------------------------
+function clickWishBlock() {
+    "use strict";
+     jQuery('.product-thumb .top-block .wish a').click(function(){
+         return false;
+     });
 }
