@@ -7,10 +7,34 @@ class ControllerCommonHome extends Controller {
         $this->load->language('common/home');
         $data['text_category'] = $this->language->get('text_category');
         $this->load->model('catalog/category');
+        $this->load->model('catalog/product');
+        $this->load->model('tool/image');
 		if (isset($this->request->get['route'])) {
 			$this->document->addLink($this->config->get('config_url'), 'canonical');
 		}
+        $data = array(
+            'catid'  => '60',
+            'sort'  => 'p.date_added',
+            'order' => 'DESC',
+            'start' => 0,
+            'limit' => '8'
+        );
+        $results_products = $this->model_catalog_product->getProducts($data);
 
+        $data['products_set'] = array();
+        foreach ($results_products as $product_item){
+
+            $price = $this->currency->format($product_item['price'], $this->session->data['currency']);
+            $image = $this->model_tool_image->resize($product_item['image'], '231', '231');
+            $data['products_set'][] = array(
+                'thumb'     => $image,
+                'name'      => $product_item['name'],
+                'sku'      => $product_item['sku'],
+                'price'     => $price,
+                'href'      => $this->url->link('product/product', 'product_id=' . $product_item['product_id'])
+            );
+
+        }
         $categories = $this->model_catalog_category->getCategories(0);
 
         foreach ($categories as $category) {
@@ -57,6 +81,7 @@ class ControllerCommonHome extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
+        $data['text_category'] = $this->language->get('text_category');
         $sobfeedback = new sobfeedback($this->registry);
         $data['sobfeedback_id33'] = $sobfeedback->initFeedback(33);
 

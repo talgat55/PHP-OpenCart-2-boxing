@@ -84,6 +84,56 @@
             <?php echo $column_right; ?></div>
     </div>
 </section>
+<section class="cat-section">
+    <div class="container">
+        <div class="row">
+            <div class="block-title">
+                <h2 class="sub-title">Наборы</h2>
+                <a href="#" class="link-to-all">Все наборы</a>
+            </div>
+            <ul class="list-specific-products">
+                <?php  foreach($products_set as $product){ ?>
+                <li class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="product-thumb transition">
+                        <div class="top-block">
+                            <div class="sku">
+                                Артикул: <?php echo $product['sku']; ?>
+                            </div>
+                            <div class="wish">
+                                <a href="#" onclick="wishlist.add('<?php echo $product['product_id']; ?>');">
+                                    <i class="fa fa-heart"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>"
+                                                                                          alt="<?php echo $product['name']; ?>"
+                                                                                          title="<?php echo $product['name']; ?>"
+                                                                                          class="img-responsive"/></a></div>
+                        <div class="caption">
+                            <div class="categories">
+                                <span>Наборы</span>
+                            </div>
+                            <h3 class="title"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h3>
+
+                            <?php if ($product['price']) { ?>
+                                <p class="price">
+                                    <?php echo $product['price']; ?>
+                                </p>
+                            <?php } ?>
+                        </div>
+
+                    </div>
+                </li>
+                <?php } ?>
+
+            </ul>
+            <div class="wrapper-slider">
+                <div class="slider"> </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 <section class="clearfix instagram-section">
     <div class="container">
         <div class="row">

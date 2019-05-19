@@ -27,9 +27,6 @@
                 </div>
                 <h3 class="title"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h3>
 
-                <?php  /*
-                <p><?php echo $product['description']; ?></p>
-                */ ?>
                 <?php if ($product['price']) { ?>
                 <p class="price">
                     <?php if (!$product['special']) { ?>
@@ -42,15 +39,7 @@
                 </p>
                 <?php } ?>
             </div>
-            <?php  /*<div class="button-group">
-                <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>');"><i
-                            class="fa fa-shopping-cart"></i> <span
-                            class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
 
-
-            </div>
-        */
-        ?>
         </div>
     </div>
     <?php } ?>

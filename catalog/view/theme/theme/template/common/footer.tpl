@@ -144,6 +144,7 @@
 <script src="<?php echo $script; ?>" type="text/javascript"></script>
 <?php } ?>
 <?php if (!isset($this->request->get['route']) || $this->request->get['route'] == 'common/home'){ ?>
+<script src="catalog/view/theme/theme/js/jquery-ui.js" type="text/javascript"></script>
 <script src="catalog/view/theme/theme/js/slick.min.js" type="text/javascript"></script>
 <?php } ?>
 <script src="catalog/view/theme/theme/js/default.js" type="text/javascript"></script>

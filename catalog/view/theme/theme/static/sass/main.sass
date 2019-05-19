@@ -84,75 +84,7 @@
         width: 100%
 
 
-//
-// Latest block
-//
-.latest-block
-  .product-layout
-    margin-bottom: 30px
-    .product-thumb
-      border: 1px solid #e8e8e8
-      padding: 30px 30px 20px 30px
-      .top-block
-        padding-bottom: 30px
-        display: -ms-flexbox
-        display: -webkit-flex
-        display: flex
-        -webkit-flex-direction: row
-        -ms-flex-direction: row
-        flex-direction: row
-        -webkit-flex-wrap: wrap
-        -ms-flex-wrap: wrap
-        flex-wrap: wrap
-        -webkit-justify-content: space-between
-        -ms-flex-pack: justify
-        justify-content: space-between
-        -webkit-align-content: stretch
-        -ms-flex-line-pack: stretch
-        align-content: stretch
-        -webkit-align-items: center
-        -ms-flex-align: center
-        align-items: center
-        .sku
-          color: $gray_color
-          font-size: 14px
-          font-family: $font_regular
-        .wish
-          a
-            font-size: 16px
-            color: $gray_color
 
-      .caption
-        padding-top: 30px
-        .title
-          font-size: 20px
-          font-family: $font_regular
-          padding-top: 20px
-          min-height: 85px
-          text-align: left
-          margin: 0
-          a
-            color: $gray_color
-            text-decoration: none
-            transition: all .3s
-            &:hover
-              text-decoration: none
-              color: $main_color
-
-        .price
-          padding-top: 25px
-          font-family: $font_medium
-          font-size: 24px
-          color: $gray_color
-          margin-bottom: 0
-
-        .categories
-          span
-            font-size: 16px
-            color: #fff
-            background-color: $main_color
-            padding: 5px 15px
-            border-radius: 20px
 
 //
 // Instagram section
@@ -161,6 +93,7 @@
   background: url('../image/main/bg-instagram.jpg')
   background-repeat: no-repeat!important
   padding-top: 65px
+  background-size: cover!important
   .title
     font-size: 60px
     color: #fff
@@ -267,3 +200,23 @@
       margin-bottom: 60px
       margin-top: 90px
 
+//
+// Home page Set section
+//
+.cat-section
+  padding-top: 35px
+  padding-bottom: 150px
+  .list-specific-products
+    margin: 0 -15px
+    padding: 0
+    height: 540px
+    overflow: hidden
+    li
+      list-style: none
+  .wrapper-slider
+    margin-top: 65px
+    height: 7px
+    padding: 0 15px
+    background-color:  #e9e9e9
+    width: 100%
+    border-radius: 20px
