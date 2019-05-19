@@ -45,7 +45,7 @@ function clickWishBlock() {
 //-------------------------------
 function changeInputForm() {
     "use strict";
-    let inputId = jQuery('#form-sobfeedback33 #sobInput33-1');
+    let inputId = jQuery('#form-sobfeedback33 #sobInput33-1, #sobInput34-2');
     if(inputId.length){
         inputId.attr('type','email');
     }

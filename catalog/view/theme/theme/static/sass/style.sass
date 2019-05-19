@@ -94,17 +94,21 @@ header .top
 
   .request-call-block
     .link-call
-      font-family: $font_regular
-      display: inline-block
-      font-size: 18px
-      padding: 10px 30px
-      background-color: $main_color
-      border-radius: 25px
-      color: #fff
-      transition: all .3s
-      &:hover
-        text-decoration: none
-        background-color: #000
+      button
+        font-family: $font_regular
+        display: inline-block
+        font-size: 18px
+        padding: 10px 30px
+        background-color: $main_color
+        border-radius: 25px
+        color: #fff
+        transition: all .3s
+        &:hover
+          text-decoration: none
+          background-color: #000
+        &:active,
+        &:focus
+          outline: none
 
 footer .search-block,
 header .bottom
@@ -282,6 +286,20 @@ header .bottom
     outline: none
     box-shadow: none
 
+
+.modal-header
+  button.close
+    padding: 0!important
+    display: inherit!important
+    color: #2b2b2b!important
+    background-color: transparent!important
+
+.modal-dialog
+  margin: 30px auto
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translateX(-50%) translateY(-50%)!important
 
 .block-title-alternative
   .sub-title

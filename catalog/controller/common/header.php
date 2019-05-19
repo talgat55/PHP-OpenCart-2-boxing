@@ -97,7 +97,8 @@ class ControllerCommonHeader extends Controller {
 		$data['contact'] = $this->url->link('information/contact');
 		$data['telephone'] = $this->config->get('config_telephone');
 		$data['work_time_redy'] =   $this->replaceWorkTime($this->config->get('config_langdata')['1']['open']);
-
+        $sobfeedback = new sobfeedback($this->registry);
+        $data['sobfeedback_id34'] = $sobfeedback->initFeedback(34);
 		// Menu
 
 

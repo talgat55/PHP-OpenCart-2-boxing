@@ -59,8 +59,8 @@ header .top .phone-block .lists-phones {
       header .top .phone-block .lists-phones li a:hover {
         color: #df5a5a; }
 
-footer .request-call-block .link-call,
-header .top .request-call-block .link-call {
+footer .request-call-block .link-call button,
+header .top .request-call-block .link-call button {
   font-family: "Gotham Pro";
   display: inline-block;
   font-size: 18px;
@@ -72,10 +72,14 @@ header .top .request-call-block .link-call {
   -webkit-transition: all .3s;
   -o-transition: all .3s;
   transition: all .3s; }
-  footer .request-call-block .link-call:hover,
-  header .top .request-call-block .link-call:hover {
+  footer .request-call-block .link-call button:hover,
+  header .top .request-call-block .link-call button:hover {
     text-decoration: none;
     background-color: #000; }
+  footer .request-call-block .link-call button:active, footer .request-call-block .link-call button:focus,
+  header .top .request-call-block .link-call button:active,
+  header .top .request-call-block .link-call button:focus {
+    outline: none; }
 
 footer .search-block .search::-webkit-input-placeholder,
 header .bottom .search::-webkit-input-placeholder {
@@ -307,6 +311,21 @@ header .bottom .search button.btn.btn-default.btn-lg {
     outline: none;
     -webkit-box-shadow: none;
             box-shadow: none; }
+
+.modal-header button.close {
+  padding: 0 !important;
+  display: inherit !important;
+  color: #2b2b2b !important;
+  background-color: transparent !important; }
+
+.modal-dialog {
+  margin: 30px auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%) !important;
+      -ms-transform: translateX(-50%) translateY(-50%) !important;
+          transform: translateX(-50%) translateY(-50%) !important; }
 
 .block-title-alternative .sub-title {
   display: inline-block; }

@@ -42,9 +42,9 @@
 
                         </div>
                         <div class="request-call-block">
-                            <a href="#" class="link-call">
-                                Заказать звонок
-                            </a>
+                            <div  class="link-call">
+                                <?php echo $sobfeedback_id34; ?>
+                            </div>
                         </div>
 
                     </div>

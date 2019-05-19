@@ -47,7 +47,8 @@ class ControllerCommonFooter extends Controller {
         $data['emailto'] = $this->config->get('config_email');
         $data['search'] = $this->load->controller('common/search');
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
-
+        $sobfeedback = new sobfeedback($this->registry);
+        $data['sobfeedback_id34'] = $sobfeedback->initFeedback(34);
 		// Whos Online
 		if ($this->config->get('config_customer_online')) {
 			$this->load->model('tool/online');
