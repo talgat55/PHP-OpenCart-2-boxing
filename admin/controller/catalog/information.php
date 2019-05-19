@@ -288,6 +288,8 @@ class ControllerCatalogInformation extends Controller {
 		$data['entry_store'] = $this->language->get('entry_store');
 		$data['entry_bottom'] = $this->language->get('entry_bottom');
 		$data['entry_sort_order'] = $this->language->get('entry_sort_order');
+		$data['videoobzor_title_youtube'] = $this->language->get('videoobzor_title_youtube');
+		$data['videoobzor_title'] = $this->language->get('videoobzor_title');
 		$data['entry_status'] = $this->language->get('entry_status');
 		$data['entry_layout'] = $this->language->get('entry_layout');
 
@@ -429,6 +431,22 @@ class ControllerCatalogInformation extends Controller {
 		} else {
 			$data['sort_order'] = '';
 		}
+		// custom field
+		if (isset($this->request->post['status_video'])) {
+			$data['status_video'] = $this->request->post['status_video'];
+		}   else {
+			$data['status_video'] = '';
+		}
+
+		if (isset($this->request->post['video_link'])) {
+			$data['video_link'] = $this->request->post['video_link'];
+		}   else {
+			$data['video_link'] = '';
+		}
+
+
+
+
 
 		if (isset($this->request->post['information_layout'])) {
 			$data['information_layout'] = $this->request->post['information_layout'];

@@ -8,6 +8,7 @@ jQuery(document).ready(function () {
 
     homeSlider();
     clickWishBlock();
+    changeInputForm();
 
     // end redy function
 });
@@ -38,4 +39,15 @@ function clickWishBlock() {
      jQuery('.product-thumb .top-block .wish a').click(function(){
          return false;
      });
+}
+//-------------------------------
+//  Change type input for subscribe
+//-------------------------------
+function changeInputForm() {
+    "use strict";
+    let inputId = jQuery('#form-sobfeedback33 #sobInput33-1');
+    if(inputId.length){
+        inputId.attr('type','email');
+    }
+
 }
