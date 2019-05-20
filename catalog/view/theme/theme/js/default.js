@@ -10,6 +10,7 @@ jQuery(document).ready(function () {
     clickWishBlock();
     changeInputForm();
     carouselSetCategory();
+    instagram();
     // end redy function
 });
 
@@ -86,9 +87,26 @@ function carouselSetCategory() {
 
     }
 
-
-
-
     // change: function( event, ui ) {}
 
+}
+
+
+//-------------------------------
+//  Instagram
+//-------------------------------
+function instagram() {
+    "use strict";
+    if(jQuery('#instafeed').length){
+        var userFeed = new Instafeed({
+            get: 'tagged',
+            tagName: 'awesome',
+            clientId: '81bf04ff4f9f4b13b19eec430a8175c0',
+            template: '<a href="{{link}}"><img src="{{image}}" /></a>'
+        });
+
+        userFeed.run();
+
+
+    }
 }
