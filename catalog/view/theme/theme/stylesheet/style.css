@@ -60,7 +60,8 @@ header .top .phone-block .lists-phones {
         color: #df5a5a; }
 
 footer .request-call-block .link-call button,
-header .top .request-call-block .link-call button {
+header .top .request-call-block .link-call button,
+#button-search {
   font-family: "Gotham Pro";
   display: inline-block;
   font-size: 18px;
@@ -73,12 +74,15 @@ header .top .request-call-block .link-call button {
   -o-transition: all .3s;
   transition: all .3s; }
   footer .request-call-block .link-call button:hover,
-  header .top .request-call-block .link-call button:hover {
+  header .top .request-call-block .link-call button:hover,
+  #button-search:hover {
     text-decoration: none;
     background-color: #000; }
   footer .request-call-block .link-call button:active, footer .request-call-block .link-call button:focus,
   header .top .request-call-block .link-call button:active,
-  header .top .request-call-block .link-call button:focus {
+  header .top .request-call-block .link-call button:focus,
+  #button-search:active,
+  #button-search:focus {
     outline: none; }
 
 footer .search-block .search::-webkit-input-placeholder,
@@ -336,9 +340,45 @@ header .bottom .search button.btn.btn-default.btn-lg {
 .padding-top-90 {
   padding-top: 90px; }
 
-@media (min-width: 1260px) {
-  .container {
-    width: 1260px; } }
+.error-page {
+  margin: 40px 0; }
+  .error-page .title {
+    text-align: center;
+    font-family: "Gotham Pro Medium";
+    font-size: 40px; }
+  .error-page p {
+    text-align: center; }
+
+.search-page {
+  margin-bottom: 40px; }
+
+.main-page {
+  margin-bottom: 40px; }
+
+.flex {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: start;
+  -webkit-box-pack: start;
+          justify-content: start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center; }
 
 #logo img {
   height: 200px;
@@ -732,3 +772,7 @@ footer {
     color: #3f4047;
     margin-bottom: 40px;
     margin-top: 0; }
+
+@media (min-width: 1260px) {
+  .container {
+    width: 1260px; } }

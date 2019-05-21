@@ -62,7 +62,7 @@
                         </p>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/shops">
                             <img src="/catalog/view/theme/theme/image/main/icon-home.png" alt="Иконка "/>
                             <p>
                                 Наши магазины

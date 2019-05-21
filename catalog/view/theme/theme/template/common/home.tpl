@@ -10,6 +10,8 @@
             <?php } ?>
             <div id="content" class="  home-page clearfix">
                 <section class="clearfix">
+                    <div class="container">
+                        <div class="row">
                     <div class="col-sm-3 col-xs-12">
                         <?php if ($categories) { ?>
                         <nav id="menu" class="navbar">
@@ -54,7 +56,7 @@
                         </nav>
                         <?php } ?>
                     </div>
-                    <div class="col-sm-9 col-xs-12">
+                    <div class="col-sm-9 col-xs-12  " style="position: relative;">
                         <ul class="home-slider clearfix">
                             <?php foreach($banner as $value){  ?>
 
@@ -69,6 +71,8 @@
 
                             <?php }  ?>
                         </ul>
+                    </div>
+                    </div>
                     </div>
                 </section>
                 <section class="clearfix">
