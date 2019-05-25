@@ -4,13 +4,17 @@
 jQuery(document).ready(function () {
 
 
-
-
     homeSlider();
     clickWishBlock();
     changeInputForm();
     carouselSetCategory();
     instagram();
+    dropDownMenuCategories();
+
+
+
+
+    console.log(jQuery('.accordion-block  *').length);
     // end redy function
 });
 
@@ -20,15 +24,26 @@ jQuery(document).ready(function () {
 //-------------------------------
 function homeSlider() {
     "use strict";
-    let homeClass = '.home-slider';
-    if (jQuery(homeClass).length) {
-        jQuery(homeClass).slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            autoplay: true,
-            pauseOnHover: false
-        });
+    let homeClass = jQuery('.home-slider');
+    if (homeClass.length) {
+
+        let windowWidth = jQuery(window).width();
+        let containerWidth = jQuery('.container').width();
+        let columnrWidth = jQuery('.col-sm-9').width();
+
+        homeClass.css('width',  (windowWidth - containerWidth ) / 2 + columnrWidth );
+
+       setTimeout(function(){
+           homeClass.slick({
+               slidesToShow: 1,
+               slidesToScroll: 1,
+               arrows: false,
+               dots: true,
+               autoplay: true,
+               pauseOnHover: false
+           });
+       }, 300);
+
     }
 }
 
@@ -52,6 +67,8 @@ function changeInputForm() {
     }
 
 }
+
+
 //-------------------------------
 //  Carousel Category Set
 //-------------------------------
@@ -97,16 +114,19 @@ function carouselSetCategory() {
 //-------------------------------
 function instagram() {
     "use strict";
-    if(jQuery('#instafeed').length){
-        var userFeed = new Instafeed({
-            get: 'tagged',
-            tagName: 'awesome',
-            clientId: '81bf04ff4f9f4b13b19eec430a8175c0',
-            template: '<a href="{{link}}"><img src="{{image}}" /></a>'
-        });
+    // Remove styles for instagram widget
+    jQuery('.widget > a').prev().remove();
+    jQuery('.widget ').find('.profile, .title').remove();
+    jQuery('.instagram-section ').find('title, meta, .copyright, script, noscript').remove();
+}
 
-        userFeed.run();
-
-
-    }
+//-------------------------------
+//  Dropdown sub menu
+//-------------------------------
+function dropDownMenuCategories() {
+    "use strict";
+    jQuery('.dropdown-toggle').click(function () {
+        jQuery(this).next().stop().slideToggle();
+        jQuery(this).toggleClass("accordion-open");
+    }).next().stop().hide();
 }

@@ -64,7 +64,12 @@
                                 <a href="<?=$value['link']; ?>">
                                     <img src="<?=$value['image']; ?>" alt="Изображение">
                                     <div class="text">
-                                        <?=$value['title']; ?>
+                                        <?php
+                                           $array = explode(' ', $value['title']);
+                                           $array['1'] = '<span>'.$array['1'].'</span>';
+                                           $arrayRedy = implode(" ", $array);
+                                        ?>
+                                        <?=$arrayRedy ?>
                                     </div>
                                 </a>
                             </li>
@@ -87,7 +92,7 @@
                         <div class="row">
                             <div class="block-title">
                                 <h2 class="sub-title">Наборы</h2>
-                                <a href="#" class="link-to-all">Все наборы</a>
+                                <a href="/sets/" class="link-to-all">Все наборы</a>
                             </div>
                             <ul class="list-specific-products">
                                 <?php  foreach($products_set as $product){ ?>
@@ -140,13 +145,25 @@
                                     ПОДПИШИСЬ<br>
                                     В ИНСТАГРАМ
                                 </h3>
-                                <a href="#" class="link-subscribe">
+                                <a href="https://www.instagram.com/takeshi.fight.gear/" target="_blank" class="link-subscribe">
                                     Хочу подписаться
                                 </a>
                                 <img class="img-glove" src="/catalog/view/theme/theme/image/main/glove.png" alt="Перчатка "/>
                             </div>
                             <div class="col-sm-6 col-xs-12 ">
-                                <div id="instafeed"></div>
+                                <div id="instagram-widget">
+                                <?php
+                                      $c = curl_init('http://widget.stapico.ru/?q=takeshi.fight.gear&s=20&w=3&h=2&b=0&p=5&title=balovenomsk&profile=no&header=no&effect=0');
+                                      curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
+                                      $content = curl_exec($c);
+                                      $pattern = "|href=\"[^\"]+\"|is";
+                                      $content = preg_replace($pattern, "href=\"https://www.instagram.com/takeshi.fight.gear\"", $content);
+                                        echo $content;
+                                     ?>
+                                </div>
+                                <p class="text-inst">
+                                    Подпишись и получи скидку!
+                                </p>
                             </div>
                         </div>
                     </div>

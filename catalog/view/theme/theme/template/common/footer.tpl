@@ -53,27 +53,27 @@
                             <h4>Мы в соц. сетях:</h4>
                             <ul class="list-soc-link">
                                 <li>
-                                    <a href="#">
+                                    <a  target="_blank" href="https://vk.com/takeshi_fight_gear">
                                         <i class="fab fa-vk"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a  target="_blank" href="https://www.facebook.com/takeshi.fight.gear/">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a target="_blank" href="https://www.instagram.com/takeshi.fight.gear/">
                                         <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a  target="_blank" href="#">
                                         <i class="fab fa-odnoklassniki"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a target="_blank"  href="#">
                                         <i class="fab fa-youtube"></i>
                                     </a>
                                 </li>
@@ -148,8 +148,10 @@
 <script src="catalog/view/theme/theme/js/slick.min.js" type="text/javascript"></script>
 <script src="catalog/view/theme/theme/js/instafeed.min.js" type="text/javascript"></script>
 <?php } ?>
+<script src="catalog/view/theme/theme/js/load-more.js" type="text/javascript"></script>
 <script src="catalog/view/theme/theme/js/default.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+
 <!--
 OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
 Please donate via PayPal to donate@opencart.com

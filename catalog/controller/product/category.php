@@ -18,7 +18,7 @@ class ControllerProductCategory extends Controller {
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
-			$sort = 'p.sort_order';
+			$sort = 'p.price';
 		}
 
 		if (isset($this->request->get['order'])) {
@@ -42,7 +42,7 @@ class ControllerProductCategory extends Controller {
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
+			'text' => 'Главная',
 			'href' => $this->url->link('common/home')
 		);
 
@@ -115,8 +115,9 @@ class ControllerProductCategory extends Controller {
 			$data['text_tax'] = $this->language->get('text_tax');
 			$data['text_points'] = $this->language->get('text_points');
 			$data['text_compare'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
-			$data['text_sort'] = $this->language->get('text_sort');
+			$data['text_sort_new'] = $this->language->get('text_sort_new');
 			$data['text_limit'] = $this->language->get('text_limit');
+			$data['text_limit_new'] = $this->language->get('text_limit_new');
 
 			$data['button_cart'] = $this->language->get('button_cart');
 			$data['button_wishlist'] = $this->language->get('button_wishlist');
@@ -220,18 +221,26 @@ class ControllerProductCategory extends Controller {
 				} else {
 					$rating = false;
 				}
-
+                $categories = $this->model_catalog_product->getCategories($result['product_id']);
+                if($categories){
+                    $categories_info = $this->model_catalog_category->getCategory($categories[0]['category_id']);
+                    $category_title = $categories_info['name'];
+                }else{
+                    $category_title = '';
+                }
 				$data['products'][] = array(
-					'product_id'  => $result['product_id'],
-					'thumb'       => $image,
-					'name'        => $result['name'],
-					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
-					'price'       => $price,
-					'special'     => $special,
-					'tax'         => $tax,
-					'minimum'     => ($result['minimum'] > 0) ? $result['minimum'] : 1,
-					'rating'      => $rating,
-					'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
+					'product_id'    => $result['product_id'],
+					'thumb'         => $image,
+					'sku'           => $result['sku'],
+					'category_title'=> $category_title,
+					'name'          => $result['name'],
+					'description'   => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
+					'price'         => $price,
+					'special'       => $special,
+					'tax'           => $tax,
+					'minimum'       => ($result['minimum'] > 0) ? $result['minimum'] : 1,
+					'rating'        => $rating,
+					'href'          => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
 				);
 			}
 
@@ -302,6 +311,11 @@ class ControllerProductCategory extends Controller {
 				'value' => 'p.model-DESC',
 				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.model&order=DESC' . $url)
 			);
+
+            unset(  $data['sorts']['0'], $data['sorts']['2'], $data['sorts']['3'], $data['sorts']['6'], $data['sorts']['7'], $data['sorts']['8']);
+            $data['sorts']['1']['text'] = 'По имени';
+            $data['sorts']['4']['text'] = 'По цене';
+            $data['sorts']['5']['text'] = 'По рейтингу';
 
 			$url = '';
 

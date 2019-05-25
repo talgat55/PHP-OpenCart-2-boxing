@@ -126,6 +126,10 @@ header .bottom
       &:focus
         outline: none
         box-shadow: none
+    .input-group-btn
+      width: auto!important
+    &.input-group
+      display: contents!important
     button.btn.btn-default.btn-lg
       border-left: none
       border-radius: 0
@@ -187,7 +191,7 @@ header .bottom
       color: #fff
       background-color: $main_color
       border-color: $main_color
-
+.category-page,
 .list-specific-products,
 .latest-block
   .product-layout
@@ -222,7 +226,7 @@ header .bottom
         .wish
           a
             font-size: 16px
-            color: $gray_color
+            color: $main_color
 
       .caption
         padding-top: 30px
@@ -255,6 +259,25 @@ header .bottom
             background-color: $main_color
             padding: 5px 15px
             border-radius: 20px
+
+.breadcrumb>li+li:before
+  content: "-"
+
+.breadcrumb
+  background-color: transparent!important
+  padding: 0
+  margin: 60px 0
+  li
+    a
+      font-size: 15px
+      color: #8d8d8d
+      text-decoration: none
+      transition: all .3s
+      &:hover
+        color: $main_color
+
+
+
 
 
 //
@@ -343,6 +366,21 @@ header .bottom
   -webkit-align-items: center
   -ms-flex-align: center
   align-items: center
+
+
+
+.grid-view-hide
+  display: none!important
+
+
+.dropdown-menu
+  position: relative!important
+  border: none!important
+  box-shadow: none
+  padding: 5px 0 5px 20px
+  a
+    border: none!important
+
 
 @import "header.sass"
 @import "main.sass"

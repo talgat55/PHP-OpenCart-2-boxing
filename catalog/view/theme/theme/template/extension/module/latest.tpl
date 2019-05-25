@@ -1,6 +1,6 @@
 <div class="block-title">
     <h2 class="sub-title"><?php echo $heading_title; ?></h2>
-    <a href="#" class="link-to-all">Все новинки</a>
+    <a href="/new" class="link-to-all">Все новинки</a>
 </div>
 
 <div class="row latest-block">

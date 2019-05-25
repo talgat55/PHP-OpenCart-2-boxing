@@ -9,6 +9,10 @@ class ControllerCommonHome extends Controller {
         $this->load->model('catalog/category');
         $this->load->model('catalog/product');
         $this->load->model('tool/image');
+        $data['text_all'] = $this->language->get('text_all');
+
+
+
 		if (isset($this->request->get['route'])) {
 			$this->document->addLink($this->config->get('config_url'), 'canonical');
 		}
