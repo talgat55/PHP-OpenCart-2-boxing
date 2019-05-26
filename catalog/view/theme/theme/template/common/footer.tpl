@@ -139,12 +139,14 @@
 <link href="catalog/view/theme/theme/stylesheet/slick-theme.css" rel="stylesheet">
 <?php } ?>
 <link href="catalog/view/theme/theme/stylesheet/fontawesome-all.css" rel="stylesheet">
-<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
 <?php foreach ($scripts as $script) { ?>
 <script src="<?php echo $script; ?>" type="text/javascript"></script>
 <?php } ?>
+
 <?php if (!isset($this->request->get['route']) || $this->request->get['route'] == 'common/home'){ ?>
 <script src="catalog/view/theme/theme/js/jquery-ui.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="catalog/view/theme/theme/js/slick.min.js" type="text/javascript"></script>
 
 <?php } ?>
