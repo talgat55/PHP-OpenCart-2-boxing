@@ -136,7 +136,10 @@ class ControllerCommonHeader extends Controller {
 
 		// category
         $pos = strpos($data['class'], 'product-category');
-        if($pos !== false) {
+		//  single product page
+        $single = strpos($data['class'], 'product-product');
+
+        if($pos !== false || $single !== false) {
             $this->load->model('catalog/category');
             if (isset($this->request->get['path'])) {
                 $parts = explode('_', (string)$this->request->get['path']);

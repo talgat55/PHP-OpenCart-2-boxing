@@ -10,11 +10,10 @@ jQuery(document).ready(function () {
     carouselSetCategory();
     instagram();
     dropDownMenuCategories();
+    dropDownFiltersCategoryPage();
+    hideLeftBlockCAtegoryPage();
+    select2OnProductPage();
 
-
-
-
-    console.log(jQuery('.accordion-block  *').length);
     // end redy function
 });
 
@@ -74,7 +73,7 @@ function changeInputForm() {
 //-------------------------------
 function carouselSetCategory() {
     "use strict";
-    let carouselClass = jQuery('.list-specific-products');
+    let carouselClass = jQuery('.list-specific-products, .list-linked-products');
     let sliderHandle  = jQuery('.slider');
     if (carouselClass.length) {
         carouselClass.slick({
@@ -110,7 +109,7 @@ function carouselSetCategory() {
 
 
 //-------------------------------
-//  Instagram
+//  Instagram Widget
 //-------------------------------
 function instagram() {
     "use strict";
@@ -129,4 +128,52 @@ function dropDownMenuCategories() {
         jQuery(this).next().stop().slideToggle();
         jQuery(this).toggleClass("accordion-open");
     }).next().stop().hide();
+}
+
+//-------------------------------
+//  Dropdown filters in category page
+//-------------------------------
+function dropDownFiltersCategoryPage() {
+    "use strict";
+    jQuery('.accordion-block .title').click(function () {
+        jQuery(this).next().stop().slideToggle();
+        jQuery(this).toggleClass("accordion-open");
+    }).next().stop().hide();
+}
+//-------------------------------
+//  Hide left sidebar in page category if empty block
+//-------------------------------
+function hideLeftBlockCAtegoryPage() {
+    "use strict";
+
+    var accordionClass =  jQuery( ".accordion-block" );
+
+    if(accordionClass.length){
+        accordionClass.each(function( index ) {
+
+            var thisClass = jQuery( this );
+            if(thisClass.find('div').length == '0'){
+
+                thisClass.hide();
+            }
+
+        });
+
+    }
+
+}
+//-------------------------------
+//  Select on page product
+//-------------------------------
+function select2OnProductPage() {
+    "use strict";
+
+    var selectClass =  jQuery( ".select-two-selection" );
+    if(selectClass.length){
+        selectClass.select2({
+            minimumResultsForSearch: -1,
+            width: 'resolve'
+        });
+    }
+
 }

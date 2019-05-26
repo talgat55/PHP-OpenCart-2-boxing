@@ -29,7 +29,14 @@
     <?php } ?>
     <meta property="og:site_name" content="<?php echo $name; ?>"/>
     <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <?php
+    // enable script on page product
 
+    $pos = strpos($class, 'product-product');
+    if($pos !== false) { ?>
+        <link href="catalog/view/theme/theme/stylesheet/select2.min.css" rel="stylesheet">
+
+    <?php } ?>
     <!-- <link href="catalog/view/theme/theme/stylesheet/stylesheet.css" rel="stylesheet"> -->
     <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
     <link href="catalog/view/theme/theme/stylesheet/style.css" rel="stylesheet">

@@ -16,14 +16,14 @@ class ControllerCommonHome extends Controller {
 		if (isset($this->request->get['route'])) {
 			$this->document->addLink($this->config->get('config_url'), 'canonical');
 		}
-        $data = array(
+        $data_args = array(
             'catid'  => '60',
             'sort'  => 'p.date_added',
             'order' => 'DESC',
             'start' => 0,
             'limit' => '8'
         );
-        $results_products = $this->model_catalog_product->getProducts($data);
+        $results_products = $this->model_catalog_product->getProducts($data_args);
 
         $data['products_set'] = array();
         foreach ($results_products as $product_item){
@@ -55,7 +55,7 @@ class ControllerCommonHome extends Controller {
                     );
 
                     $children_data[] = array(
-                        'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+                        'name'  => $child['name']  ,
                         'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
                     );
                 }

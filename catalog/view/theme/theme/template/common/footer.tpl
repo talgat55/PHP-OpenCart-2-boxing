@@ -146,8 +146,17 @@
 <?php if (!isset($this->request->get['route']) || $this->request->get['route'] == 'common/home'){ ?>
 <script src="catalog/view/theme/theme/js/jquery-ui.js" type="text/javascript"></script>
 <script src="catalog/view/theme/theme/js/slick.min.js" type="text/javascript"></script>
-<script src="catalog/view/theme/theme/js/instafeed.min.js" type="text/javascript"></script>
+
 <?php } ?>
+<?php
+// enable script on page product
+$pos = strpos($class, 'product-product');
+if($pos !== false) {
+?>
+<script src="catalog/view/theme/theme/js/select2.min.js" type="text/javascript"></script>
+
+<?php } ?>
+
 <script src="catalog/view/theme/theme/js/load-more.js" type="text/javascript"></script>
 <script src="catalog/view/theme/theme/js/default.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>

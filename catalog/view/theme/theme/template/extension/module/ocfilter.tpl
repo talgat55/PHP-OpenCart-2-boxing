@@ -1,60 +1,59 @@
 <div class="accordion-block">
-<?php if ($options || $show_price) { ?>
-<div class="visible-xs" id="ocfilter-mobile">
-  <nav class="navbar navbar-default">
-    <div class="navbar-header">
-      <span class="navbar-brand"><i class="fa fa-filter"></i> <?php echo $heading_title; ?></span>
-      <button data-target="#navbar-ocfilter" data-toggle="collapse" class="btn btn-navbar navbar-toggle" type="button"><i class="fa fa-bars"></i></button>
+    <?php if ($options || $show_price) { ?>
+    <div class="visible-xs" id="ocfilter-mobile">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <span class="navbar-brand"><i class="fa fa-filter"></i> <?php echo $heading_title; ?></span>
+                <button data-target="#navbar-ocfilter" data-toggle="collapse" class="btn btn-navbar navbar-toggle" type="button"><i class="fa fa-bars"></i></button>
+            </div>
+            <div id="navbar-ocfilter" class="navbar-collapse collapse" aria-expanded="false"></div>
+        </nav>
     </div>
-    <div id="navbar-ocfilter" class="navbar-collapse collapse" aria-expanded="false"></div>
-  </nav>
-</div>
-<div class="panel ocfilter panel-default" id="ocfilter">
-  <div class="hidden" id="ocfilter-button">
-    <button class="btn btn-primary disabled" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Загрузка.."></button>
-  </div>
-  <div class="list-group" id="ocfilter-content">
-
-
-      <?php if ($show_price) { # Price filtering ?>
-      <div class="list-group-item ocfilter-option" data-toggle="popover-price">
-        <div class="option-name">
-					<?php echo $text_price; ?>&nbsp;<?php echo $symbol_left; ?>
-          <span id="price-from"><?php echo $min_price_get; ?></span>&nbsp;-&nbsp;<span id="price-to"><?php echo $max_price_get; ?></span><?php echo $symbol_right; ?>
-				</div>
-
-        <div class="option-values">
-					<div id="scale-price" class="scale ocf-target" data-option-id="p"
-              data-start-min="<?php echo $min_price_get; ?>"
-              data-start-max="<?php echo $max_price_get; ?>"
-              data-range-min="<?php echo $min_price; ?>"
-              data-range-max="<?php echo $max_price; ?>"
-              data-element-min="#price-from"
-              data-element-max="#price-to"
-              data-control-min="#min-price-value"
-              data-control-max="#max-price-value"
-              ></div>
-
-					<?php if ($diagram) { ?>
-          <div class="price-diagram">
-						<div class="diagram-field">
-							<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="40px">
-								<?php foreach ($diagram['circles'] as $circle) { ?>
-								<?php if ($circle['count']) { ?>
-								<circle cx="<?php echo $circle['x']; ?>" cy="<?php echo $circle['y']; ?>" r="1" fill="#037a9c" stroke="#037a9c" stroke-width="1" />
-								<?php } else { ?>
-								<circle cx="<?php echo $circle['x']; ?>" cy="<?php echo $circle['y']; ?>" r="1" fill="#BF0000" stroke="#BF0000" stroke-width="1" />
-								<?php } ?>
-								<?php } ?>
-								<path fill="#037a9c" stroke="#037a9c" d="<?php echo $diagram['path']; ?>" stroke-width="1" opacity="0.25" stroke-opacity="1" />
-							</svg>
-						</div>
-          </div>
-					<?php } ?>
+    <div class="panel ocfilter panel-default" id="ocfilter">
+        <div class="hidden" id="ocfilter-button">
+            <button class="btn btn-primary disabled" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Загрузка.."></button>
         </div>
-      </div>
-      <?php } # Price filtering end ?>
+        <div class="list-group" id="ocfilter-content">
 
+
+            <?php if ($show_price) { # Price filtering ?>
+            <div class="list-group-item ocfilter-option" data-toggle="popover-price">
+                <div class="option-name">
+                    <?php echo $text_price; ?>&nbsp;<?php echo $symbol_left; ?>
+                    <span id="price-from"><?php echo $min_price_get; ?></span>&nbsp;-&nbsp;<span id="price-to"><?php echo $max_price_get; ?></span><?php echo $symbol_right; ?>
+                </div>
+
+                <div class="option-values">
+                    <div id="scale-price" class="scale ocf-target" data-option-id="p"
+                         data-start-min="<?php echo $min_price_get; ?>"
+                         data-start-max="<?php echo $max_price_get; ?>"
+                         data-range-min="<?php echo $min_price; ?>"
+                         data-range-max="<?php echo $max_price; ?>"
+                         data-element-min="#price-from"
+                         data-element-max="#price-to"
+                         data-control-min="#min-price-value"
+                         data-control-max="#max-price-value"
+                    ></div>
+
+                    <?php if ($diagram) { ?>
+                    <div class="price-diagram">
+                        <div class="diagram-field">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="40px">
+                                <?php foreach ($diagram['circles'] as $circle) { ?>
+                                <?php if ($circle['count']) { ?>
+                                <circle cx="<?php echo $circle['x']; ?>" cy="<?php echo $circle['y']; ?>" r="1" fill="#037a9c" stroke="#037a9c" stroke-width="1" />
+                                <?php } else { ?>
+                                <circle cx="<?php echo $circle['x']; ?>" cy="<?php echo $circle['y']; ?>" r="1" fill="#BF0000" stroke="#BF0000" stroke-width="1" />
+                                <?php } ?>
+                                <?php } ?>
+                                <path fill="#037a9c" stroke="#037a9c" d="<?php echo $diagram['path']; ?>" stroke-width="1" opacity="0.25" stroke-opacity="1" />
+                            </svg>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+            </div>
+            <?php } # Price filtering end ?>
       <?php foreach ($options as $option) { ?>
 
 			<?php if ($show_options_limit && $show_options_limit == $option['index'] - 1) { ?>
@@ -154,10 +153,12 @@
 							<?php } elseif ($value['count']) { ?>
 		          <label id="v-<?php echo $value['id']; ?>">
                 <input type="<?php echo $option['type']; ?>" name="ocfilter_filter[<?php echo $option['option_id']; ?>]" value="<?php echo $value['href']; ?>" class="ocf-target" />
-                <a href="<?php echo $value['href']; ?>"><?php echo $value['name']; ?></a>
-                <?php if ($show_counter) { ?>
-                <small class="badge"><?php echo $value['count']; ?></small>
-                <?php } ?>
+                <a href="<?php echo $value['href']; ?>"><?php echo $value['name']; ?>
+                    <?php if ($show_counter) { ?>
+                    <small class="badge"><?php echo $value['count']; ?></small>
+                    <?php } ?>
+                </a>
+
               </label>
 							<?php } else { ?>
 		          <label id="v-<?php echo $value['id']; ?>" class="disabled">
@@ -191,6 +192,7 @@
 
     	<?php } # End "foreach $options" ?>
     </div>
+
   </div>
     <?php if ($selecteds) { # Selected options ?>
     <div class="list-group-item selected-options">
@@ -208,6 +210,7 @@
         <?php } ?>
     </div>
     <?php } ?>
+
 </div>
 <script type="text/javascript"><!--
 $(function() {

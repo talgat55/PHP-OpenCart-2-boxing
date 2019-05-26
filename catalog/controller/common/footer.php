@@ -49,7 +49,27 @@ class ControllerCommonFooter extends Controller {
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
         $sobfeedback = new sobfeedback($this->registry);
         $data['sobfeedback_id34'] = $sobfeedback->initFeedback(34);
-		// Whos Online
+        if (isset($this->request->get['route'])) {
+            if (isset($this->request->get['product_id'])) {
+                $class = '-' . $this->request->get['product_id'];
+
+            } elseif (isset($this->request->get['path'])) {
+                $class = '-' . $this->request->get['path'];
+
+            } elseif (isset($this->request->get['manufacturer_id'])) {
+                $class = '-' . $this->request->get['manufacturer_id'];
+            } elseif (isset($this->request->get['information_id'])) {
+                $class = '-' . $this->request->get['information_id'];
+            } else {
+                $class = '';
+            }
+
+            $data['class'] = str_replace('/', '-', $this->request->get['route']) . $class;
+        } else {
+            $data['class'] = 'common-home';
+        }
+
+        // Whos Online
 		if ($this->config->get('config_customer_online')) {
 			$this->load->model('tool/online');
 

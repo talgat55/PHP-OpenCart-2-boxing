@@ -8,7 +8,7 @@ class ControllerProductProduct extends Controller {
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
+            'text' => 'Главная',
 			'href' => $this->url->link('common/home')
 		);
 
@@ -40,6 +40,12 @@ class ControllerProductProduct extends Controller {
 
 			// Set the last category breadcrumb
 			$category_info = $this->model_catalog_category->getCategory($category_id);
+
+
+			// $product_info
+            $data['current_cat']        =  $category_info['name'];
+            $data['link_current_cat']   = $this->url->link('product/category', 'path=' .  $category_info['category_id'] );
+
 
 			if ($category_info) {
 				$url = '';
@@ -223,8 +229,13 @@ class ControllerProductProduct extends Controller {
 			$this->document->setDescription($product_info['meta_description']);
 			$this->document->setKeywords($product_info['meta_keyword']);
 			$this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id']), 'canonical');
-			$this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
-			$this->document->addStyle('catalog/view/javascript/jquery/magnific/magnific-popup.css');
+
+//			$this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
+//			$this->document->addStyle('catalog/view/javascript/jquery/magnific/magnific-popup.css');
+    		$this->document->addStyle('catalog/view/theme/theme/stylesheet/lightbox.min.css');
+
+			$this->document->addScript('catalog/view/theme/theme/js/lightbox.min.js');
+
 			$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment.js');
 			$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/locale/'.$this->session->data['language'].'.js');
 			$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js');
@@ -237,6 +248,7 @@ class ControllerProductProduct extends Controller {
 			}
 
 			$data['text_select'] = $this->language->get('text_select');
+			$data['text_select_size'] = $this->language->get('text_select_size');
 			$data['text_manufacturer'] = $this->language->get('text_manufacturer');
 			$data['text_model'] = $this->language->get('text_model');
 			$data['text_reward'] = $this->language->get('text_reward');
@@ -266,6 +278,8 @@ class ControllerProductProduct extends Controller {
 			$data['button_compare'] = $this->language->get('button_compare');
 			$data['button_upload'] = $this->language->get('button_upload');
 			$data['button_continue'] = $this->language->get('button_continue');
+			$data['sku_text'] = $this->language->get('sku_text');
+            $data['button_cart_new'] = $this->language->get('button_cart_new');
 
 			$this->load->model('catalog/review');
 
@@ -275,10 +289,13 @@ class ControllerProductProduct extends Controller {
 
 			$data['product_id'] = (int)$this->request->get['product_id'];
 			$data['manufacturer'] = $product_info['manufacturer'];
-			$data['manufacturers'] = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $product_info['manufacturer_id']);
+			$data['sku'] = $product_info['sku'];
 			$data['model'] = $product_info['model'];
-			$data['reward'] = $product_info['reward'];
-			$data['points'] = $product_info['points'];
+			$data['location'] = $product_info['location'];
+			$data['manufacturers'] = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $product_info['manufacturer_id']);
+//			$data['model'] = $product_info['model'];
+//			$data['reward'] = $product_info['reward'];
+//			$data['points'] = $product_info['points'];
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
 
 			if ($product_info['quantity'] <= 0) {
@@ -384,6 +401,11 @@ class ControllerProductProduct extends Controller {
 			} else {
 				$data['minimum'] = 1;
 			}
+			if ($product_info['quantity']) {
+				$data['quantity_available'] = $product_info['quantity'];
+			} else {
+				$data['quantity_available'] = 0;
+			}
 
 			$data['review_status'] = $this->config->get('config_review_status');
 
@@ -462,18 +484,43 @@ class ControllerProductProduct extends Controller {
 				);
 			}
 
-			$data['tags'] = array();
+//			$data['tags'] = array();
+//
+//			if ($product_info['tag']) {
+//				$tags = explode(',', $product_info['tag']);
+//
+//				foreach ($tags as $tag) {
+//					$data['tags'][] = array(
+//						'tag'  => trim($tag),
+//						'href' => $this->url->link('product/search', 'tag=' . trim($tag))
+//					);
+//				}
+//			}
+            $data_args = array(
+                'catid'  => $category_info['category_id'],
+                'sort'  => 'p.date_added',
+                'order' => 'DESC',
+                'start' => 0,
+                'limit' => '8'
+            );
+            $results_products = $this->model_catalog_product->getProducts($data_args);
 
-			if ($product_info['tag']) {
-				$tags = explode(',', $product_info['tag']);
+            $data['products_set'] = array();
 
-				foreach ($tags as $tag) {
-					$data['tags'][] = array(
-						'tag'  => trim($tag),
-						'href' => $this->url->link('product/search', 'tag=' . trim($tag))
-					);
-				}
-			}
+            foreach ($results_products as $product_item){
+                if($product_info['product_id'] != $product_item['product_id']) {
+                    $price = $this->currency->format($product_item['price'], $this->session->data['currency']);
+                    $image = $this->model_tool_image->resize($product_item['image'], '231', '231');
+                    $data['products_set'][] = array(
+                        'thumb' => $image,
+                        'name' => $product_item['name'],
+                        'sku' => $product_item['sku'],
+                        'price' => $price,
+                        'href' => $this->url->link('product/product', 'product_id=' . $product_item['product_id'])
+                    );
+                }
+
+            }
 
 			$data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
 
@@ -485,8 +532,30 @@ class ControllerProductProduct extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+            if (isset($this->request->get['route'])) {
+                if (isset($this->request->get['product_id'])) {
+                    $class = '-' . $this->request->get['product_id'];
 
-			$this->response->setOutput($this->load->view('product/product', $data));
+                } elseif (isset($this->request->get['path'])) {
+                    $class = '-' . $this->request->get['path'];
+
+                } elseif (isset($this->request->get['manufacturer_id'])) {
+                    $class = '-' . $this->request->get['manufacturer_id'];
+                } elseif (isset($this->request->get['information_id'])) {
+                    $class = '-' . $this->request->get['information_id'];
+                } else {
+                    $class = '';
+                }
+
+                $data['class'] = str_replace('/', '-', $this->request->get['route']) . $class;
+            } else {
+                $data['class'] = 'common-home';
+            }
+
+
+
+
+            $this->response->setOutput($this->load->view('product/product', $data));
 		} else {
 			$url = '';
 
@@ -548,6 +617,7 @@ class ControllerProductProduct extends Controller {
 			$data['heading_title'] = $this->language->get('text_error');
 
 			$data['text_error'] = $this->language->get('text_error');
+			$data['button_cart_new'] = $this->language->get('button_cart_new');
 
 			$data['button_continue'] = $this->language->get('button_continue');
 

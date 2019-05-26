@@ -34,6 +34,12 @@ body {
   font-size: 17px;
   line-height: 1.5; }
 
+.main-page .content *,
+.main-page .content {
+  font-family: "Gotham Pro Light" !important;
+  font-size: 17px !important;
+  line-height: 1.5 !important; }
+
 footer .phone-block img,
 header .top .phone-block img {
   vertical-align: top;
@@ -60,6 +66,7 @@ header .top .phone-block .lists-phones {
       header .top .phone-block .lists-phones li a:hover {
         color: #df5a5a; }
 
+.product-page #product #button-cart,
 footer .request-call-block .link-call button,
 header .top .request-call-block .link-call button,
 #button-search {
@@ -74,12 +81,15 @@ header .top .request-call-block .link-call button,
   -webkit-transition: all .3s;
   -o-transition: all .3s;
   transition: all .3s; }
+  .product-page #product #button-cart:hover,
   footer .request-call-block .link-call button:hover,
   header .top .request-call-block .link-call button:hover,
   #button-search:hover {
     text-decoration: none;
     background-color: #000; }
-  footer .request-call-block .link-call button:active, footer .request-call-block .link-call button:focus,
+  .product-page #product #button-cart:active, .product-page #product #button-cart:focus,
+  footer .request-call-block .link-call button:active,
+  footer .request-call-block .link-call button:focus,
   header .top .request-call-block .link-call button:active,
   header .top .request-call-block .link-call button:focus,
   #button-search:active,
@@ -214,15 +224,18 @@ header .bottom .search button.btn.btn-default.btn-lg {
     background-color: #df5a5a;
     border-color: #df5a5a; }
 
+.list-linked-products .product-layout,
 .category-page .product-layout,
 .list-specific-products .product-layout,
 .latest-block .product-layout {
   margin-bottom: 30px; }
+  .list-linked-products .product-layout .product-thumb,
   .category-page .product-layout .product-thumb,
   .list-specific-products .product-layout .product-thumb,
   .latest-block .product-layout .product-thumb {
     border: 1px solid #e8e8e8;
     padding: 30px 30px 20px 30px; }
+    .list-linked-products .product-layout .product-thumb .top-block,
     .category-page .product-layout .product-thumb .top-block,
     .list-specific-products .product-layout .product-thumb .top-block,
     .latest-block .product-layout .product-thumb .top-block {
@@ -250,21 +263,25 @@ header .bottom .search button.btn.btn-default.btn-lg {
       -ms-flex-align: center;
       -webkit-box-align: center;
               align-items: center; }
+      .list-linked-products .product-layout .product-thumb .top-block .sku,
       .category-page .product-layout .product-thumb .top-block .sku,
       .list-specific-products .product-layout .product-thumb .top-block .sku,
       .latest-block .product-layout .product-thumb .top-block .sku {
         color: #3f4047;
         font-size: 14px;
         font-family: "Gotham Pro"; }
+      .list-linked-products .product-layout .product-thumb .top-block .wish a,
       .category-page .product-layout .product-thumb .top-block .wish a,
       .list-specific-products .product-layout .product-thumb .top-block .wish a,
       .latest-block .product-layout .product-thumb .top-block .wish a {
         font-size: 16px;
         color: #df5a5a; }
+    .list-linked-products .product-layout .product-thumb .caption,
     .category-page .product-layout .product-thumb .caption,
     .list-specific-products .product-layout .product-thumb .caption,
     .latest-block .product-layout .product-thumb .caption {
       padding-top: 30px; }
+      .list-linked-products .product-layout .product-thumb .caption .title,
       .category-page .product-layout .product-thumb .caption .title,
       .list-specific-products .product-layout .product-thumb .caption .title,
       .latest-block .product-layout .product-thumb .caption .title {
@@ -274,6 +291,7 @@ header .bottom .search button.btn.btn-default.btn-lg {
         min-height: 85px;
         text-align: left;
         margin: 0; }
+        .list-linked-products .product-layout .product-thumb .caption .title a,
         .category-page .product-layout .product-thumb .caption .title a,
         .list-specific-products .product-layout .product-thumb .caption .title a,
         .latest-block .product-layout .product-thumb .caption .title a {
@@ -282,11 +300,13 @@ header .bottom .search button.btn.btn-default.btn-lg {
           -webkit-transition: all .3s;
           -o-transition: all .3s;
           transition: all .3s; }
+          .list-linked-products .product-layout .product-thumb .caption .title a:hover,
           .category-page .product-layout .product-thumb .caption .title a:hover,
           .list-specific-products .product-layout .product-thumb .caption .title a:hover,
           .latest-block .product-layout .product-thumb .caption .title a:hover {
             text-decoration: none;
             color: #df5a5a; }
+      .list-linked-products .product-layout .product-thumb .caption .price,
       .category-page .product-layout .product-thumb .caption .price,
       .list-specific-products .product-layout .product-thumb .caption .price,
       .latest-block .product-layout .product-thumb .caption .price {
@@ -295,6 +315,7 @@ header .bottom .search button.btn.btn-default.btn-lg {
         font-size: 24px;
         color: #3f4047;
         margin-bottom: 0; }
+      .list-linked-products .product-layout .product-thumb .caption .categories span,
       .category-page .product-layout .product-thumb .caption .categories span,
       .list-specific-products .product-layout .product-thumb .caption .categories span,
       .latest-block .product-layout .product-thumb .caption .categories span {
@@ -428,6 +449,9 @@ header .bottom .search button.btn.btn-default.btn-lg {
   padding: 5px 0 5px 20px; }
   .dropdown-menu a {
     border: none !important; }
+
+.no-dispaly {
+  display: none !important; }
 
 #logo img {
   height: 200px;
@@ -904,11 +928,12 @@ header {
   margin-right: 20px; }
   .accordion-block .title {
     margin-top: 0;
-    margin-bottom: 35px;
+    margin-bottom: 0;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: -webkit-box;
-    display: flex; }
+    display: flex;
+    cursor: pointer; }
     .accordion-block .title p {
       margin-bottom: 0;
       font-size: 24px;
@@ -920,28 +945,58 @@ header {
       padding: 0px 0;
       margin: 8px 0 8px 20px; }
       .accordion-block .title .img-block img {
-        display: block; }
-  .accordion-block .row-common ul {
-    margin: 0;
-    padding: 0; }
-    .accordion-block .row-common ul li {
-      list-style: none;
-      margin-bottom: 10px; }
-      .accordion-block .row-common ul li a {
-        font-family: "Gotham Pro";
-        font-size: 16px;
-        color: #3f4047;
-        text-decoration: none;
-        -webkit-transition: all .3s;
-        -o-transition: all .3s;
-        transition: all .3s; }
-        .accordion-block .row-common ul li a:hover {
-          color: #df5a5a; }
-        .accordion-block .row-common ul li a i {
-          color: #e3e3e3;
-          padding-right: 8px; }
-    .accordion-block .row-common ul li:last-child {
-      margin-bottom: 0; }
+        display: block;
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
+        transition: all .2s; }
+    .accordion-block .title.accordion-open img {
+      -webkit-transform: rotateZ(180deg);
+          -ms-transform: rotate(180deg);
+              transform: rotateZ(180deg); }
+  .accordion-block .row-common {
+    margin-top: 35px;
+    display: none; }
+    .accordion-block .row-common ul {
+      margin: 0;
+      padding: 0; }
+      .accordion-block .row-common ul li {
+        list-style: none;
+        margin-bottom: 10px; }
+        .accordion-block .row-common ul li a {
+          position: relative;
+          font-family: "Gotham Pro";
+          font-size: 14px;
+          color: #3f4047;
+          text-decoration: none;
+          -webkit-transition: all .3s;
+          -o-transition: all .3s;
+          transition: all .3s; }
+          .accordion-block .row-common ul li a:hover {
+            color: #df5a5a; }
+          .accordion-block .row-common ul li a i {
+            color: #e3e3e3;
+            padding-right: 8px; }
+      .accordion-block .row-common ul li:last-child {
+        margin-bottom: 0; }
+  .accordion-block .count-product {
+    background-color: #df5a5a;
+    color: #fff;
+    vertical-align: middle;
+    position: absolute;
+    right: -28px;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    line-height: 19px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    padding: 0;
+    text-align: center;
+    font-family: "Gotham Pro Medium"; }
   .accordion-block .panel {
     margin-bottom: 0 !important; }
     .accordion-block .panel.ocfilter.panel-default {
@@ -965,19 +1020,26 @@ header {
     border: none; }
   .accordion-block .ocfilter-option label a {
     color: #3f4047;
-    font-family: "Gotham Pro"; }
+    font-family: "Gotham Pro";
+    position: relative; }
   .accordion-block .ocfilter-option label small {
     background-color: #df5a5a;
     color: #fff;
     vertical-align: middle;
     position: absolute;
-    right: 0;
+    right: -28px;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    line-height: 19px;
     top: 50%;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-    line-height: 1.3;
-    padding: 1px 5px;
+    padding: 0;
+    text-align: center;
     font-family: "Gotham Pro Medium"; }
   .accordion-block .badge {
     padding: 5px 7px; }
@@ -1004,6 +1066,312 @@ header {
 
 #column-left .accordion-block:last-child {
   margin-bottom: 0; }
+
+.product-page .thumbnails {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center; }
+  .product-page .thumbnails .thumbnail {
+    border: none; }
+  .product-page .thumbnails .image-additional-block {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column; }
+    .product-page .thumbnails .image-additional-block .image-additional:last-child a {
+      margin-bottom: 0 !important; }
+
+.product-page .title {
+  color: #3f4047;
+  font-size: 36px;
+  font-family: "Gotham Pro Medium";
+  margin-top: 50px; }
+
+.product-page .first-block-information {
+  margin-top: 45px;
+  margin-bottom: 25px;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center; }
+  .product-page .first-block-information li {
+    font-family: "Gotham Pro";
+    font-size: 16px; }
+    .product-page .first-block-information li a {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #268cec;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s;
+      pointer-events: none; }
+      .product-page .first-block-information li a:hover {
+        text-decoration: none;
+        color: #df5a5a; }
+
+.product-page .second-block-information .price {
+  font-size: 34px;
+  font-family: "Gotham Pro Medium";
+  margin-bottom: 20px; }
+
+.product-page #product .link-to-all-size {
+  height: 54px;
+  display: table-cell;
+  vertical-align: middle; }
+  .product-page #product .link-to-all-size p {
+    margin-bottom: 0;
+    display: inline-block;
+    font-size: 14px;
+    font-family: "Gotham Pro";
+    color: #b6b6b6;
+    text-decoration: none;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    border-bottom: 1px solid;
+    line-height: 14px; }
+  .product-page #product .link-to-all-size:hover {
+    text-decoration: none; }
+    .product-page #product .link-to-all-size:hover p {
+      color: #df5a5a; }
+
+.product-page #product .cm-attribute-potion-block {
+  min-height: 69px;
+  margin-bottom: 35px; }
+  .product-page #product .cm-attribute-potion-block .form-group {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+            align-items: center; }
+    .product-page #product .cm-attribute-potion-block .form-group label {
+      margin: 0;
+      font-size: 18px;
+      font-family: "Gotham Pro";
+      font-weight: normal;
+      padding-right: 50px; }
+
+.product-page #product .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent transparent #df5a5a transparent; }
+
+.product-page #product .select2-container--default .select2-selection--single {
+  outline: none;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  padding: 12px 18px;
+  height: auto; }
+  .product-page #product .select2-container--default .select2-selection--single .select2-selection__rendered {
+    font-size: 15px;
+    color: #8d8d8d; }
+  .product-page #product .select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 50%;
+    right: 10px;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%); }
+    .product-page #product .select2-container--default .select2-selection--single .select2-selection__arrow b {
+      border-color: #df5a5a transparent transparent transparent; }
+
+.product-page #product #button-cart {
+  width: auto !important;
+  border: none; }
+
+.product-page .form-group.add-to-cart-block {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex; }
+
+.product-page .text-not-available {
+  font-size: 14px;
+  padding-left: 35px;
+  margin: 0; }
+
+.product-page .tab-second-block {
+  margin-top: 40px; }
+  .product-page .tab-second-block .nav.nav-tabs {
+    border-color: #e5e5e5;
+    padding-bottom: 3px;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    -webkit-box-align: start;
+            align-items: flex-start; }
+    .product-page .tab-second-block .nav.nav-tabs li {
+      float: none;
+      cursor: pointer; }
+      .product-page .tab-second-block .nav.nav-tabs li a {
+        font-family: "Gotham Pro";
+        font-size: 18px;
+        color: #3f4047;
+        border: none;
+        padding: 30px 66px;
+        cursor: pointer; }
+        .product-page .tab-second-block .nav.nav-tabs li a:hover {
+          color: #df5a5a;
+          background: transparent; }
+      .product-page .tab-second-block .nav.nav-tabs li.active a {
+        font-family: "Gotham Pro Medium"; }
+    .product-page .tab-second-block .nav.nav-tabs li:first-child a {
+      padding-left: 0; }
+    .product-page .tab-second-block .nav.nav-tabs li:last-child a {
+      padding-right: 0; }
+  .product-page .tab-second-block .tab-content {
+    margin-bottom: 75px; }
+    .product-page .tab-second-block .tab-content .tab-pane {
+      position: relative;
+      padding-top: 40px;
+      font-family: "Gotham Pro";
+      font-size: 16px;
+      height: 215px;
+      overflow: hidden; }
+      .product-page .tab-second-block .tab-content .tab-pane::after {
+        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+        background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(white));
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 30px;
+        bottom: 0;
+        left: 0; }
+
+.product-page .tab-first-block {
+  margin-top: 71px; }
+  .product-page .tab-first-block .title {
+    font-size: 25px;
+    font-family: "Gotham Pro Medium";
+    margin-top: 0;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 29px; }
+  .product-page .tab-first-block #tab-specification table {
+    margin-top: 40px;
+    border: none !important; }
+    .product-page .tab-first-block #tab-specification table td,
+    .product-page .tab-first-block #tab-specification table tbody {
+      border: none;
+      padding: 0; }
+    .product-page .tab-first-block #tab-specification table td {
+      padding-bottom: 5px;
+      font-family: "Gotham Pro";
+      font-size: 16px; }
+      .product-page .tab-first-block #tab-specification table td a,
+      .product-page .tab-first-block #tab-specification table td span {
+        color: #268cec;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+        cursor: pointer; }
+        .product-page .tab-first-block #tab-specification table td a:hover,
+        .product-page .tab-first-block #tab-specification table td span:hover {
+          text-decoration: none;
+          color: #df5a5a; }
+
+.product-page .linked-products .title {
+  font-family: "Gotham Pro Medium";
+  font-size: 30px;
+  margin-top: 100px;
+  text-align: center;
+  margin-bottom: 80px; }
+
+.product-page .linked-products .list-linked-products {
+  padding: 0;
+  margin: 0 -15px; }
+  .product-page .linked-products .list-linked-products li {
+    list-style: none;
+    float: left; }
+
+.product-page .linked-products .wrapper-slider {
+  height: 7px;
+  padding: 0 15px;
+  background-color: #e9e9e9;
+  width: 100%;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  margin-bottom: 160px;
+  margin-top: 35px; }
 
 footer {
   background-color: #f7f7f7;

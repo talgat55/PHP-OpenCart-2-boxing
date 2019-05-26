@@ -15,7 +15,10 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>  main-page"><?php echo $content_top; ?>
       <h1><?php echo $heading_title; ?></h1>
-      <?php echo $description; ?><?php echo $content_bottom; ?></div>
+      <div class="content">
+        <?php echo $description; ?><?php echo $content_bottom; ?>
+      </div>
+     </div>
     <?php echo $column_right; ?></div>
 </div>
 <?php echo $footer; ?>
