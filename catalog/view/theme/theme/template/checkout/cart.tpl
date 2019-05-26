@@ -1,5 +1,6 @@
 <?php echo $header; ?>
 <div class="container">
+
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
@@ -28,14 +29,14 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?>
+    <div id="content" class="<?php echo $class; ?>  cart-page"><?php echo $content_top; ?>
+      <h1 class="title"><?php echo $heading_title; ?>
         <?php if ($weight) { ?>
         &nbsp;(<?php echo $weight; ?>)
         <?php } ?>
       </h1>
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-        <div class="table-responsive">
+        <div class="table-responsive  cart-table">
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -75,7 +76,7 @@
                 <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
                     <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control" />
                     <span class="input-group-btn">
-                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
+                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary"><i class="fas fa-sync"></i></button>
                     <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><i class="fa fa-times-circle"></i></button>
                     </span></div></td>
                 <td class="text-right"><?php echo $product['price']; ?></td>

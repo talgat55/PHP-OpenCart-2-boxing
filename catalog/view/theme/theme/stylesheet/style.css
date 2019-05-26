@@ -66,6 +66,8 @@ header .top .phone-block .lists-phones {
       header .top .phone-block .lists-phones li a:hover {
         color: #df5a5a; }
 
+.page-checkout .btn.btn-primary,
+.cart-page .buttons .btn.btn-primary,
 .product-page #product #button-cart,
 footer .request-call-block .link-call button,
 header .top .request-call-block .link-call button,
@@ -80,14 +82,21 @@ header .top .request-call-block .link-call button,
   color: #fff;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
-  transition: all .3s; }
+  transition: all .3s;
+  border: none; }
+  .page-checkout .btn.btn-primary:hover,
+  .cart-page .buttons .btn.btn-primary:hover,
   .product-page #product #button-cart:hover,
   footer .request-call-block .link-call button:hover,
   header .top .request-call-block .link-call button:hover,
   #button-search:hover {
     text-decoration: none;
     background-color: #000; }
-  .product-page #product #button-cart:active, .product-page #product #button-cart:focus,
+  .page-checkout .btn.btn-primary:active, .page-checkout .btn.btn-primary:focus,
+  .cart-page .buttons .btn.btn-primary:active,
+  .cart-page .buttons .btn.btn-primary:focus,
+  .product-page #product #button-cart:active,
+  .product-page #product #button-cart:focus,
   footer .request-call-block .link-call button:active,
   footer .request-call-block .link-call button:focus,
   header .top .request-call-block .link-call button:active,
@@ -530,9 +539,44 @@ header {
             align-items: center; }
     header .top > div {
       display: inline-block; }
+    header .top .cart-block .btn-group.open .dropdown-toggle {
+      -webkit-box-shadow: none !important;
+              box-shadow: none !important; }
     header .top .cart-block #cart {
       width: auto;
       padding-right: 50px; }
+      header .top .cart-block #cart .dropdown-menu.pull-right {
+        position: absolute !important;
+        margin-top: 0;
+        padding: 15px 5px 5px 5px;
+        -webkit-box-shadow: 1px 1px 5px 1px #eee;
+                box-shadow: 1px 1px 5px 1px #eee;
+        min-width: 400px; }
+        header .top .cart-block #cart .dropdown-menu.pull-right .table > tbody > tr > td,
+        header .top .cart-block #cart .dropdown-menu.pull-right .table > tbody > tr > th,
+        header .top .cart-block #cart .dropdown-menu.pull-right .table > tfoot > tr > td,
+        header .top .cart-block #cart .dropdown-menu.pull-right .table > tfoot > tr > th,
+        header .top .cart-block #cart .dropdown-menu.pull-right .table > thead > tr > td,
+        header .top .cart-block #cart .dropdown-menu.pull-right .table > thead > tr > th {
+          vertical-align: middle;
+          border: none; }
+        header .top .cart-block #cart .dropdown-menu.pull-right .table td:nth-child(3n) {
+          width: 45px; }
+        header .top .cart-block #cart .dropdown-menu.pull-right .table tr {
+          background-color: transparent !important; }
+        header .top .cart-block #cart .dropdown-menu.pull-right a {
+          text-decoration: none;
+          color: #3f4047;
+          -webkit-transition: all .3s;
+          -o-transition: all .3s;
+          transition: all .3s; }
+          header .top .cart-block #cart .dropdown-menu.pull-right a:hover {
+            color: #df5a5a; }
+        header .top .cart-block #cart .dropdown-menu.pull-right .table-bordered {
+          border: none;
+          border-top: 1px solid #eee; }
+        header .top .cart-block #cart .dropdown-menu.pull-right button.btn.btn-danger.btn-xs {
+          color: red; }
     header .top .cart-block button {
       background: transparent;
       border: none; }
@@ -583,7 +627,8 @@ header {
 .top-category-page-category {
   background-color: #3f4047;
   width: 510px;
-  margin-right: 50px; }
+  margin-right: 50px;
+  position: relative; }
   .top-category-page-category .heading {
     position: relative;
     padding: 10px 29px; }
@@ -613,6 +658,47 @@ header {
           -ms-transform: translateY(-50%);
               transform: translateY(-50%);
       right: 29px; }
+  .top-category-page-category .list-group.drop-down {
+    -webkit-box-shadow: 4px 5px 10px 1px #eee;
+            box-shadow: 4px 5px 10px 1px #eee;
+    position: absolute;
+    top: 46px;
+    left: 0;
+    background: #fff;
+    z-index: 10;
+    -webkit-border-radius: 0;
+            border-radius: 0;
+    border: 0;
+    padding: 0 32px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out; }
+    .top-category-page-category .list-group.drop-down a {
+      -webkit-border-radius: 0;
+              border-radius: 0;
+      border: 0;
+      border-bottom: 1px solid #eee;
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s; }
+      .top-category-page-category .list-group.drop-down a:hover {
+        background: transparent;
+        color: #df5a5a; }
+      .top-category-page-category .list-group.drop-down a:last-child {
+        border: none !important; }
+      .top-category-page-category .list-group.drop-down a.active {
+        background: transparent;
+        color: #df5a5a; }
+
+.top-category-page-category:hover .list-group.drop-down,
+.list-group.drop-down:hover {
+  opacity: 1;
+  visibility: visible; }
 
 .common-home #content {
   padding: 0; }
@@ -1372,6 +1458,39 @@ header {
   border-radius: 20px;
   margin-bottom: 160px;
   margin-top: 35px; }
+
+.cart-page {
+  margin-bottom: 90px; }
+  .cart-page .title {
+    margin-bottom: 50px; }
+  .cart-page .table.table-bordered,
+  .cart-page .table.table-bordered td,
+  .cart-page .table.table-bordered th {
+    border: none;
+    vertical-align: middle; }
+  .cart-page table thead {
+    border-bottom: 1px solid #eee; }
+  .cart-page .cart-table a {
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    color: #3f4047; }
+    .cart-page .cart-table a:hover {
+      color: #df5a5a; }
+
+.page-checkout .title {
+  margin-bottom: 50px; }
+
+.page-checkout .panel.panel-default {
+  -webkit-border-radius: 0;
+          border-radius: 0; }
+
+.page-checkout .panel-heading {
+  background: transparent; }
+
+.page-checkout .panel-title a {
+  font-family: "Gotham Pro Medium";
+  color: #3f4047; }
 
 footer {
   background-color: #f7f7f7;

@@ -144,10 +144,10 @@ var cart = {
 			data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			dataType: 'json',
 			beforeSend: function() {
-				$('#cart > button').button('loading');
+				// $('#cart > button').button('loading');
 			},
 			complete: function() {
-				$('#cart > button').button('reset');
+				// $('#cart > button').button('reset');
 			},
 			success: function(json) {
 				$('.alert, .text-danger').remove();
@@ -160,9 +160,15 @@ var cart = {
 					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
 					// Need to set timeout otherwise it wont update the total
-					setTimeout(function () {
-						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
-					}, 100);
+                    setTimeout(function () {
+                        $('#cart > button').html('<a href="#" >\n' +
+                            '        <img src="/catalog/view/theme/theme/image/main/cart.png"  alt="Иконка " />\n' +
+                            '        <span id="cart-total">' + json['text_items_count'] + '</span>\n' +
+                            '        <p>\n' +
+                            + json['text_items'] +
+                            '        </p>\n' +
+                            '    </a>');
+                    }, 100);
 
 					$('html, body').animate({ scrollTop: 0 }, 'slow');
 
@@ -210,16 +216,20 @@ var cart = {
 			data: 'key=' + key,
 			dataType: 'json',
 			beforeSend: function() {
-				$('#cart > button').button('loading');
+				// $('#cart > button').button('loading');
 			},
 			complete: function() {
-				$('#cart > button').button('reset');
+				// $('#cart > button').button('reset');
 			},
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
-				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
-				}, 100);
+                setTimeout(function () {
+                    $('#cart > button').html('<a href="#" >\n' +
+                        '        <img src="/catalog/view/theme/theme/image/main/cart.png"  alt="Иконка " />\n' +
+                        '        <span id="cart-total">' + json['text_items_count'] + '</span>\n' +
+                        '        <p>\n'  + json['text_items'] + ' </p>\n' +
+                        '    </a>');
+                }, 100);
 				
 				var now_location = String(document.location.pathname);
 

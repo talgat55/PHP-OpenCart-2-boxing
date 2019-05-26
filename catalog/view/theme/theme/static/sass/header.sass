@@ -88,9 +88,43 @@ header
 
 
     .cart-block
+      .btn-group.open .dropdown-toggle
+        box-shadow: none!important
       #cart
         width: auto
         padding-right: 50px
+
+        .dropdown-menu.pull-right
+          position: absolute!important
+          margin-top: 0
+          padding: 15px 5px 5px 5px
+          box-shadow: 1px 1px 5px 1px #eee
+          min-width: 400px
+          .table>tbody>tr>td,
+          .table>tbody>tr>th,
+          .table>tfoot>tr>td,
+          .table>tfoot>tr>th,
+          .table>thead>tr>td,
+          .table>thead>tr>th
+            vertical-align: middle
+            border: none
+          .table td:nth-child(3n)
+            width: 45px
+          .table tr
+            background-color: transparent!important
+          a
+            text-decoration: none
+            color: $gray_color
+            transition: all .3s
+            &:hover
+              color: $main_color
+          .table-bordered
+            border: none
+            border-top: 1px solid #eee
+          button.btn.btn-danger.btn-xs
+            color: red
+
+
       button
         background: transparent
         border: none
@@ -144,6 +178,8 @@ header
   background-color: #3f4047
   width: 510px
   margin-right: 50px
+  position: relative
+
   .heading
     position: relative
     padding: 10px 29px
@@ -172,7 +208,39 @@ header
       transform: translateY(-50%)
       right: 29px
 
-
+  .list-group.drop-down
+    box-shadow: 4px 5px 10px 1px #eee
+    position: absolute
+    top: 46px
+    left: 0
+    background: #fff
+    z-index: 10
+    border-radius: 0
+    border: 0
+    padding: 0 32px
+    opacity: 0
+    visibility: hidden
+    transition: all .3s ease-out
+    a
+      border-radius: 0
+      border: 0
+      border-bottom: 1px solid #eee
+      padding-left: 0
+      padding-right: 0
+      margin: 0
+      transition: all .3s
+      &:hover
+        background: transparent
+        color: $main_color
+      &:last-child
+        border: none!important
+      &.active
+        background: transparent
+        color: $main_color
+.top-category-page-category:hover .list-group.drop-down,
+.list-group.drop-down:hover
+  opacity: 1
+  visibility: visible
 
 
 

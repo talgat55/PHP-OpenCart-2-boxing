@@ -166,33 +166,33 @@
                 <div class="bottom">
                     <?php
 
-                    /*
-                    <div class="list-group">
-                        <?php foreach ($categories as $category) { ?>
-                        <?php if ($category['category_id'] == $category_id) { ?>
-                        <a href="<?php echo $category['href']; ?>" class="list-group-item active"><?php echo $category['name']; ?></a>
-                        <?php if ($category['children']) { ?>
-                        <?php foreach ($category['children'] as $child) { ?>
-                        <?php if ($child['category_id'] == $child_id) { ?>
-                        <a href="<?php echo $child['href']; ?>" class="list-group-item active">&nbsp;&nbsp;&nbsp;- <?php echo $child['name']; ?></a>
-                        <?php } else { ?>
-                        <a href="<?php echo $child['href']; ?>" class="list-group-item">&nbsp;&nbsp;&nbsp;- <?php echo $child['name']; ?></a>
-                        <?php } ?>
-                        <?php } ?>
-                        <?php } ?>
-                        <?php } else { ?>
-                        <a href="<?php echo $category['href']; ?>" class="list-group-item"><?php echo $category['name']; ?></a>
-                        <?php } ?>
-                        <?php } ?>
-                    </div>
-                */
+
                 if(isset($categories) && !empty($categories)){  ?>
                     <div class="top-category-page-category">
                         <div class="heading">
                             <p>Каталог товаров</p>
                             <img src="/catalog/view/theme/theme/image/main/bar.png" alt="Иконка ">
                         </div>
+                        <div class="list-group drop-down">
+                            <?php foreach ($categories as $category) { ?>
+                            <?php if ($category['category_id'] == $category_id) { ?>
+                            <a href="<?php echo $category['href']; ?>" class="list-group-item active"><?php echo $category['name']; ?></a>
+                            <?php if ($category['children']) { ?>
+                            <?php foreach ($category['children'] as $child) { ?>
+                            <?php if ($child['category_id'] == $child_id) { ?>
+                            <a href="<?php echo $child['href']; ?>" class="list-group-item active">&nbsp;&nbsp;&nbsp;- <?php echo $child['name']; ?></a>
+                            <?php } else { ?>
+                            <a href="<?php echo $child['href']; ?>" class="list-group-item">&nbsp;&nbsp;&nbsp;- <?php echo $child['name']; ?></a>
+                            <?php } ?>
+                            <?php } ?>
+                            <?php } ?>
+                            <?php } else { ?>
+                            <a href="<?php echo $category['href']; ?>" class="list-group-item"><?php echo $category['name']; ?></a>
+                            <?php } ?>
+                            <?php } ?>
+                        </div>
                     </div>
+
                 <?php }  ?>
 
                     <?php echo $search; ?>

@@ -40,7 +40,7 @@ class ControllerCheckoutCheckout extends Controller {
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
+			'text' => 'Главная',
 			'href' => $this->url->link('common/home')
 		);
 
