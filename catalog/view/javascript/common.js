@@ -164,9 +164,7 @@ var cart = {
                         $('#cart > button').html('<a href="#" >\n' +
                             '        <img src="/catalog/view/theme/theme/image/main/cart.png"  alt="Иконка " />\n' +
                             '        <span id="cart-total">' + json['text_items_count'] + '</span>\n' +
-                            '        <p>\n' +
-                            + json['text_items'] +
-                            '        </p>\n' +
+                            '        <p>\n'  + json['text_items'] + ' </p>\n' +
                             '    </a>');
                     }, 100);
 

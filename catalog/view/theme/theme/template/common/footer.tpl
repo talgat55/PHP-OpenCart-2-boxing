@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <?php if ($informations) { ?>
-            <div class="information-block col-sm-5 col-xs-12">
+            <div class="information-block col-md-5  col-sm-12 col-xs-12">
                 <h4><?php echo $text_information; ?></h4>
                 <ul class="list-unstyled  footer-list-links">
                     <?php foreach ($informations as $information) { ?>
@@ -11,7 +11,7 @@
                 </ul>
             </div>
             <?php } ?>
-            <div class="col-sm-7 col-xs-12">
+            <div class="col-md-7  col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-sm-6 col-xs-12">
                         <div class="email-block">

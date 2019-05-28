@@ -96,7 +96,7 @@
 
                         <div class="clearfix">
                             <div class="row">
-                                <div class="cm-attribute-potion-block  col-sm-8 col-xs-12">
+                                <div class="cm-attribute-potion-block  col-lg-8  col-md-12 col-sm-12 col-xs-12">
                                     <?php if ($options) { ?>
 
                                     <?php foreach ($options as $option) { ?>
@@ -268,7 +268,7 @@
                                     <?php } ?>
 
                                 </div>
-                                <div class="col-sm-4 col-xs-12">
+                                <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                                     <a href="/table_sizes" class="link-to-all-size">
                                         <img src="/catalog/view/theme/theme/image/main/meter.png" alt="Иконка "/>
                                         <p>
@@ -313,7 +313,7 @@
             </div>
             <div class="clearfix">
                 <div class="row">
-                    <div class="col-sm-6 col-xs-12">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="tab-content  tab-first-block">
                             <h3 class="title">Описание товара</h3>
                             <?php if ($attribute_groups) { ?>
@@ -347,14 +347,18 @@
                                     </tbody>
                                 </table>
                                 <div class="decription">
-                                    <?php echo $tab_description; ?>
+                                    <div class="content">
+                                    <?php echo htmlspecialchars_decode($tab_description_new); ?>
+                                    </div>
                                 </div>
+
                             </div>
                             <?php } ?>
 
                         </div>
+                        <a href="#" class="tab-link-read-more  black" >Читать все</a>
                     </div>
-                    <div class="col-sm-6 col-xs-12">
+                    <div class="col-md-6 col-sm-12  col-xs-12">
                         <div class="tab-second-block">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab-delivery" data-toggle="tab">Доставка</a></li>
@@ -389,12 +393,21 @@
                                 </div>
 
                                 <div class="tab-pane" id="tab-pay">
-                                    text 2
+                                    <div class="content">
+                                    Товарищи! постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание соответствующий условий активизации. Идейные соображения высшего порядка, а также реализация намеченных плановых заданий обеспечивает широкому кругу (специалистов) участие в формировании системы обучения кадров, соответствует насущным потребностям.
+
+                                    Разнообразный и богатый опыт рамки и место обучения кадров представляет собой интересный эксперимент проверки модели развития. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации
+                                    </div>
                                 </div>
                                 <div class="tab-pane" id="tab-fitsize">
-                                    text 3
+                                    <div class="content">
+                                    Товарищи! постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание соответствующий условий активизации. Идейные соображения высшего порядка, а также реализация намеченных плановых заданий обеспечивает широкому кругу (специалистов) участие в формировании системы обучения кадров, соответствует насущным потребностям.
+
+                                    Разнообразный и богатый опыт рамки и место обучения кадров представляет собой интересный эксперимент проверки модели развития. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации
+                                    </div>
                                 </div>
                             </div>
+                            <a href="#" class="tab-link-read-more" >Читать все</a>
                         </div>
                     </div>
                 </div>

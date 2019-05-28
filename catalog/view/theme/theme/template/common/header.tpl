@@ -9,7 +9,7 @@
 <!--<![endif]-->
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?php echo $title;  ?></title>
     <base href="<?php echo $base; ?>"/>
@@ -34,13 +34,12 @@
 
     $pos = strpos($class, 'product-product');
     if($pos !== false) { ?>
-        <link href="catalog/view/theme/theme/stylesheet/select2.min.css" rel="stylesheet">
+    <link href="catalog/view/theme/theme/stylesheet/select2.min.css" rel="stylesheet">
 
     <?php } ?>
     <!-- <link href="catalog/view/theme/theme/stylesheet/stylesheet.css" rel="stylesheet"> -->
     <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
     <link href="catalog/view/theme/theme/stylesheet/style.css" rel="stylesheet">
-
 
 
     <?php foreach ($styles as $style) { ?>
@@ -58,10 +57,11 @@
 </head>
 <body class="<?php echo $class; ?>">
 
-<div id="top-bar">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-5 col-xs-12">
+
+<div class="container">
+    <div class="row">
+        <div id="top-bar">
+            <div class="f-b col-md-5 col-sm-6  hidden-xs">
                 <ul class="list-information">
                     <li>
                         <img src="/catalog/view/theme/theme/image/main/icon-maps.png" alt="Иконка "/>
@@ -79,13 +79,20 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-7 col-xs-12">
+            <div class="s-b col-md-7 col-sm-6 col-xs-12">
                 <div class="work-time">
                     <?php echo $work_time_redy; ?>
                 </div>
                 <ul class="navigation text-right">
+                    <?php if ($logged) { ?>
+                    <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
                     <li>
-                        <a href="#">
+                        /
+                    </li>
+                    <li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+                    <?php } else { ?>
+                    <li>
+                        <a href="<?php echo $login; ?>">
                             Войти
                         </a>
 
@@ -95,11 +102,13 @@
                         /
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<?php echo $register; ?>">
                             Зарегистрироваться
                         </a>
 
                     </li>
+                    <?php } ?>
+
 
                 </ul>
             </div>
@@ -144,13 +153,13 @@
 
                     </div>
                     <div class="request-call-block">
-                        <div  class="link-call">
+                        <div class="link-call">
                             <?php echo $sobfeedback_id34; ?>
                         </div>
                     </div>
                     <div class="cart-block">
                         <?php echo $cart; ?>
-                        <a href="#" class="wish-block">
+                        <a href="/wishlist/" class="wish-block">
                             <img src="/catalog/view/theme/theme/image/main/wish-icon.png" alt="Иконка "/>
                             <span class="count">
                                 <?php echo $text_wishlist; ?>
@@ -176,24 +185,28 @@
                         <div class="list-group drop-down">
                             <?php foreach ($categories as $category) { ?>
                             <?php if ($category['category_id'] == $category_id) { ?>
-                            <a href="<?php echo $category['href']; ?>" class="list-group-item active"><?php echo $category['name']; ?></a>
+                            <a href="<?php echo $category['href']; ?>"
+                               class="list-group-item active"><?php echo $category['name']; ?></a>
                             <?php if ($category['children']) { ?>
                             <?php foreach ($category['children'] as $child) { ?>
                             <?php if ($child['category_id'] == $child_id) { ?>
-                            <a href="<?php echo $child['href']; ?>" class="list-group-item active">&nbsp;&nbsp;&nbsp;- <?php echo $child['name']; ?></a>
+                            <a href="<?php echo $child['href']; ?>"
+                               class="list-group-item active">&nbsp;&nbsp;&nbsp;- <?php echo $child['name']; ?></a>
                             <?php } else { ?>
-                            <a href="<?php echo $child['href']; ?>" class="list-group-item">&nbsp;&nbsp;&nbsp;- <?php echo $child['name']; ?></a>
+                            <a href="<?php echo $child['href']; ?>"
+                               class="list-group-item">&nbsp;&nbsp;&nbsp;- <?php echo $child['name']; ?></a>
                             <?php } ?>
                             <?php } ?>
                             <?php } ?>
                             <?php } else { ?>
-                            <a href="<?php echo $category['href']; ?>" class="list-group-item"><?php echo $category['name']; ?></a>
+                            <a href="<?php echo $category['href']; ?>"
+                               class="list-group-item"><?php echo $category['name']; ?></a>
                             <?php } ?>
                             <?php } ?>
                         </div>
                     </div>
 
-                <?php }  ?>
+                    <?php }  ?>
 
                     <?php echo $search; ?>
                 </div>

@@ -283,6 +283,7 @@ class ControllerProductProduct extends Controller {
 
 			$this->load->model('catalog/review');
 
+			$data['tab_description_new'] = $product_info['description'];
 			$data['tab_description'] = $this->language->get('tab_description');
 			$data['tab_attribute'] = $this->language->get('tab_attribute');
 			$data['tab_review'] = sprintf($this->language->get('tab_review'), $product_info['reviews']);

@@ -12,7 +12,7 @@
                 <section class="clearfix">
                     <div class="container">
                         <div class="row">
-                    <div class="col-sm-3 col-xs-12">
+                    <div class="col-md-3 col-sm-12  col-xs-12">
                         <?php if ($categories) { ?>
                         <nav id="menu" class="navbar">
                             <div class="navbar-header"><span id="category"><?php echo $text_category; ?></span>
@@ -56,7 +56,7 @@
                         </nav>
                         <?php } ?>
                     </div>
-                    <div class="col-sm-9 col-xs-12  " style="position: relative;">
+                    <div class="col-md-9  col-sm-12 col-xs-12  " style="position: relative;">
                         <ul class="home-slider clearfix">
                             <?php foreach($banner as $value){  ?>
 
@@ -140,7 +140,7 @@
                 <section class="clearfix instagram-section">
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-6 col-xs-12 ">
+                            <div class="col-md-6 col-sm-12 col-xs-12 ">
                                 <h3 class="title">
                                     ПОДПИШИСЬ<br>
                                     В ИНСТАГРАМ
@@ -150,7 +150,7 @@
                                 </a>
                                 <img class="img-glove" src="/catalog/view/theme/theme/image/main/glove.png" alt="Перчатка "/>
                             </div>
-                            <div class="col-sm-6 col-xs-12 ">
+                            <div class="col-md-6 col-sm-12 col-xs-12 ">
                                 <div id="instagram-widget">
                                 <?php
                                       $c = curl_init('http://widget.stapico.ru/?q=takeshi.fight.gear&s=20&w=3&h=2&b=0&p=5&title=balovenomsk&profile=no&header=no&effect=0');

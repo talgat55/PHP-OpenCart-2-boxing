@@ -696,21 +696,22 @@
         padding-top: 40px
         font-family: $font_regular
         font-size: 16px
-        height: 215px
+        height: 249px
         overflow: hidden
+        transition: all .3s ease-out
         &::after
-          background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)
-          background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)
-          background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)
-          background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)
-          background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)
           content: ""
           display: block
           position: absolute
           width: 100%
-          height: 30px
+          height: 85px
           bottom: 0
           left: 0
+          background: -moz-linear-gradient(top, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.89) 61%, rgba(255,255,255,0.89) 76%, rgba(255,255,255,0.89) 100%)
+          background: -o-linear-gradient(top, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.89) 61%, rgba(255,255,255,0.89) 76%, rgba(255,255,255,0.89) 100%)
+          background: -ms-linear-gradient(top, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.89) 61%, rgba(255,255,255,0.89) 76%, rgba(255,255,255,0.89) 100%)
+          background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.89) 61%, rgba(255,255,255,0.89) 76%, rgba(255,255,255,0.89) 100%)
+
 
   .tab-first-block
     margin-top: 71px
@@ -722,6 +723,24 @@
       padding-bottom: 29px
 
     #tab-specification
+      height: 240px
+      position: relative
+      overflow: hidden
+      margin-bottom: 75px
+      transition: all .3s ease-out
+      &::after
+        content: ""
+        display: block
+        position: absolute
+        width: 100%
+        height: 85px
+        bottom: 0
+        left: 0
+        background: -moz-linear-gradient(top, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.89) 61%, rgba(255,255,255,0.89) 76%, rgba(255,255,255,0.89) 100%)
+        background: -o-linear-gradient(top, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.89) 61%, rgba(255,255,255,0.89) 76%, rgba(255,255,255,0.89) 100%)
+        background: -ms-linear-gradient(top, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.89) 61%, rgba(255,255,255,0.89) 76%, rgba(255,255,255,0.89) 100%)
+        background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.89) 61%, rgba(255,255,255,0.89) 76%, rgba(255,255,255,0.89) 100%)
+
       table
         margin-top: 40px
         border: none!important
@@ -741,7 +760,10 @@
             &:hover
               text-decoration: none
               color: $main_color
-
+      *
+        font-family: $font_light!important
+        font-size: 17px!important
+        line-height: 1.5!important
   .linked-products
     .title
       font-family: $font_medium
@@ -765,11 +787,24 @@
       margin-bottom: 160px
       margin-top: 35px
 
+  .tab-link-read-more
+    background-color: transparent
+    border: 1px solid $main_color
+    color: $main_color
+    transition: all .3s
+    &:hover
+      color: #000
+      border-color: #000
+
+  .active-tab::after
+    display: none!important
+
 
 
 //
-// Cart page
+// Cart page  and wish
 //
+.account-wishlist,
 .cart-page
   margin-bottom: 90px
   .title
@@ -806,5 +841,37 @@
     a
       font-family: $font_medium
       color: $gray_color
+
+
+//
+// Page register
+//
+.page-register
+  margin-bottom: 40px
+  .form-control
+    border-radius: 0!important
+
+//
+//  Account
+//
+body[class^="account-"] .form-control,
+body[class*=" account-"] .form-control
+  border-radius: 0!important
+body[class^="account-"] #column-right .list-group-item,
+body[class*=" account-"] #column-right .list-group-item
+  border-radius: 0!important
+.btn-danger.alternative
+  background: transparent!important
+  color: red!important
+  border: none!important
+
+.tab-link-read-more.black
+  border-color: #000
+  color: #000
+  &:hover
+    border-color: $main_color
+    color: $main_color
+
+
 
 

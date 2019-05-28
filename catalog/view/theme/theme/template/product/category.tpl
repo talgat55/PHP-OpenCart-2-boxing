@@ -7,7 +7,7 @@
         <?php } ?>
     </ul>
     <div class="row">
-        <aside id="column-left" class="col-sm-3 col-xs-12">
+        <aside id="column-left" class="col-md-3 col-sm-12 col-xs-12">
             <div class="accordion-block">
                 <h3 class="title">
                     <p>Категории</p>
@@ -56,7 +56,7 @@
         <?php } else { ?>
         <?php $class = 'col-sm-12'; ?>
         <?php } ?>
-        <div id="content" class="col-sm-9 col-xs-12  category-page"><?php echo $content_top; ?>
+        <div id="content" class="col-md-9 col-sm-12 col-xs-12  category-page"><?php echo $content_top; ?>
             <h1><?php echo $heading_title; ?></h1>
             <?php if ($thumb || $description) { ?>
             <div class="row">

@@ -13,39 +13,81 @@ jQuery(document).ready(function () {
     dropDownFiltersCategoryPage();
     hideLeftBlockCAtegoryPage();
     select2OnProductPage();
-
+    accordionTabInPageProduct();
+    showCategotyonMobile();
     // end redy function
+});
+
+jQuery(window).resize(function() {
+    homeSlider();
+    showCategotyonMobile();
+
 });
 
 
 //-------------------------------
+//  Show category menu for Mobile
+//-------------------------------
+function showCategotyonMobile() {
+    "use strict";
+    let widthWindow = jQuery(window).width();
+    if(widthWindow < 993){
+
+        jQuery('body').on('click', ' #menu .navbar-header', function () {
+            console.log('w');
+            jQuery('#menu .navbar-collapse.collapse').toggleClass('active');
+
+            return false;
+
+        });
+    }
+}
+
+
+// -------------------------------
 //  Home slideshow
 //-------------------------------
 function homeSlider() {
     "use strict";
     let homeClass = jQuery('.home-slider');
+    let widthWindow = jQuery(window).width();
     if (homeClass.length) {
+       // homeClass.unslick();
 
-        let windowWidth = jQuery(window).width();
-        let containerWidth = jQuery('.container').width();
-        let columnrWidth = jQuery('.col-sm-9').width();
+        if(jQuery('.home-slider.slick-initialized').length){
+            homeClass.slick('unslick');
 
-        homeClass.css('width',  (windowWidth - containerWidth ) / 2 + columnrWidth );
+        }
 
-       setTimeout(function(){
-           homeClass.slick({
-               slidesToShow: 1,
-               slidesToScroll: 1,
-               arrows: false,
-               dots: true,
-               autoplay: true,
-               pauseOnHover: false
-           });
-       }, 300);
+        if(widthWindow > 1200){
+            let windowWidth = jQuery(window).width();
+            let containerWidth = jQuery('.container').width();
+            let columnrWidth = jQuery('.col-sm-9').width();
+
+            homeClass.css('width',  (windowWidth - containerWidth ) / 2 + columnrWidth );
+            setTimeout(function(){
+                sliderHomeSlick(homeClass);
+            }, 300);
+        }else{
+            homeClass.removeAttr('style');
+            sliderHomeSlick(homeClass);
+        }
+
+
+
 
     }
 }
-
+function sliderHomeSlick(homeClass){
+    homeClass.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        autoplay: true,
+        pauseOnHover: false
+    });
+}
 //-------------------------------
 //  Click on wish block
 //-------------------------------
@@ -81,7 +123,33 @@ function carouselSetCategory() {
             slidesToScroll: 1,
             arrows: false,
             autoplay: true,
-            pauseOnHover: true
+            pauseOnHover: true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                },
+                {
+                    breakpoint: 700,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
         });
         sliderHandle.slider({
             min: 1,
@@ -175,5 +243,41 @@ function select2OnProductPage() {
             width: 'resolve'
         });
     }
+
+}
+//-------------------------------
+//  Accordion tabs in page product
+//-------------------------------
+function accordionTabInPageProduct() {
+    "use strict";
+
+    var clickClass =  jQuery( ".tab-link-read-more" );
+    if(clickClass.length){
+        clickClass.click(function(){
+            var thisTab = jQuery(this).parent().find('.tab-content .tab-pane.active');
+            if(thisTab.hasClass('active-tab')){
+                thisTab.removeAttr('style');
+                thisTab.removeClass('active-tab');
+            }else{
+                var ContentClass =  jQuery(this).parent().find('.tab-content .tab-pane.active .content').height();
+
+
+                if(thisTab.is( "#tab-specification" )){
+
+                    thisTab.css('height', ContentClass + 70+ jQuery('#tab-specification table').outerHeight());
+                }else{
+                    thisTab.css('height', ContentClass + 50);
+                }
+
+
+                thisTab.addClass('active-tab');
+            }
+
+
+
+            return false;
+        });
+    }
+
 
 }
