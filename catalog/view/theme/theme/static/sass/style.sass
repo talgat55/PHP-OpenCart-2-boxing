@@ -601,3 +601,37 @@ header .bottom
 @media  (max-width: 600px)
   .modal-dialog
     width: 100%
+  header
+    .top
+      text-align: center
+      .request-call-block,
+      .cart-block
+        display: block
+        width: 100%
+        margin-top: 20px
+        .dropdown-menu.pull-right
+          min-width: auto!important
+          li:first-child
+            td:first-child,
+            td:nth-child(3n),
+            td:nth-child(4n)
+              display: none
+          li:last-child
+            .table.table-bordered
+              display: none
+            a
+              display: block
+              text-align: left
+
+
+
+  .checkout-cart
+    .buttons
+      text-align: center
+      .pull-right,
+      .pull-left
+        float: none!important
+      a
+        margin-top: 10px
+
+
