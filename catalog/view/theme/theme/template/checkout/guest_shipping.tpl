@@ -32,7 +32,7 @@
   <div class="form-group required no-dispaly">
     <label class="col-sm-2 control-label" for="input-shipping-city"><?php echo $entry_city; ?></label>
     <div class="col-sm-10">
-      <input type="text" name="city" value="<?php echo $city; ?>" placeholder="<?php echo $entry_city; ?>" id="input-shipping-city" class="form-control" />
+      <input type="text" name="city" value="москва" placeholder="<?php echo $entry_city; ?>" id="input-shipping-city" class="form-control" />
     </div>
   </div>
   <div class="form-group required no-dispaly">
@@ -57,9 +57,11 @@
     </div>
   </div>
   <div class="form-group required no-dispaly">
-    <select name="zone_id" id="input-shipping-zone" class="form-control">
-      <option selected  value="нет данных">нет данных</option>
-    </select>
+    <input type="text" name="zone_id" value="2761"  id="input-shipping-address-2" class="form-control" />
+
+    <!--<select name="zone_id" id="input-shipping-zone" class="form-control">
+
+    </select> -->
 
   </div>
   <?php foreach ($custom_fields as $custom_field) { ?>
