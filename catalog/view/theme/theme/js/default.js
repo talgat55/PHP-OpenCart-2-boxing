@@ -16,6 +16,7 @@ jQuery(document).ready(function () {
     accordionTabInPageProduct();
     showCategotyonMobile();
     mapInit();
+    reviewSlider();
     // end redy function
 });
 
@@ -87,6 +88,24 @@ function sliderHomeSlick(homeClass) {
         autoplay: true,
         pauseOnHover: false
     });
+}
+//-------------------------------
+//  Review slider
+//-------------------------------
+function reviewSlider() {
+    "use strict";
+    let reviewClass = jQuery('.review-block');
+    if(reviewClass.length){
+        reviewClass.slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: true,
+            // autoplay: true,
+            pauseOnHover: false
+        });
+    }
+
 }
 
 //-------------------------------

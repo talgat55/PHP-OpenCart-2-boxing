@@ -918,10 +918,6 @@ body[class*=" account-"] #column-right .list-group-item
 // Brend block
 //
 .information-information-8
-  .title
-    font-size: 33px
-    font-family: $font_medium
-    margin-bottom: 55px
   .main-page
     margin-bottom: 150px
 .brend-block
@@ -936,6 +932,81 @@ body[class*=" account-"] #column-right .list-group-item
       .title
         font-size: 22px
         text-align: center
+
+
+///
+// Review
+///
+.review-block
+  box-shadow: 1px 1px 16px 4px #fbf8f8
+  border-radius: 5px
+  padding: 35px
+  .review-item-walp
+    width: 50%
+    margin: 0 auto
+    text-align: center
+    .img-block
+      margin: 0 auto 60px auto
+      display: table
+      overflow: hidden
+      border-radius: 50%
+      img
+        width: 200px
+        height: 200px
+        object-fit: cover!important
+    .content
+      font-family: $font_regular!important
+      font-size: 18px!important
+      color: #000!important
+
+    .divider
+      background-color: #ececec
+      height: 1px
+      width: 80%
+      margin: 55px auto  20px auto
+
+    .name
+      font-size: 24px!important
+      color: #252e41!important
+      font-family: $font_medium!important
+      text-align: center
+
+    .position
+      font-size: 16px!important
+      color: #252e41!important
+      text-align: center!important
+
+  .slick-prev
+    left: 90px!important
+    background: url(../image/main/right-arrow.png)
+    background-repeat: no-repeat!important
+    width: 22px
+    height: 36px
+    transform: rotateZ(180deg) translateY(50%)
+    z-index: 30
+    &:before
+      display: none
+
+    &:focus,
+    &:hover
+      background: url(../image/main/right-arrow-active.png)
+      background-repeat: no-repeat!important
+      transform: rotateZ(180deg) translateY(50%)
+
+.slick-next
+    right: 90px!important
+    background: url(../image/main/right-arrow.png)!important
+    background-repeat: no-repeat!important
+    width: 22px!important
+    height: 36px!important
+    z-index: 30!important
+    &:before
+      display: none!important
+
+    &:focus,
+    &:hover
+      background: url(../image/main/right-arrow-active.png)!important
+      background-repeat: no-repeat!important
 
 
 

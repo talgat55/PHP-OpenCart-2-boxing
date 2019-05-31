@@ -1619,11 +1619,6 @@ body[class*=" account-"] #column-right .list-group-item {
         color: #df5a5a;
         text-decoration: none; }
 
-.information-information-8 .title {
-  font-size: 33px;
-  font-family: "Gotham Pro Medium";
-  margin-bottom: 55px; }
-
 .information-information-8 .main-page {
   margin-bottom: 150px; }
 
@@ -1638,6 +1633,77 @@ body[class*=" account-"] #column-right .list-group-item {
     .brend-block .brend-col .brend-item .title {
       font-size: 22px;
       text-align: center; }
+
+.review-block {
+  -webkit-box-shadow: 1px 1px 16px 4px #fbf8f8;
+          box-shadow: 1px 1px 16px 4px #fbf8f8;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  padding: 35px; }
+  .review-block .review-item-walp {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center; }
+    .review-block .review-item-walp .img-block {
+      margin: 0 auto 60px auto;
+      display: table;
+      overflow: hidden;
+      -webkit-border-radius: 50%;
+              border-radius: 50%; }
+      .review-block .review-item-walp .img-block img {
+        width: 200px;
+        height: 200px;
+        -o-object-fit: cover !important;
+           object-fit: cover !important; }
+    .review-block .review-item-walp .content {
+      font-family: "Gotham Pro" !important;
+      font-size: 18px !important;
+      color: #000 !important; }
+    .review-block .review-item-walp .divider {
+      background-color: #ececec;
+      height: 1px;
+      width: 80%;
+      margin: 55px auto  20px auto; }
+    .review-block .review-item-walp .name {
+      font-size: 24px !important;
+      color: #252e41 !important;
+      font-family: "Gotham Pro Medium" !important;
+      text-align: center; }
+    .review-block .review-item-walp .position {
+      font-size: 16px !important;
+      color: #252e41 !important;
+      text-align: center !important; }
+  .review-block .slick-prev {
+    left: 90px !important;
+    background: url(../image/main/right-arrow.png);
+    background-repeat: no-repeat !important;
+    width: 22px;
+    height: 36px;
+    -webkit-transform: rotateZ(180deg) translateY(50%);
+        -ms-transform: rotate(180deg) translateY(50%);
+            transform: rotateZ(180deg) translateY(50%);
+    z-index: 30; }
+    .review-block .slick-prev:before {
+      display: none; }
+    .review-block .slick-prev:focus, .review-block .slick-prev:hover {
+      background: url(../image/main/right-arrow-active.png);
+      background-repeat: no-repeat !important;
+      -webkit-transform: rotateZ(180deg) translateY(50%);
+          -ms-transform: rotate(180deg) translateY(50%);
+              transform: rotateZ(180deg) translateY(50%); }
+
+.slick-next {
+  right: 90px !important;
+  background: url(../image/main/right-arrow.png) !important;
+  background-repeat: no-repeat !important;
+  width: 22px !important;
+  height: 36px !important;
+  z-index: 30 !important; }
+  .slick-next:before {
+    display: none !important; }
+  .slick-next:focus, .slick-next:hover {
+    background: url(../image/main/right-arrow-active.png) !important;
+    background-repeat: no-repeat !important; }
 
 footer {
   background-color: #f7f7f7;
@@ -1722,6 +1788,12 @@ footer {
   footer #search.search.input-group {
     display: table !important;
     width: 100%; }
+
+.information-information-9 .title,
+.information-information-8 .title {
+  font-size: 33px;
+  font-family: "Gotham Pro Medium";
+  margin-bottom: 55px; }
 
 @media (min-width: 1260px) {
   .container {
@@ -1896,9 +1968,19 @@ footer {
     display: block; }
   .product-page .linked-products .title {
     margin-top: 50px;
-    margin-bottom: 50px; } }
+    margin-bottom: 50px; }
+  .review-block .slick-next {
+    right: 15px !important; }
+  .review-block .slick-prev {
+    left: 15px !important; } }
 
 @media (max-width: 600px) {
+  .review-block .review-item-walp {
+    width: 90%; }
+    .review-block .review-item-walp .img-block {
+      margin-bottom: 20px !important; }
+    .review-block .review-item-walp .divider {
+      margin-top: 10px !important; }
   .modal-dialog {
     width: 100%; }
   header .top {
@@ -1944,3 +2026,40 @@ footer {
   width: 100%;
   height: 500px;
   margin-bottom: 90px; }
+
+.review-item,
+.slick-track {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none; }
+
+.slick-dots {
+  position: relative !important;
+  bottom: 0 !important;
+  margin-top: 30px !important; }
+  .slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 11px !important;
+    height: 11px !important;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer; }
+    .slick-dots li button {
+      font-size: 0;
+      line-height: 0;
+      display: block;
+      width: 11px !important;
+      height: 11px !important;
+      padding: 5px;
+      cursor: pointer;
+      color: transparent;
+      border: 0;
+      outline: none;
+      background: #d9d9d9 !important;
+      -webkit-border-radius: 50%;
+              border-radius: 50%; }
+      .slick-dots li button:before {
+        display: none; }
+  .slick-dots .slick-active button {
+    background-color: #df5a5a !important; }

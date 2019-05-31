@@ -404,6 +404,15 @@ header .bottom
 @import "main.sass"
 @import "footer.sass"
 
+
+.information-information-9,
+.information-information-8
+  .title
+    font-size: 33px
+    font-family: $font_medium
+    margin-bottom: 55px
+
+
 @media  (min-width: 1260px)
   .container
     width: 1260px
@@ -598,7 +607,24 @@ header .bottom
   .product-page .linked-products .title
     margin-top: 50px
     margin-bottom: 50px
+
+
+  .review-block
+    .slick-next
+      right: 15px!important
+    .slick-prev
+      left: 15px!important
+
 @media  (max-width: 600px)
+  .review-block
+    .review-item-walp
+      width: 90%
+      .img-block
+        margin-bottom: 20px!important
+      .divider
+        margin-top: 10px!important
+
+
   .modal-dialog
     width: 100%
   header
@@ -647,3 +673,43 @@ header .bottom
   width: 100%
   height: 500px
   margin-bottom: 90px
+
+.review-item,
+.slick-track
+  outline: none
+  box-shadow: none
+
+
+
+
+
+.slick-dots
+  position: relative!important
+  bottom: 0!important
+  margin-top: 30px!important
+  li
+    position: relative
+    display: inline-block
+    width: 11px!important
+    height: 11px!important
+    margin: 0 5px
+    padding: 0
+    cursor: pointer
+    button
+      font-size: 0
+      line-height: 0
+      display: block
+      width: 11px!important
+      height: 11px!important
+      padding: 5px
+      cursor: pointer
+      color: transparent
+      border: 0
+      outline: none
+      background: #d9d9d9!important
+      border-radius: 50%
+      &:before
+        display: none
+  .slick-active
+    button
+      background-color: $main_color!important

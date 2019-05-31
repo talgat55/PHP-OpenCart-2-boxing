@@ -53,17 +53,17 @@
                             <h4>Мы в соц. сетях:</h4>
                             <ul class="list-soc-link">
                                 <li>
-                                    <a  target="_blank" href="https://vk.com/takeshi_fight_gear">
+                                    <a  target="_blank" href="#">
                                         <i class="fab fa-vk"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a  target="_blank" href="https://www.facebook.com/takeshi.fight.gear/">
+                                    <a  target="_blank" href="#">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a target="_blank" href="https://www.instagram.com/takeshi.fight.gear/">
+                                    <a target="_blank" href="#">
                                         <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>
@@ -106,7 +106,7 @@
     </div>
 </footer>
 
-<?php if (!isset($this->request->get['route']) || $this->request->get['route'] == 'common/home'){ ?>
+<?php if (!isset($this->request->get['route']) || $this->request->get['route'] == 'common/home'  || $_REQUEST['_route_'] == 'reviews' ){ ?>
 <link href="catalog/view/theme/theme/stylesheet/slick.css" rel="stylesheet">
 <link href="catalog/view/theme/theme/stylesheet/slick-theme.css" rel="stylesheet">
 <?php } ?>
@@ -116,7 +116,7 @@
 <script src="<?php echo $script; ?>" type="text/javascript"></script>
 <?php } ?>
 
-<?php if (!isset($this->request->get['route']) || $this->request->get['route'] == 'common/home'){ ?>
+<?php if (!isset($this->request->get['route']) || $this->request->get['route'] == 'common/home' || $_REQUEST['_route_'] == 'reviews'){ ?>
 <script src="catalog/view/theme/theme/js/jquery-ui.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="catalog/view/theme/theme/js/slick.min.js" type="text/javascript"></script>
