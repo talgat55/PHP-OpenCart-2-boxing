@@ -12,6 +12,26 @@ class ControllerInformationInformation extends Controller {
 			'href' => $this->url->link('common/home')
 		);
 
+            if(isset($_REQUEST['_route_']) && $_REQUEST['_route_'] == 'brends'){
+                $data['categories'] = array();
+                $this->load->model('catalog/manufacturer');
+                $this->load->model('tool/image');
+                $results = $this->model_catalog_manufacturer->getManufacturers();
+
+                foreach ($results as $result) {
+                    $name = $result['name'];
+
+
+                    $image = $this->model_tool_image->resize($result['image'], '170', '140');
+                    $data['categories'][] = array(
+                        'name' => $name,
+                        'image' => $image
+                    );
+                }
+
+            }
+
+
 		if (isset($this->request->get['information_id'])) {
 			$information_id = (int)$this->request->get['information_id'];
 		} else {

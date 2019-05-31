@@ -15,10 +15,11 @@ jQuery(document).ready(function () {
     select2OnProductPage();
     accordionTabInPageProduct();
     showCategotyonMobile();
+    mapInit();
     // end redy function
 });
 
-jQuery(window).resize(function() {
+jQuery(window).resize(function () {
     homeSlider();
     showCategotyonMobile();
 
@@ -31,7 +32,7 @@ jQuery(window).resize(function() {
 function showCategotyonMobile() {
     "use strict";
     let widthWindow = jQuery(window).width();
-    if(widthWindow < 993){
+    if (widthWindow < 993) {
 
         jQuery('body').on('click', ' #menu .navbar-header', function () {
             console.log('w');
@@ -52,33 +53,32 @@ function homeSlider() {
     let homeClass = jQuery('.home-slider');
     let widthWindow = jQuery(window).width();
     if (homeClass.length) {
-       // homeClass.unslick();
+        // homeClass.unslick();
 
-        if(jQuery('.home-slider.slick-initialized').length){
+        if (jQuery('.home-slider.slick-initialized').length) {
             homeClass.slick('unslick');
 
         }
 
-        if(widthWindow > 1200){
+        if (widthWindow > 1200) {
             let windowWidth = jQuery(window).width();
             let containerWidth = jQuery('.container').width();
             let columnrWidth = jQuery('.col-sm-9').width();
 
-            homeClass.css('width',  (windowWidth - containerWidth ) / 2 + columnrWidth );
-            setTimeout(function(){
+            homeClass.css('width', (windowWidth - containerWidth) / 2 + columnrWidth);
+            setTimeout(function () {
                 sliderHomeSlick(homeClass);
             }, 300);
-        }else{
+        } else {
             homeClass.removeAttr('style');
             sliderHomeSlick(homeClass);
         }
 
 
-
-
     }
 }
-function sliderHomeSlick(homeClass){
+
+function sliderHomeSlick(homeClass) {
     homeClass.slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -88,23 +88,25 @@ function sliderHomeSlick(homeClass){
         pauseOnHover: false
     });
 }
+
 //-------------------------------
 //  Click on wish block
 //-------------------------------
 function clickWishBlock() {
     "use strict";
-     jQuery('.product-thumb .top-block .wish a').click(function(){
-         return false;
-     });
+    jQuery('.product-thumb .top-block .wish a').click(function () {
+        return false;
+    });
 }
+
 //-------------------------------
 //  Change type input for subscribe
 //-------------------------------
 function changeInputForm() {
     "use strict";
     let inputId = jQuery('#form-sobfeedback33 #sobInput33-1, #sobInput34-2');
-    if(inputId.length){
-        inputId.attr('type','email');
+    if (inputId.length) {
+        inputId.attr('type', 'email');
     }
 
 }
@@ -116,7 +118,7 @@ function changeInputForm() {
 function carouselSetCategory() {
     "use strict";
     let carouselClass = jQuery('.list-specific-products, .list-linked-products');
-    let sliderHandle  = jQuery('.slider');
+    let sliderHandle = jQuery('.slider');
     if (carouselClass.length) {
         carouselClass.slick({
             slidesToShow: 4,
@@ -156,17 +158,14 @@ function carouselSetCategory() {
             max: 8,
             step: 1,
             value: 1,
-            slide: function( event, ui ) {
+            slide: function (event, ui) {
                 carouselClass.slick('slickGoTo', ui.value - 1);
             }
         });
 
-        carouselClass.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-            sliderHandle.slider('value',nextSlide+1);
+        carouselClass.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            sliderHandle.slider('value', nextSlide + 1);
         });
-
-
-
 
 
     }
@@ -208,19 +207,20 @@ function dropDownFiltersCategoryPage() {
         jQuery(this).toggleClass("accordion-open");
     }).next().stop().hide();
 }
+
 //-------------------------------
 //  Hide left sidebar in page category if empty block
 //-------------------------------
 function hideLeftBlockCAtegoryPage() {
     "use strict";
 
-    var accordionClass =  jQuery( ".accordion-block" );
+    var accordionClass = jQuery(".accordion-block");
 
-    if(accordionClass.length){
-        accordionClass.each(function( index ) {
+    if (accordionClass.length) {
+        accordionClass.each(function (index) {
 
-            var thisClass = jQuery( this );
-            if(thisClass.find('div').length == '0'){
+            var thisClass = jQuery(this);
+            if (thisClass.find('div').length == '0') {
 
                 thisClass.hide();
             }
@@ -230,14 +230,15 @@ function hideLeftBlockCAtegoryPage() {
     }
 
 }
+
 //-------------------------------
 //  Select on page product
 //-------------------------------
 function select2OnProductPage() {
     "use strict";
 
-    var selectClass =  jQuery( ".select-two-selection" );
-    if(selectClass.length){
+    var selectClass = jQuery(".select-two-selection");
+    if (selectClass.length) {
         selectClass.select2({
             minimumResultsForSearch: -1,
             width: 'resolve'
@@ -245,27 +246,28 @@ function select2OnProductPage() {
     }
 
 }
+
 //-------------------------------
 //  Accordion tabs in page product
 //-------------------------------
 function accordionTabInPageProduct() {
     "use strict";
 
-    var clickClass =  jQuery( ".tab-link-read-more" );
-    if(clickClass.length){
-        clickClass.click(function(){
+    var clickClass = jQuery(".tab-link-read-more");
+    if (clickClass.length) {
+        clickClass.click(function () {
             var thisTab = jQuery(this).parent().find('.tab-content .tab-pane.active');
-            if(thisTab.hasClass('active-tab')){
+            if (thisTab.hasClass('active-tab')) {
                 thisTab.removeAttr('style');
                 thisTab.removeClass('active-tab');
-            }else{
-                var ContentClass =  jQuery(this).parent().find('.tab-content .tab-pane.active .content').height();
+            } else {
+                var ContentClass = jQuery(this).parent().find('.tab-content .tab-pane.active .content').height();
 
 
-                if(thisTab.is( "#tab-specification" )){
+                if (thisTab.is("#tab-specification")) {
 
-                    thisTab.css('height', ContentClass + 70+ jQuery('#tab-specification table').outerHeight());
-                }else{
+                    thisTab.css('height', ContentClass + 70 + jQuery('#tab-specification table').outerHeight());
+                } else {
                     thisTab.css('height', ContentClass + 50);
                 }
 
@@ -274,10 +276,62 @@ function accordionTabInPageProduct() {
             }
 
 
-
             return false;
         });
     }
 
 
 }
+
+
+//
+// Map
+//
+function mapInit() {
+    "use strict";
+
+    if (jQuery('#map').length) {
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map('map', {
+                    center: [55.857197, 37.558957],
+                    zoom: 18,
+                    controls: ['zoomControl']
+                }, {
+                    // searchControlProvider: 'yandex#search'
+                }),
+
+                // Создаём макет содержимого.
+                /*  MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+                  ),*/
+
+                myPlacemark = new ymaps.Placemark([55.857197, 37.558957], {
+                    id: '1'
+                }, {
+
+                    // Опции.
+                    // Необходимо указать данный тип макета.
+                    iconLayout: 'default#image',
+                    // Своё изображение иконки метки.
+
+                    iconImageHref: 'http://sport.lightxdesign.ru/catalog/view/theme/theme/image/main/marker.png',
+                    // Размеры метки.
+                    iconImageSize: [79, 103],
+                    // Смещение левого верхнего угла иконки относительно
+                    // её "ножки" (точки привязки).
+                    iconImageOffset: [-39, -103]
+                });
+
+
+            myMap.geoObjects
+
+                .add(myPlacemark);
+
+            myMap.behaviors.disable('scrollZoom');
+            myMap.behaviors.disable('multiTouch');
+
+
+        });
+    }
+}
+
