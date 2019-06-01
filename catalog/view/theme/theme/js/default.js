@@ -62,14 +62,7 @@ function homeSlider() {
         }
 
         if (widthWindow > 1200) {
-            let windowWidth = jQuery(window).width();
-            let containerWidth = jQuery('.container').width();
-            let columnrWidth = jQuery('.col-sm-9').width();
-
-            homeClass.css('width', (windowWidth - containerWidth) / 2 + columnrWidth);
-            setTimeout(function () {
-                sliderHomeSlick(homeClass);
-            }, 300);
+            sliderHomeSlick(homeClass);
         } else {
             homeClass.removeAttr('style');
             sliderHomeSlick(homeClass);

@@ -58,9 +58,10 @@
 <body class="<?php echo $class; ?>">
 
 
-<div class="container">
-    <div class="row">
+
         <div id="top-bar">
+            <div class="container">
+            <div class="row">
             <div class="f-b col-md-5 col-sm-6  hidden-xs">
                 <ul class="list-information">
                     <li>
@@ -113,8 +114,8 @@
                 </ul>
             </div>
         </div>
+        </div>
     </div>
-</div>
 
 <header>
     <div class="container">

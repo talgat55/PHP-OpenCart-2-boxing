@@ -993,20 +993,51 @@ body[class*=" account-"] #column-right .list-group-item
       background-repeat: no-repeat!important
       transform: rotateZ(180deg) translateY(50%)
 
-.slick-next
-    right: 90px!important
-    background: url(../image/main/right-arrow.png)!important
-    background-repeat: no-repeat!important
-    width: 22px!important
-    height: 36px!important
-    z-index: 30!important
-    &:before
-      display: none!important
-
-    &:focus,
-    &:hover
-      background: url(../image/main/right-arrow-active.png)!important
+  .slick-next
+      right: 90px!important
+      background: url(../image/main/right-arrow.png)!important
       background-repeat: no-repeat!important
+      width: 22px!important
+      height: 36px!important
+      z-index: 30!important
+      &:before
+        display: none!important
+
+      &:focus,
+      &:hover
+        background: url(../image/main/right-arrow-active.png)!important
+        background-repeat: no-repeat!important
 
 
 
+
+  .slick-dots
+    position: relative!important
+    bottom: 0!important
+    margin-top: 30px!important
+    li
+      position: relative
+      display: inline-block
+      width: 11px!important
+      height: 11px!important
+      margin: 0 5px
+      padding: 0
+      cursor: pointer
+      button
+        font-size: 0
+        line-height: 0
+        display: block
+        width: 11px!important
+        height: 11px!important
+        padding: 5px
+        cursor: pointer
+        color: transparent
+        border: 0
+        outline: none
+        background: #d9d9d9!important
+        border-radius: 50%
+        &:before
+          display: none
+    .slick-active
+      button
+        background-color: $main_color!important
