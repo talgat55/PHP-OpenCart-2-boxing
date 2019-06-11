@@ -39,11 +39,12 @@
         li
           display: block
           float: none
+          position: relative
+          overflow: hidden
           a
             padding: 11px 0
             font-size: 16px
             color: #000
-            border-bottom: 1px solid #ededed
             transition: all .3s
             &:hover
               background: transparent
@@ -51,12 +52,28 @@
             &:active,
             &:focus
               background: transparent!important
+            &:after
+              content: ""
+              display: block
+              position: absolute
+              bottom: 0
+              height: 1px
+              width: 150px
+              background-color: #ededed
 
+          .arrow-down
+            background: url('../image/main/arr-nav.png')
+            width: 8px
+            height: 12px
+            position: absolute
+            right: 0
+            top: 16px
+            transition: all .3s
         li:last-child
-          a
-            border: none
-
-
+          a:after
+            display: none
+      .rotate
+        transform: rotateZ(90deg)
 
 //
 // Home slider

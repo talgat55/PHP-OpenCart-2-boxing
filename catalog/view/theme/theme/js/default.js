@@ -17,6 +17,8 @@ jQuery(document).ready(function () {
     showCategotyonMobile();
     mapInit();
     reviewSlider();
+    addImageInMenu();
+    addDropDownMenu();
     // end redy function
 });
 
@@ -26,6 +28,36 @@ jQuery(window).resize(function () {
 
 });
 
+
+//-------------------------------
+//  Add arrow in menu for dropdown
+//-------------------------------
+function addDropDownMenu() {
+    "use strict";
+    var menulist = jQuery('#menu .navbar-nav li');
+    menulist.each(function(){
+        var $this = jQuery(this);
+        if($this.hasClass('dropdown')){
+            $this.append('<span class="arrow-down"></span>');
+            console.log('true');
+        }else{
+
+            console.log('false');
+        }
+    });
+
+}
+
+//-------------------------------
+//  Add image for item menu   Sle
+//-------------------------------
+function addImageInMenu() {
+    "use strict";
+    var $this = jQuery('.nav li a:contains("Распродажа")');
+    $this.addClass('sale-class');
+    $this.css('color', 'red');
+
+}
 
 //-------------------------------
 //  Show category menu for Mobile
@@ -206,6 +238,7 @@ function dropDownMenuCategories() {
     jQuery('.dropdown-toggle').click(function () {
         jQuery(this).next().stop().slideToggle();
         jQuery(this).toggleClass("accordion-open");
+        jQuery(this).parent().find('.arrow-down').toggleClass("rotate");
     }).next().stop().hide();
 }
 
@@ -326,7 +359,7 @@ function mapInit() {
                     iconLayout: 'default#image',
                     // Своё изображение иконки метки.
 
-                    iconImageHref: 'http://sport.lightxdesign.ru/catalog/view/theme/theme/image/main/marker.png',
+                    iconImageHref: 'https://good-fighter.shop/catalog/view/theme/theme/image/main/marker.png',
                     // Размеры метки.
                     iconImageSize: [79, 103],
                     // Смещение левого верхнего угла иконки относительно

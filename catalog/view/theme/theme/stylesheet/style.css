@@ -741,12 +741,13 @@ header {
       padding: 30px; }
       .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li {
         display: block;
-        float: none; }
+        float: none;
+        position: relative;
+        overflow: hidden; }
         .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li a {
           padding: 11px 0;
           font-size: 16px;
           color: #000;
-          border-bottom: 1px solid #ededed;
           -webkit-transition: all .3s;
           -o-transition: all .3s;
           transition: all .3s; }
@@ -755,8 +756,30 @@ header {
             color: #df5a5a; }
           .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li a:active, .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li a:focus {
             background: transparent !important; }
-      .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li:last-child a {
-        border: none; }
+          .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li a:after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            height: 1px;
+            width: 150px;
+            background-color: #ededed; }
+        .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li .arrow-down {
+          background: url("../image/main/arr-nav.png");
+          width: 8px;
+          height: 12px;
+          position: absolute;
+          right: 0;
+          top: 16px;
+          -webkit-transition: all .3s;
+          -o-transition: all .3s;
+          transition: all .3s; }
+      .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li:last-child a:after {
+        display: none; }
+    .home-page #menu .navbar-collapse.collapse .rotate {
+      -webkit-transform: rotateZ(90deg);
+          -ms-transform: rotate(90deg);
+              transform: rotateZ(90deg); }
 
 .home-page .home-slider {
   margin: 0;
@@ -2061,3 +2084,15 @@ footer {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none; }
+
+.dropdown-menu a {
+  display: inline-block; }
+
+.sale-class::before {
+  content: "";
+  display: block;
+  background: url("../image/main/tag.png");
+  width: 29px;
+  height: 20px;
+  position: absolute;
+  left: 120px; }

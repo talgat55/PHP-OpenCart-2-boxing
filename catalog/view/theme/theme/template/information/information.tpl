@@ -50,8 +50,8 @@
                                 </h3>
                             </div>
                             <div class="content">
-                               <a href="mailto:takeshifg@yandex.ru" >
-                                   takeshifg@yandex.ru
+                               <a href="mailto:zakaz1@octagon-shop.com" >
+                                   zakaz1@octagon-shop.com
                                </a>
                                 по вопросам заказа товара
                             </div>
@@ -67,8 +67,8 @@
                                 </h3>
                             </div>
                             <div class="content">
-                                <a href="tel:+74993906765" >
-                                    +74993906765
+                                <a href="tel:+79175438587" >
+                                    +79175438587
                                 </a>
                                 Звонок по России бесплатный
                             </div>
