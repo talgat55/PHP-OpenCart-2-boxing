@@ -717,7 +717,9 @@ header {
   padding: 0; }
 
 .home-page #menu {
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-border-radius: 0 !important;
+          border-radius: 0 !important; }
   .home-page #menu .navbar-header {
     background-color: #3f4047;
     padding: 15px 25px;
@@ -1759,7 +1761,7 @@ body[class*=" account-"] #column-right .list-group-item {
 
 footer {
   background-color: #f7f7f7;
-  padding: 50px 0; }
+  padding: 50px 0 0; }
   footer .information-block .footer-list-links {
     -webkit-column-count: 2;
        -moz-column-count: 2;
@@ -1840,6 +1842,22 @@ footer {
   footer #search.search.input-group {
     display: table !important;
     width: 100%; }
+  footer .copyright {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s; }
+    footer .copyright a {
+      color: #3f4047; }
+      footer .copyright a span {
+        font-weight: 700; }
+      footer .copyright a:hover {
+        color: #df5a5a;
+        text-decoration: none; }
 
 .information-information-9 .title,
 .information-information-8 .title {

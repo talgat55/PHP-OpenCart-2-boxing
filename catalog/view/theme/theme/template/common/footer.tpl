@@ -104,6 +104,9 @@
 
     </div>
     </div>
+    <div class="copyright">
+        <a href="https://vk.com/m_arts_land" target="_blank">Сайт разработала <span>студия M-Arts</span></a>
+    </div>
 </footer>
 
 <?php if (!isset($this->request->get['route']) || $this->request->get['route'] == 'common/home'  || $_REQUEST['_route_'] == 'reviews' ){ ?>
