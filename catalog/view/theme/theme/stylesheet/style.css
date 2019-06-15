@@ -336,6 +336,12 @@ header .bottom .search button.btn.btn-default.btn-lg {
         font-size: 24px;
         color: #3f4047;
         margin-bottom: 0; }
+        .list-linked-products .product-layout .product-thumb .caption .price .price-old,
+        .category-page .product-layout .product-thumb .caption .price .price-old,
+        .list-specific-products .product-layout .product-thumb .caption .price .price-old,
+        .latest-block .product-layout .product-thumb .caption .price .price-old {
+          font-size: .7vw;
+          text-decoration: line-through; }
       .list-linked-products .product-layout .product-thumb .caption .categories span,
       .category-page .product-layout .product-thumb .caption .categories span,
       .list-specific-products .product-layout .product-thumb .caption .categories span,
