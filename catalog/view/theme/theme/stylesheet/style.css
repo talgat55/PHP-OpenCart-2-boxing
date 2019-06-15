@@ -1759,6 +1759,29 @@ body[class*=" account-"] #column-right .list-group-item {
     .review-block .slick-dots .slick-active button {
       background-color: #df5a5a !important; }
 
+.special-price {
+  color: #df5a5a; }
+
+.promotion-block {
+  border: 2px solid #df5a5a;
+  margin-bottom: 30px; }
+  .promotion-block .heading {
+    background-color: #df5a5a;
+    color: #fff;
+    padding: 10px;
+    text-transform: uppercase;
+    text-align: center; }
+  .promotion-block #countdown {
+    margin-top: 30px; }
+  .promotion-block .text-wrapper {
+    text-align: center; }
+    .promotion-block .text-wrapper div {
+      width: 17%;
+      display: inline-block; }
+
+.countdownHolder {
+  width: 100% !important; }
+
 footer {
   background-color: #f7f7f7;
   padding: 50px 0 0; }
@@ -2045,6 +2068,16 @@ footer {
     left: 15px !important; } }
 
 @media (max-width: 600px) {
+  .promotion-block .text-wrapper div {
+    width: 55px; }
+  #countdown {
+    margin-bottom: -38px; }
+    #countdown .digit {
+      font-size: 17px; }
+    #countdown .position {
+      width: 20px; }
+    #countdown .countDiv {
+      height: 81px; }
   .review-block .review-item-walp {
     width: 90%; }
     .review-block .review-item-walp .img-block {

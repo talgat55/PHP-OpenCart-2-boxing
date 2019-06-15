@@ -25,7 +25,8 @@
                     <div class="row">
                         <div class="thumbnails">
                             <?php if ($thumb) { ?>
-                            <div class="col-sm-9 col-xs-12"><a class="thumbnail" href="<?php echo $popup; ?>" data-lightbox="gallery"
+                            <div class="col-sm-9 col-xs-12"><a class="thumbnail" href="<?php echo $popup; ?>"
+                                                               data-lightbox="gallery"
                                                                title="<?php echo $heading_title; ?>"><img
                                             src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>"
                                             alt="<?php echo $heading_title; ?>"/></a></div>
@@ -35,7 +36,8 @@
                                 <?php if ($images) { ?>
                                 <?php foreach ($images as $image) { ?>
                                 <div class="image-additional "><a class="thumbnail"
-                                                                  href="<?php echo $image['popup']; ?>" data-lightbox="gallery"
+                                                                  href="<?php echo $image['popup']; ?>"
+                                                                  data-lightbox="gallery"
                                                                   title="<?php echo $heading_title; ?>"> <img
                                                 src="<?php echo $image['thumb']; ?>"
                                                 title="<?php echo $heading_title; ?>"
@@ -73,7 +75,30 @@
                         <?php } else { ?>
                         <li><span style="text-decoration: line-through;"><?php echo $price; ?></span></li>
                         <li>
-                            <h2><?php echo $special; ?></h2>
+                            <h2 class="special-price"><?php echo $special; ?></h2>
+                        </li>
+                        <li class="promotion-countdown">
+                            <div class="promotion-block">
+                                <div class="heading">
+                                    До конца акции осталось:
+                                </div>
+                                <div id="countdown"></div>
+                                <div class="text-wrapper">
+                                    <div>дней</div>
+                                    <div>часов</div>
+                                    <div>минут</div>
+                                    <div>секунд</div>
+
+                                </div>
+                                <?php
+                                $date=date_create($date_end_promotion);
+                                ?>
+
+
+                                <p id="note"   data-date="<?= date_format($date,'Y,m,d'); ?>"></p>
+
+                            </div>
+
                         </li>
                         <?php } ?>
                         <?php if ($tax) { ?>
@@ -348,7 +373,7 @@
                                 </table>
                                 <div class="decription">
                                     <div class="content">
-                                    <?php echo htmlspecialchars_decode($tab_description_new); ?>
+                                        <?php echo htmlspecialchars_decode($tab_description_new); ?>
                                     </div>
                                 </div>
 
@@ -356,7 +381,7 @@
                             <?php } ?>
 
                         </div>
-                        <a href="#" class="tab-link-read-more  black" >Читать все</a>
+                        <a href="#" class="tab-link-read-more  black">Читать все</a>
                     </div>
                     <div class="col-md-6 col-sm-12  col-xs-12">
                         <div class="tab-second-block">
@@ -394,20 +419,34 @@
 
                                 <div class="tab-pane" id="tab-pay">
                                     <div class="content">
-                                    Товарищи! постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание соответствующий условий активизации. Идейные соображения высшего порядка, а также реализация намеченных плановых заданий обеспечивает широкому кругу (специалистов) участие в формировании системы обучения кадров, соответствует насущным потребностям.
+                                        Товарищи! постоянный количественный рост и сфера нашей активности в значительной
+                                        степени обуславливает создание соответствующий условий активизации. Идейные
+                                        соображения высшего порядка, а также реализация намеченных плановых заданий
+                                        обеспечивает широкому кругу (специалистов) участие в формировании системы
+                                        обучения кадров, соответствует насущным потребностям.
 
-                                    Разнообразный и богатый опыт рамки и место обучения кадров представляет собой интересный эксперимент проверки модели развития. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации
+                                        Разнообразный и богатый опыт рамки и место обучения кадров представляет собой
+                                        интересный эксперимент проверки модели развития. С другой стороны постоянное
+                                        информационно-пропагандистское обеспечение нашей деятельности способствует
+                                        подготовки и реализации
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="tab-fitsize">
                                     <div class="content">
-                                    Товарищи! постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание соответствующий условий активизации. Идейные соображения высшего порядка, а также реализация намеченных плановых заданий обеспечивает широкому кругу (специалистов) участие в формировании системы обучения кадров, соответствует насущным потребностям.
+                                        Товарищи! постоянный количественный рост и сфера нашей активности в значительной
+                                        степени обуславливает создание соответствующий условий активизации. Идейные
+                                        соображения высшего порядка, а также реализация намеченных плановых заданий
+                                        обеспечивает широкому кругу (специалистов) участие в формировании системы
+                                        обучения кадров, соответствует насущным потребностям.
 
-                                    Разнообразный и богатый опыт рамки и место обучения кадров представляет собой интересный эксперимент проверки модели развития. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации
+                                        Разнообразный и богатый опыт рамки и место обучения кадров представляет собой
+                                        интересный эксперимент проверки модели развития. С другой стороны постоянное
+                                        информационно-пропагандистское обеспечение нашей деятельности способствует
+                                        подготовки и реализации
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="tab-link-read-more" >Читать все</a>
+                            <a href="#" class="tab-link-read-more">Читать все</a>
                         </div>
                     </div>
                 </div>
@@ -429,15 +468,18 @@
 
                                 </div>
                             </div>
-                            <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>"
-                                                                                              alt="<?php echo $product['name']; ?>"
-                                                                                              title="<?php echo $product['name']; ?>"
-                                                                                              class="img-responsive"/></a></div>
+                            <div class="image"><a href="<?php echo $product['href']; ?>"><img
+                                            src="<?php echo $product['thumb']; ?>"
+                                            alt="<?php echo $product['name']; ?>"
+                                            title="<?php echo $product['name']; ?>"
+                                            class="img-responsive"/></a></div>
                             <div class="caption">
                                 <div class="categories">
                                     <span><?=$current_cat; ?></span>
                                 </div>
-                                <h3 class="title"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h3>
+                                <h3 class="title"><a
+                                            href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+                                </h3>
 
                                 <?php if ($product['price']) { ?>
                                 <p class="price">
@@ -452,7 +494,7 @@
 
                 </ul>
                 <div class="wrapper-slider">
-                    <div class="slider"> </div>
+                    <div class="slider"></div>
                 </div>
             </div>
 
@@ -524,7 +566,7 @@
                         $('#cart > button').html('<a href="#" >\n' +
                             '        <img src="/catalog/view/theme/theme/image/main/cart.png"  alt="Иконка " />\n' +
                             '        <span id="cart-total">' + json['text_items_count'] + '</span>\n' +
-                            '        <p>\n'  + json['text_items'] + ' </p>\n' +
+                            '        <p>\n' + json['text_items'] + ' </p>\n' +
                             '    </a>');
                     }, 100);
 
@@ -648,7 +690,6 @@
         });
         grecaptcha.reset();
     });
-
 
 
     $(document).ready(function () {

@@ -233,8 +233,10 @@ class ControllerProductProduct extends Controller {
 //			$this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
 //			$this->document->addStyle('catalog/view/javascript/jquery/magnific/magnific-popup.css');
     		$this->document->addStyle('catalog/view/theme/theme/stylesheet/lightbox.min.css');
+    		$this->document->addStyle('catalog/view/theme/theme/stylesheet/jquery.countdown.css');
 
 			$this->document->addScript('catalog/view/theme/theme/js/lightbox.min.js');
+			$this->document->addScript('catalog/view/theme/theme/js/jquery.countdown.js');
 
 			$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment.js');
 			$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/locale/'.$this->session->data['language'].'.js');
@@ -338,11 +340,13 @@ class ControllerProductProduct extends Controller {
 			} else {
 				$data['price'] = false;
 			}
-
 			if ((float)$product_info['special']) {
 				$data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+
+                $data['date_end_promotion'] = $product_info['date_end_promotion'];
 			} else {
 				$data['special'] = false;
+                $data['date_end_promotion'] = false;
 			}
 
 			if ($this->config->get('config_tax')) {
