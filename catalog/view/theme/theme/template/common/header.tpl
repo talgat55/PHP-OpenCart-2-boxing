@@ -9,6 +9,7 @@
 <!--<![endif]-->
 <head>
     <meta charset="UTF-8"/>
+    <meta name="yandex-verification" content="881aceead0c4de53" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?php echo $title;  ?></title>
