@@ -351,7 +351,7 @@
                                     </tr>
                                     <tr>
                                         <td>Вид:</td>
-                                        <td><span><?=$model; ?></span></td>
+                                        <td><span><a href="<?=$model_link;?>"> <?=$model; ?></a></span></td>
                                     </tr>
                                     <tr>
                                         <td>Страна:</td>

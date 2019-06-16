@@ -140,7 +140,7 @@ if($pos !== false) {
 <?php endif; ?>
 
 
-
+<script src="catalog/view/theme/theme/js/jquery.matchHeight.js" type="text/javascript"></script>
 <script src="catalog/view/theme/theme/js/load-more.js" type="text/javascript"></script>
 <script src="catalog/view/theme/theme/js/default.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>

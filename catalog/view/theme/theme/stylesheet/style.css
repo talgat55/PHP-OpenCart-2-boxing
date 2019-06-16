@@ -1354,7 +1354,8 @@ header {
   height: auto; }
   .product-page #product .select2-container--default .select2-selection--single .select2-selection__rendered {
     font-size: 15px;
-    color: #8d8d8d; }
+    color: #8d8d8d;
+    font-family: "Gotham Pro Medium"; }
   .product-page #product .select2-container--default .select2-selection--single .select2-selection__arrow {
     top: 50%;
     right: 10px;
@@ -1543,6 +1544,9 @@ header {
 
 .product-page .active-tab::after {
   display: none !important; }
+
+.select2-results {
+  font-family: "Gotham Pro Medium"; }
 
 .account-wishlist,
 .cart-page {

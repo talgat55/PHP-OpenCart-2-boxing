@@ -11,7 +11,11 @@ class ModelCatalogCategory extends Model {
 
 		return $query->rows;
 	}
-
+    public function getProductCategories($prodid) {
+        $query = $this->db->query("SELECT category_id FROM " . DB_PREFIX . "product_to_category WHERE product_id = '" . $prodid . "'");
+        if($query->num_rows > 0) return $query->rows;
+        return false;
+    }
 	public function getCategoryFilters($category_id) {
 		$implode = array();
 

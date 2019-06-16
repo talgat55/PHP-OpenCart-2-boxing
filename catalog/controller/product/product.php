@@ -40,7 +40,21 @@ class ControllerProductProduct extends Controller {
 
 			// Set the last category breadcrumb
 			$category_info = $this->model_catalog_category->getCategory($category_id);
+            $prodcategories = $this->model_catalog_category->getProductCategories($this->request->get['product_id']);
 
+
+            $cats = array();
+            if($prodcategories) {
+                foreach($prodcategories as $prodcategory) {
+                    if($prodcategory['category_id']  != $category_info['category_id'] ){
+                        $cats[] = $prodcategory['category_id'];
+                    }
+
+                }
+                $data['model_link'] = $this->url->link('product/category', 'path=' .  $cats[0] );
+            }else{
+                $data['model_link'] = '';
+            }
 
 			// $product_info
             $data['current_cat']        =  $category_info['name'];
