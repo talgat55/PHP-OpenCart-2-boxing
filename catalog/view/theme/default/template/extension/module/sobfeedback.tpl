@@ -10,14 +10,14 @@
                  <?php if ($field['required']) { ?>
                     <div class="form-group required">
                       <label class="control-label" for="sobInput<?php echo $module_id; ?>-<?php echo $field_row; ?>"><?php echo $field['name']; ?></label>
-                      <input type="text" class="form-control" name="sob_input[<?php echo $field_row; ?>][<?php echo $field['name']?>]" id="sobInput<?php echo $module_id; ?>-<?php echo $field_row; ?>" data-minlength="3" required="" placeholder="<?php echo $field['name']; ?>">
+                      <input type="email" class="form-control" name="sob_input[<?php echo $field_row; ?>][<?php echo $field['name']?>]" id="sobInput<?php echo $module_id; ?>-<?php echo $field_row; ?>" data-minlength="3" required="" placeholder="<?php echo $field['name']; ?>">
                       <div class="help-block with-errors"></div>
                       <input type="hidden" class="form-control" name="sob_input[<?php echo $field_row; ?>][required]" id="sobInputHiddden<?php echo $module_id; ?>-<?php echo $field_row; ?>" value="input">
                     </div>
                   <?php } else { ?>
                     <div class="form-group">
                       <label for="sobInput<?php echo $module_id; ?>-<?php echo $field_row; ?>"><?php echo $field['name']; ?></label>
-                      <input type="text" class="form-control" name="sob_input[<?php echo $field_row; ?>][<?php echo $field['name']; ?>]" id="sobInput<?php echo $module_id; ?>-<?php echo $field_row; ?>" placeholder="<?php echo $field['name']; ?>">
+                      <input type="email" class="form-control" name="sob_input[<?php echo $field_row; ?>][<?php echo $field['name']; ?>]" id="sobInput<?php echo $module_id; ?>-<?php echo $field_row; ?>" placeholder="<?php echo $field['name']; ?>">
                     </div>
                    <?php } ?>
                <?php } elseif ($field['type'] == 'textarea' && $field['field_status']) { ?>

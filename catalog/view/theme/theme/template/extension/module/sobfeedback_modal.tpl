@@ -167,7 +167,11 @@
               return;
             }
             $('#feedbackModal<?php echo $module_id; ?> .text-danger').remove();
-            alertForm({form: that, msg: data['success']});
+            if( $('#feedbackModal<?php echo $module_id; ?> .alert-success').length  != '1'){
+                alertForm({form: that, msg: data['success']});
+            }
+
+
             that.find('input[type=\'text\']').val('');
             that.find('input[type=\'email\']').val('');
             that.find('textarea').val('');
