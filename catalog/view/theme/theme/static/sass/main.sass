@@ -42,6 +42,7 @@
           float: none
           position: relative
           overflow: hidden
+          min-width: 186px
           a
             padding: 11px 0
             font-size: 16px
@@ -938,10 +939,17 @@ body[class*=" account-"] #column-right .list-group-item
 //
 // Brend block
 //
+.product-manufacturer,
 .information-information-8
   .main-page
     margin-bottom: 150px
 .brend-block
+  a
+    color: #333
+    &:hover
+      text-decoration: none
+      color: $main_color
+
   .brend-col
     width: 20%
     border: 1px solid #dcdcdc
@@ -953,6 +961,8 @@ body[class*=" account-"] #column-right .list-group-item
       .title
         font-size: 22px
         text-align: center
+        font-family: $font_light !important
+        line-height: 1.5 !important
 
 
 ///

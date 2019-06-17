@@ -142,13 +142,8 @@
                         <img src="/catalog/view/theme/theme/image/main/phone.png" alt="Иконка "/>
                         <ul class="lists-phones">
                             <li>
-                                <a href="tel:88007759535">
-                                    8 (800) 775-95-35
-                                </a>
-                            </li>
-                            <li>
-                                <a href="tel:84993471935">
-                                    8 (499) 347-19-35
+                                <a href="tel:+79175438587">
+                                    +7 917 543-85-87
                                 </a>
                             </li>
                         </ul>

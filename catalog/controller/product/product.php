@@ -51,7 +51,13 @@ class ControllerProductProduct extends Controller {
                     }
 
                 }
-                $data['model_link'] = $this->url->link('product/category', 'path=' .  $cats[0] );
+                if(!empty($cats[0])){
+                    $data['model_link'] = $this->url->link('product/category', 'path=' .  $cats[0] );
+                }else{
+                    $data['model_link'] = '';
+                }
+
+
             }else{
                 $data['model_link'] = '';
             }

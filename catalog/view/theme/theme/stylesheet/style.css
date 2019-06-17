@@ -751,7 +751,8 @@ header {
         display: block;
         float: none;
         position: relative;
-        overflow: hidden; }
+        overflow: hidden;
+        min-width: 186px; }
         .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li a {
           padding: 11px 0;
           font-size: 16px;
@@ -1654,8 +1655,15 @@ body[class*=" account-"] #column-right .list-group-item {
         color: #df5a5a;
         text-decoration: none; }
 
+.product-manufacturer .main-page,
 .information-information-8 .main-page {
   margin-bottom: 150px; }
+
+.brend-block a {
+  color: #333; }
+  .brend-block a:hover {
+    text-decoration: none;
+    color: #df5a5a; }
 
 .brend-block .brend-col {
   width: 20%;
@@ -1667,7 +1675,9 @@ body[class*=" account-"] #column-right .list-group-item {
       margin: 0 auto; }
     .brend-block .brend-col .brend-item .title {
       font-size: 22px;
-      text-align: center; }
+      text-align: center;
+      font-family: "Gotham Pro Light" !important;
+      line-height: 1.5 !important; }
 
 .review-block {
   -webkit-box-shadow: 1px 1px 16px 4px #fbf8f8;
@@ -1892,6 +1902,7 @@ footer {
         color: #df5a5a;
         text-decoration: none; }
 
+.product-manufacturer .title,
 .information-information-9 .title,
 .information-information-8 .title {
   font-size: 33px;

@@ -7,32 +7,14 @@ class ControllerInformationInformation extends Controller
         $this->load->language('information/information');
 
         $this->load->model('catalog/information');
-
+        $data['emailto'] = $this->config->get('config_email');
         $data['breadcrumbs'] = array();
 
         $data['breadcrumbs'][] = array(
             'text' => 'Главная',
             'href' => $this->url->link('common/home')
         );
-        // if page brends
-        if (isset($_REQUEST['_route_']) && $_REQUEST['_route_'] == 'brends') {
-            $data['categories'] = array();
-            $this->load->model('catalog/manufacturer');
-            $this->load->model('tool/image');
-            $results = $this->model_catalog_manufacturer->getManufacturers();
 
-            foreach ($results as $result) {
-                $name = $result['name'];
-
-
-                $image = $this->model_tool_image->resize($result['image'], '170', '140');
-                $data['categories'][] = array(
-                    'name' => $name,
-                    'image' => $image
-                );
-            }
-
-        }
         // if page review
         if (isset($_REQUEST['_route_']) && $_REQUEST['_route_'] == 'reviews') {
 

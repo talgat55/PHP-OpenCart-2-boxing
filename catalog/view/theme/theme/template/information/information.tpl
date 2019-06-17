@@ -50,8 +50,8 @@
                                 </h3>
                             </div>
                             <div class="content">
-                               <a href="mailto:zakaz1@octagon-shop.com" >
-                                   zakaz1@octagon-shop.com
+                               <a href="mailto:<?=$emailto;?>" >
+                                   <?=$emailto;?>
                                </a>
                                 по вопросам заказа товара
                             </div>
@@ -78,25 +78,7 @@
 
                 </div>
                 <div id="map"></div>
-                <?php  elseif ($_REQUEST['_route_'] == 'brends') :    ?>
-                    <div class="brend-block">
-                    <div class="row">
-                        <?php   foreach($categories as $category) { ?>
-                            <div class="brend-col col-md-2 col-sm-4 col-xs-12">
-                                <div class="brend-item">
-                                    <img src="<?=$category['image']; ?>"  alt="Бренд"/>
 
-                                    <h3 class="title">
-                                        <?= $category['name']; ?>
-
-                                    </h3>
-
-                                </div>
-                            </div>
-
-                        <?php  } ?>
-                    </div>
-                    </div>
                 <?php  elseif ($_REQUEST['_route_'] == 'reviews') :    ?>
                     <div class="review-block">
                         <?php   if(!empty($news_list) )  :  ?>

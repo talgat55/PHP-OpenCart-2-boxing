@@ -67,9 +67,13 @@ function addDropDownMenu() {
 //-------------------------------
 function addImageInMenu() {
     "use strict";
-    var $this = jQuery('.nav li a:contains("Распродажа")');
-    $this.addClass('sale-class');
-    $this.css('color', 'red');
+    var $this = jQuery('.nav li a.dropdown-toggle:contains("Распродажа")');
+
+        $this.addClass('sale-class');
+        $this.css('color', 'red');
+
+
+
 
 }
 

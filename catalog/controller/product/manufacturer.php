@@ -28,28 +28,23 @@ class ControllerProductManufacturer extends Controller {
 			'href' => $this->url->link('product/manufacturer')
 		);
 
-		$data['categories'] = array();
+        $data['categories'] = array();
+        $this->load->model('tool/image');
+        $results = $this->model_catalog_manufacturer->getManufacturers();
 
-		$results = $this->model_catalog_manufacturer->getManufacturers();
+        foreach ($results as $result) {
+            $name = $result['name'];
 
-		foreach ($results as $result) {
-			$name = $result['name'];
 
-			if (is_numeric(utf8_substr($name, 0, 1))) {
-				$key = '0 - 9';
-			} else {
-				$key = utf8_substr(utf8_strtoupper($name), 0, 1);
-			}
+            $image = $this->model_tool_image->resize($result['image'], '170', '140');
+            $data['categories'][] = array(
+                'name' => $name,
+                'image' => $image,
+                'url' => $this->url->link('manufacturer/info', 'manufacturer_id=' . $result['manufacturer_id']),
 
-			if (!isset($data['categories'][$key])) {
-				$data['categories'][$key]['name'] = $key;
-			}
+            );
+        }
 
-			$data['categories'][$key]['manufacturer'][] = array(
-				'name' => $name,
-				'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $result['manufacturer_id'])
-			);
-		}
 
 		$data['continue'] = $this->url->link('common/home');
 
@@ -64,6 +59,7 @@ class ControllerProductManufacturer extends Controller {
 	}
 
 	public function info() {
+        $this->load->model('catalog/category');
 		$this->load->language('product/manufacturer');
 
 		$this->load->model('catalog/manufacturer');
@@ -176,7 +172,9 @@ class ControllerProductManufacturer extends Controller {
 			$data['text_compare'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
 			$data['text_sort'] = $this->language->get('text_sort');
 			$data['text_limit'] = $this->language->get('text_limit');
-
+            $data['text_sort_new'] = $this->language->get('text_sort_new');
+            $data['text_compare'] =  $this->language->get('text_compare');
+            $data['text_limit_new'] = $this->language->get('text_limit_new');
 			$data['button_cart'] = $this->language->get('button_cart');
 			$data['button_wishlist'] = $this->language->get('button_wishlist');
 			$data['button_compare'] = $this->language->get('button_compare');
@@ -230,6 +228,13 @@ class ControllerProductManufacturer extends Controller {
 				} else {
 					$rating = false;
 				}
+                $categories = $this->model_catalog_product->getCategories($result['product_id']);
+                if($categories){
+                    $categories_info = $this->model_catalog_category->getCategory($categories[0]['category_id']);
+                    $category_title = $categories_info['name'];
+                }else{
+                    $category_title = '';
+                }
 
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
@@ -238,6 +243,8 @@ class ControllerProductManufacturer extends Controller {
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
 					'price'       => $price,
 					'special'     => $special,
+                    'category_title'=> $category_title,
+                    'sku'         => $result['sku'],
 					'tax'         => $tax,
 					'minimum'     => ($result['minimum'] > 0) ? $result['minimum'] : 1,
 					'rating'      => $rating,
@@ -308,7 +315,10 @@ class ControllerProductManufacturer extends Controller {
 				'value' => 'p.model-DESC',
 				'href'  => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . '&sort=p.model&order=DESC' . $url)
 			);
-
+            unset(  $data['sorts']['0'], $data['sorts']['2'], $data['sorts']['3'], $data['sorts']['6'], $data['sorts']['7'], $data['sorts']['8']);
+            $data['sorts']['1']['text'] = 'По имени';
+            $data['sorts']['4']['text'] = 'По цене';
+            $data['sorts']['5']['text'] = 'По рейтингу';
 			$url = '';
 
 			if (isset($this->request->get['sort'])) {
