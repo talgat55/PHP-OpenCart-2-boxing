@@ -54,31 +54,27 @@ $(document).ready(function () {
                         $('#endless .fa-refresh').addClass('fa-spin');
                     },
                     success: function(data){
+                        var products = $(data).find('.product-layout');
+                        $(products).css('height', $('.product-layout').first().height() );
+                        $('.products-row').append(products);
 
-                        var products = $(data).find('.product-list');
+                        // lastProduct.after(products);
 
-                        lastProduct.after(products);
+                        // if (localStorage.getItem('display') == 'grid') {
+                        //
+                        //     cols = $('#column-right, #column-left').length;
+                        //
+                        //     if (cols == 2) {
+                        //         $(products).attr('class', 'product-layout product-grid col-lg-6 col-md-6 col-sm-12 col-xs-12');
+                        //     } else if (cols == 1) {
+                        //         $(products).attr('class', 'product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12');
+                        //     } else {
+                        //         $(products).attr('class', 'product-layout product-grid col-lg-3 col-md-3 col-sm-6 col-xs-12');
+                        //     }
+                        //
+                        // }
 
-
-
-
-
-
-
-                        if (localStorage.getItem('display') == 'grid') {
-
-                            cols = $('#column-right, #column-left').length;
-
-                            if (cols == 2) {
-                                $(products).attr('class', 'product-layout product-grid col-lg-6 col-md-6 col-sm-12 col-xs-12');
-                            } else if (cols == 1) {
-                                $(products).attr('class', 'product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12');
-                            } else {
-                                $(products).attr('class', 'product-layout product-grid col-lg-3 col-md-3 col-sm-6 col-xs-12');
-                            }
-
-                        }
-
+                        // $(products).attr('class', 'product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12');
 
                         $('.pagination').html($(data).find('.pagination > *'));
 
