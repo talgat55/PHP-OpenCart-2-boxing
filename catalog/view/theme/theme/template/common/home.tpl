@@ -25,17 +25,23 @@
                             </div>
                             <div class="collapse navbar-collapse navbar-ex1-collapse">
                                 <ul class="nav navbar-nav">
+
                                     <?php foreach ($categories as $category) { ?>
                                     <?php if ($category['children']) { ?>
                                     <li class="dropdown"><a href="<?php echo $category['href']; ?>"
                                                             class="dropdown-toggle"
                                                             data-toggle="dropdown"><?php echo $category['name']; ?></a>
                                         <div class="dropdown-menu">
+                                            <h3 class="title"><?php echo $category['name']; ?></h3>
                                             <div class="dropdown-inner">
+
                                                 <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
                                                 <ul class="list-unstyled">
                                                     <?php foreach ($children as $child) { ?>
                                                     <li>
+                                                        <?php  if(!empty($child['image'])) : ?>
+                                                            <img src="<?= $child['image']; ?>" alt="иконка">
+                                                        <?php  endif; ?>
                                                         <a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a>
                                                     </li>
                                                     <?php } ?>
@@ -145,7 +151,7 @@
                                     ПОДПИШИСЬ<br>
                                     В ИНСТАГРАМ
                                 </h3>
-                                <a href="https://www.instagram.com/takeshi.fight.gear/" target="_blank" class="link-subscribe">
+                                <a href="https://www.instagram.com/good_fighter_pro/?igshid=19p2l6qz05472" target="_blank" class="link-subscribe">
                                     Хочу подписаться
                                 </a>
                                 <img class="img-glove" src="/catalog/view/theme/theme/image/main/glove.png" alt="Перчатка "/>
@@ -153,11 +159,11 @@
                             <div class="col-md-6 col-sm-12 col-xs-12 ">
                                 <div id="instagram-widget">
                                 <?php
-                                      $c = curl_init('http://widget.stapico.ru/?q=takeshi.fight.gear&s=20&w=3&h=2&b=0&p=5&title=balovenomsk&profile=no&header=no&effect=0');
+                                      $c = curl_init('http://widget.stapico.ru/?q=good_fighter_pro&s=20&w=3&h=2&b=0&p=5&title=good_fighter_pro&profile=no&header=no&effect=0');
                                       curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
                                       $content = curl_exec($c);
                                       $pattern = "|href=\"[^\"]+\"|is";
-                                      $content = preg_replace($pattern, "href=\"https://www.instagram.com/takeshi.fight.gear\"", $content);
+                                      $content = preg_replace($pattern, "href=\"https://www.instagram.com/good_fighter_pro\"", $content);
                                         echo $content;
                                      ?>
                                 </div>

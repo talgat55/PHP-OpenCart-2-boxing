@@ -41,6 +41,7 @@ class ControllerCommonHome extends Controller {
         }
         $categories = $this->model_catalog_category->getCategories(0);
 
+
         foreach ($categories as $category) {
             if ($category['top']) {
                 // Level 2
@@ -56,6 +57,7 @@ class ControllerCommonHome extends Controller {
 
                     $children_data[] = array(
                         'name'  => $child['name']  ,
+                        'image'  =>  $child['image'] ? 'https://' . $_SERVER['HTTP_HOST'] . '' . $_SERVER['REQUEST_URI']  .'image/'. $child['image'] : '' ,
                         'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
                     );
                 }
@@ -67,6 +69,7 @@ class ControllerCommonHome extends Controller {
                     'column'   => $category['column'] ? $category['column'] : 1,
                     'href'     => $this->url->link('product/category', 'path=' . $category['category_id'])
                 );
+
             }
         }
         // banner

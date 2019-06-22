@@ -62,7 +62,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a target="_blank" href="#">
+                                    <a target="_blank" href="https://www.instagram.com/good_fighter_pro/?igshid=19p2l6qz05472">
                                         <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>

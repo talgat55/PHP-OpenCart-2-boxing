@@ -20,6 +20,7 @@ jQuery(document).ready(function () {
     addImageInMenu();
     addDropDownMenu();
     countDownPromotion();
+    hoverMenuItem();
 
 
     /*
@@ -75,6 +76,25 @@ function addImageInMenu() {
 
 
 
+}
+
+//-------------------------------
+//  Hover menu item
+//-------------------------------
+function hoverMenuItem() {
+    "use strict";
+    let widthWindow = jQuery(window).width();
+    if (widthWindow > 1024) {
+        jQuery( "#menu li " ).hover(
+            function() {
+                jQuery(this).find(' > a').addClass('active');
+            }, function() {
+                jQuery(this).find(' > a').removeClass('active');
+            }
+        );
+
+
+    }
 }
 
 //-------------------------------
