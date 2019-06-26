@@ -168,6 +168,7 @@ class ControllerCommonHeader extends Controller {
                         $children_data[] = array(
                             'category_id' => $child['category_id'],
                             'name' => $child['name']  ,
+                            'top' => $child['top']  ,
                             'href' => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
                         );
                     }
@@ -181,6 +182,7 @@ class ControllerCommonHeader extends Controller {
                 $data['categories'][] = array(
                     'category_id' => $category['category_id'],
                     'name'        => $category['name']  ,
+                    'top'        => $category['top']  ,
                     'children'    => $children_data,
                     'href'        => $this->url->link('product/category', 'path=' . $category['category_id'])
                 );
