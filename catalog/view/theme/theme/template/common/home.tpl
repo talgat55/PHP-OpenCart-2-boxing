@@ -151,7 +151,7 @@
                                     ПОДПИШИСЬ<br>
                                     В ИНСТАГРАМ
                                 </h3>
-                                <a href="https://www.instagram.com/good_fighter_pro/?igshid=19p2l6qz05472" target="_blank" class="link-subscribe">
+                                <a href="https://www.instagram.com/good_fighter.shop/?igshid=7qbl9zazhevz" target="_blank" class="link-subscribe">
                                     Хочу подписаться
                                 </a>
                                 <img class="img-glove" src="/catalog/view/theme/theme/image/main/glove.png" alt="Перчатка "/>
@@ -159,11 +159,11 @@
                             <div class="col-md-6 col-sm-12 col-xs-12 ">
                                 <div id="instagram-widget">
                                 <?php
-                                      $c = curl_init('http://widget.stapico.ru/?q=good_fighter_pro&s=20&w=3&h=2&b=0&p=5&title=good_fighter_pro&profile=no&header=no&effect=0');
+                                      $c = curl_init('http://widget.stapico.ru/?q=good_fighter.shop&s=20&w=3&h=2&b=0&p=5&title=good_fighter.shop&profile=no&header=no&effect=0');
                                       curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
                                       $content = curl_exec($c);
                                       $pattern = "|href=\"[^\"]+\"|is";
-                                      $content = preg_replace($pattern, "href=\"https://www.instagram.com/good_fighter_pro\"", $content);
+                                      $content = preg_replace($pattern, "href=\"https://www.instagram.com/good_fighter.shop\"", $content);
                                         echo $content;
                                      ?>
                                 </div>
