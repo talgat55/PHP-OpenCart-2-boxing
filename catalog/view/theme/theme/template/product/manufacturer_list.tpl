@@ -14,7 +14,10 @@
         <?php $class = 'col-sm-12'; ?>
         <?php } ?>
         <div id="content" class="<?php echo $class; ?>   main-page"><?php echo $content_top; ?>
-            <h1 class="title">Наши бренды</h1>
+            <h1 class="title">
+                <?php echo $text_title; ?>
+
+            </h1>
             <?php if ($categories) { ?>
             <div class="brend-block">
                 <div class="row">

@@ -11,7 +11,7 @@ class ControllerInformationInformation extends Controller
         $data['breadcrumbs'] = array();
 
         $data['breadcrumbs'][] = array(
-            'text' => 'Главная',
+            'text' => $this->language->get('heading_title'),
             'href' => $this->url->link('common/home')
         );
 
@@ -73,6 +73,15 @@ class ControllerInformationInformation extends Controller
         }
 
         $information_info = $this->model_catalog_information->getInformation($information_id);
+
+        $data['text_title_reviews'] = $this->language->get('text_title_reviews');
+        $data['text_title_brends'] = $this->language->get('text_title_brends');
+        $data['text_address'] = $this->language->get('text_address');
+        $data['text_address_alt'] = $this->language->get('text_address_alt');
+        $data['text_mail'] = $this->language->get('text_mail');
+        $data['text_question_mail'] = $this->language->get('text_question_mail');
+        $data['text_phone'] = $this->language->get('text_phone');
+        $data['text_call'] = $this->language->get('text_call');
 
         if ($information_info) {
 

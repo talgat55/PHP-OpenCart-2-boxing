@@ -1,6 +1,11 @@
 <?php
 class ControllerCommonCart extends Controller {
 	public function index() {
+        if($this->session->data['language'] =='en-gb'){
+            $redyCurrency = 'USD';
+        }else{
+            $redyCurrency = 'RUB';
+        }
 		$this->load->language('common/cart');
 
 		// Totals
@@ -53,7 +58,9 @@ class ControllerCommonCart extends Controller {
 		$data['text_recurring'] = $this->language->get('text_recurring');
 		//$data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
 		$data['text_items_count'] = $this->cart->countProducts() ? $this->cart->countProducts() : '0';
-		$data['text_items'] = $this->currency->format($total, $this->session->data['currency']);
+
+
+		$data['text_items'] = $this->currency->format($total,$redyCurrency);
 
 		$data['text_loading'] = $this->language->get('text_loading');
 
@@ -97,8 +104,8 @@ class ControllerCommonCart extends Controller {
 			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
 				$unit_price = $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax'));
 				
-				$price = $this->currency->format($unit_price, $this->session->data['currency']);
-				$total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+				$price = $this->currency->format($unit_price, $redyCurrency);
+				$total = $this->currency->format($unit_price * $product['quantity'], $redyCurrency);
 			} else {
 				$price = false;
 				$total = false;
@@ -126,7 +133,7 @@ class ControllerCommonCart extends Controller {
 				$data['vouchers'][] = array(
 					'key'         => $key,
 					'description' => $voucher['description'],
-					'amount'      => $this->currency->format($voucher['amount'], $this->session->data['currency'])
+					'amount'      => $this->currency->format($voucher['amount'], $redyCurrency)
 				);
 			}
 		}
@@ -136,7 +143,7 @@ class ControllerCommonCart extends Controller {
 		foreach ($totals as $total) {
 			$data['totals'][] = array(
 				'title' => $total['title'],
-				'text'  => $this->currency->format($total['value'], $this->session->data['currency']),
+				'text'  => $this->currency->format($total['value'], $redyCurrency),
 			);
 		}
 

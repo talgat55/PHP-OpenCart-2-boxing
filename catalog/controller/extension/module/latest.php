@@ -10,6 +10,9 @@ class ControllerExtensionModuleLatest extends Controller {
 		$data['button_cart'] = $this->language->get('button_cart');
 		$data['button_wishlist'] = $this->language->get('button_wishlist');
 		$data['button_compare'] = $this->language->get('button_compare');
+		$data['text_all_new'] = $this->language->get('text_all_new');
+		$data['text_sku'] = $this->language->get('text_sku');
+		$data['text_new'] = $this->language->get('text_new');
 
 		$this->load->model('catalog/product');
 
@@ -27,6 +30,11 @@ class ControllerExtensionModuleLatest extends Controller {
 		$results = $this->model_catalog_product->getProducts($filter_data);
 
 		if ($results) {
+            if($this->session->data['language'] =='en-gb'){
+                $redyCurrency = 'USD';
+            }else{
+                $redyCurrency = 'RUB';
+            }
 			foreach ($results as $result) {
 				if ($result['image']) {
 					$image = $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height']);
@@ -35,7 +43,7 @@ class ControllerExtensionModuleLatest extends Controller {
 				}
 
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $redyCurrency);
 				} else {
 					$price = false;
 				}

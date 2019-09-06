@@ -62,25 +62,27 @@
 <div id="top-bar">
     <div class="container">
         <div class="row">
-            <div class="f-b col-md-5 col-sm-6  hidden-xs">
+            <div class="f-b col-md-6 col-sm-6  hidden-xs">
+                <?php echo $language; ?>
                 <ul class="list-information">
                     <li>
                         <img src="/catalog/view/theme/theme/image/main/icon-maps.png" alt="Иконка "/>
                         <p>
-                            Москва и Подмосковье
+                            <?php echo $top_region; ?>
                         </p>
                     </li>
                     <li>
                         <a href="/shops">
                             <img src="/catalog/view/theme/theme/image/main/icon-home.png" alt="Иконка "/>
                             <p>
-                                Наши магазины
+                                <?php echo $top_shops; ?>
+
                             </p>
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="s-b col-md-7 col-sm-6 col-xs-12">
+            <div class="s-b col-md-6 col-sm-6 col-xs-12">
                 <div class="work-time">
                     <?php echo $work_time_redy; ?>
                 </div>
@@ -94,23 +96,20 @@
                     <?php } else { ?>
                     <li>
                         <a href="<?php echo $login; ?>">
-                            Войти
+                            <?php echo $top_login_text; ?>
                         </a>
 
                     </li>
-
                     <li>
                         /
                     </li>
                     <li>
                         <a href="<?php echo $register; ?>">
-                            Зарегистрироваться
-                        </a>
 
+                            <?php echo $top_register_text; ?>
+                        </a>
                     </li>
                     <?php } ?>
-
-
                 </ul>
             </div>
         </div>
@@ -161,21 +160,17 @@
                                 <?php echo $text_wishlist; ?>
                             </span>
                             <p>
-                                Избранное
+                                <?php echo $top_wish_text; ?>
                             </p>
                         </a>
-
-
                     </div>
                 </div>
                 <div class="bottom">
                     <?php
-
-
                 if(isset($categories) && !empty($categories)){  ?>
                     <div class="top-category-page-category">
                         <div class="heading">
-                            <p>Каталог товаров</p>
+                            <p><?php echo $top_catalog; ?></p>
                             <img src="/catalog/view/theme/theme/image/main/bar.png" alt="Иконка ">
                         </div>
                         <div class="list-group drop-down">
@@ -215,5 +210,6 @@
             </div>
         </div>
     </div>
+
 </header>
 

@@ -11,7 +11,9 @@
     <aside id="column-left" class="col-md-3 col-sm-12 col-xs-12">
       <div class="accordion-block">
         <h3 class="title">
-          <p>Категории</p>
+          <p>
+            <?php echo $text_category; ?>
+          </p>
           <div class="img-block">
             <img src="/catalog/view/theme/theme/image/main/arrow-down.png" alt="Иконка ">
           </div>
@@ -41,9 +43,7 @@
         </div>
         <?php } ?>
         <?php } else{ ?>
-
-        нет категорий
-
+        <?php echo $text_category_no; ?>
         <?php } ?>
       </div>
       <?=$column_left; ?>
@@ -155,7 +155,7 @@
           <div class="product-thumb">
             <div class="top-block">
               <div class="sku">
-                Артикул: <?php echo $product['sku']; ?>
+               <?php echo $text_sku; ?> <?php echo $product['sku']; ?>
               </div>
               <div class="wish">
                 <a href="#" onclick="wishlist.add('<?php echo $product['product_id']; ?>');">

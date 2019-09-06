@@ -8,10 +8,10 @@
                     <?php foreach ($informations as $information) { ?>
                     <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
                     <?php } ?>
-                    <li><a href="/brands/">Бренды</a></li>
-
-
-
+                    <li><a href="/brands/">
+                        <?php echo $text_brends; ?>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <?php } ?>
@@ -20,7 +20,8 @@
                     <div class="col-sm-6 col-xs-12">
                         <div class="email-block">
                             <h4>
-                                Наша почта:
+
+                                <?php echo $text_our_mail; ?>
                             </h4>
                             <a href="mailto:<?php echo $emailto; ?>">
                                 <?php echo $emailto;?>
@@ -49,7 +50,10 @@
                     </div>
                     <div class="col-sm-6 col-xs-12">
                         <div class="social-block">
-                            <h4>Мы в соц. сетях:</h4>
+                            <h4>
+
+                                <?php echo $text_soc_links; ?>
+                            </h4>
                             <ul class="list-soc-link">
                                 <li>
                                     <a  target="_blank" href="#">
@@ -81,7 +85,10 @@
                             </ul>
                         </div>
                         <div class="delivery-block">
-                            <h4>Способы оплаты:</h4>
+                            <h4>
+
+                                <?php echo $text_payment_methods; ?>
+                            </h4>
 
                             <ul class="list-delivery-images">
                                 <li>
@@ -104,7 +111,10 @@
     </div>
     </div>
     <div class="copyright">
-        <a href="https://vk.com/m_arts_land" target="_blank">Сайт разработала <span>студия M-Arts</span></a>
+        <a href="https://vk.com/m_arts_land" target="_blank">
+
+            <?php echo $text_develop_copyright; ?>
+        </a>
     </div>
 </footer>
 

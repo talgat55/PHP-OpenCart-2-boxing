@@ -1,5 +1,6 @@
 <?php echo $header; ?>
-<h1 class="hidden-title">Главная страница</h1>
+
+<h1 class="hidden-title"><?php echo $text_home_page; ?></h1>
 
             <?php if ($column_left && $column_right) { ?>
             <?php $class = 'col-sm-6'; ?>
@@ -97,8 +98,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="block-title">
-                                <h2 class="sub-title">Наборы</h2>
-                                <a href="/sets/" class="link-to-all">Все наборы</a>
+                                <h2 class="sub-title"><?php echo $text_sets; ?></h2>
+                                <a href="/sets/" class="link-to-all"><?php echo $text_sets_all; ?></a>
                             </div>
                             <ul class="list-specific-products">
                                 <?php  foreach($products_set as $product){ ?>
@@ -106,7 +107,7 @@
                                     <div class="product-thumb transition">
                                         <div class="top-block">
                                             <div class="sku">
-                                                Артикул: <?php echo $product['sku']; ?>
+                                                <?php echo $text_articul; ?>: <?php echo $product['sku']; ?>
                                             </div>
                                             <div class="wish">
                                                 <a href="#" onclick="wishlist.add('<?php echo $product['product_id']; ?>');">
@@ -120,7 +121,7 @@
                                                                                                           class="img-responsive"/></a></div>
                                         <div class="caption">
                                             <div class="categories">
-                                                <span>Наборы</span>
+                                                <span><?php echo $text_sets; ?></span>
                                             </div>
                                             <h3 class="title"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h3>
 
@@ -148,27 +149,26 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-12 col-xs-12 ">
                                 <h3 class="title">
-                                    ПОДПИШИСЬ<br>
-                                    В ИНСТАГРАМ
+                                    <?php echo $text_sub_inst; ?>
                                 </h3>
-                                <a href="https://www.instagram.com/good_fighter.shop/?igshid=7qbl9zazhevz" target="_blank" class="link-subscribe">
-                                    Хочу подписаться
+                                <a href="https://www.instagram.com/good.vf_/?igshid=7qbl9zazhevz" target="_blank" class="link-subscribe">
+                                    <?php echo $text_want_subscribe; ?>
                                 </a>
                                 <img class="img-glove" src="/catalog/view/theme/theme/image/main/glove.png" alt="Перчатка "/>
                             </div>
                             <div class="col-md-6 col-sm-12 col-xs-12 ">
                                 <div id="instagram-widget">
                                 <?php
-                                      $c = curl_init('http://widget.stapico.ru/?q=good_fighter.shop&s=20&w=3&h=2&b=0&p=5&title=good_fighter.shop&profile=no&header=no&effect=0');
+                                      $c = curl_init('http://widget.stapico.ru/?q=good.vf_&s=20&w=3&h=2&b=0&p=5&title=good.vf_&profile=no&header=no&effect=0');
                                       curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
                                       $content = curl_exec($c);
                                       $pattern = "|href=\"[^\"]+\"|is";
-                                      $content = preg_replace($pattern, "href=\"https://www.instagram.com/good_fighter.shop\"", $content);
+                                      $content = preg_replace($pattern, "href=\"https://www.instagram.com/good.vf_\"", $content);
                                         echo $content;
                                      ?>
                                 </div>
                                 <p class="text-inst">
-                                    Подпишись и получи скидку!
+                                    <?php echo $text_inst_gifts; ?>
                                 </p>
                             </div>
                         </div>
@@ -179,9 +179,9 @@
                         <div class="row">
                             <div class="col-sm-6 col-xs-12 ">
                                 <div class="block-title-alternative">
-                                    <h2 class="sub-title">Видеообзоры</h2>
+                                    <h2 class="sub-title"><?php echo $text_video_views; ?> </h2>
                                     <a href="#" class="link-to-all">
-                                        Все видеообзоры
+                                        <?php echo $text_video_views_all; ?>
                                     </a>
                                 </div>
                                 <div class="clearfix padding-top-90">
@@ -216,34 +216,21 @@
                             </div>
                             <div class="text-block-video col-sm-6 col-xs-12 ">
                                 <div class="block-title-alternative">
-                                    <h2 class="sub-title">Спортивная одежда для ММА</h2>
+                                    <h2 class="sub-title">
+                                        <?php echo $text_part_one_title; ?>
+                                    </h2>
                                 </div>
                                 <p class="padding-top-90 first">
-                                    Современная мода на здоровый образ жизни и занятия теми или иными видами спорта обуславливает
-                                    стабильный спрос на специальную одежду, без наличия которой невозможно гарантировать безопасность во
-                                    время проведения тренировок и всевозможных соревнований. Не смотря на то, что многие непрофессионалы
-                                    довольно скептично относятся к выбору подходящих маек, шорт, боксерских перчаток и перчаток для ММА,
-                                    и др. инвентаря, правильно подобранная экипировка для единоборств играет огромную роль, - во многих
-                                    случаях от качества одежды напрямую зависит успех ММА поединка и сохранение здоровья в процессе
-                                    обучения в различных видах боевых искусств.
+                                    <?php echo $text_part_one_text_one; ?>
+
                                 </p>
                                 <div class="block-title-alternative two-title">
-                                    <h2 class="sub-title">Где купить?</h2>
+                                    <h2 class="sub-title">
+                                        <?php echo $text_part_one_title_two; ?>
+                                    </h2>
                                 </div>
                                 <p  class="second">
-                                    Интернет магазин Good Fighter предлагает бойцовскую одежду для ММА от лучших производителей в мире.
-                                    В нашем магазине вы можете найти большой ассортимент стильной одежды и экипировки следующих брендов:
-                                    Venum, Bad Boy, FixGear, RDX, UFC/Reebok, Twins Special, FightEvo и других!
-                                    <br>
-                                    Дизайн спортивной одежды разрабатывается настоящими экспертами, а в процессе производства
-                                    используются самые передовые технологии, поэтому спортсмены могут ни секунды не сомневаться в том,
-                                    что смогут достойно представить себя и свою команду, не беспокоясь при этом о собственном
-                                    самочувствии и будучи уверенными в надежности и удобстве экипировки. Таким образом, для того, чтобы
-                                    добиться успеха в ММА, имеет смысл обратить внимание не только на совершенствование физических
-                                    навыков, но и со всей ответственностью подойти к выбору одежды, тем более что в нашем
-                                    интернет-магазине вы найдете высококачественные майки, шорты и перчатки от известных брендов,
-                                    разработанных с учетом всех потребностей спортсменов.
-
+                                    <?php echo $text_part_one_text_two; ?>
                                 </p>
                             </div>
                         </div>
@@ -254,10 +241,7 @@
                         <div class="row">
                             <div class="col-sm-9 col-xs-12">
                                 <h3 class="title">
-                                    ПОДПИШИСЬ
-                                    <span>
-                        НА НОВОСТИ
-                    </span>
+                                    <?php echo $text_sub_feed; ?>
                                 </h3>
                             </div>
                             <div class="col-sm-3 col-xs-12">
@@ -268,10 +252,21 @@
 
 
                 </section>
+                <section class="clearfix last-section"  >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12">
+                                <br>
+                                <br>
+                                <br>
+                                <?php echo $text_last_text ?>
+                                    <br>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-
-
-
-
-
 <?php echo $footer; ?>

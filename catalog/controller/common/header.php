@@ -5,6 +5,7 @@ class ControllerCommonHeader extends Controller {
         return str_replace([' Пн – ',' Вс –'],[' <span>Пн –</span>','<span>Вс –</span>'], $data);
     }
 	public function index() {
+
 		// Analytics
 		$this->load->model('extension/extension');
 
@@ -78,6 +79,12 @@ class ControllerCommonHeader extends Controller {
 		$data['text_logout'] = $this->language->get('text_logout');
 		$data['text_checkout'] = $this->language->get('text_checkout');
 		$data['text_page'] = $this->language->get('text_page');
+		$data['top_region'] = $this->language->get('top_region');
+		$data['top_shops'] = $this->language->get('top_shops');
+		$data['top_login_text'] = $this->language->get('top_login_text');
+		$data['top_register_text'] = $this->language->get('top_register_text');
+		$data['top_wish_text'] = $this->language->get('top_wish_text');
+		$data['top_catalog'] = $this->language->get('top_catalog');
 
 		$data['text_all'] = $this->language->get('text_all');
 
@@ -95,7 +102,16 @@ class ControllerCommonHeader extends Controller {
 		$data['checkout'] = $this->url->link('checkout/checkout', '', true);
 		$data['contact'] = $this->url->link('information/contact');
 		$data['telephone'] = $this->config->get('config_telephone');
-		$data['work_time_redy'] =   $this->replaceWorkTime($this->config->get('config_langdata')['1']['open']);
+
+		if($this->session->data['language'] == 'en-gb'){
+		    $redyLng= '2';
+        }else {
+            $redyLng= '1';
+        }
+
+
+		$data['work_time_redy'] =   $this->replaceWorkTime($this->config->get('config_langdata')[$redyLng]['open']);
+
         $sobfeedback = new sobfeedback($this->registry);
         $data['sobfeedback_id34'] = $sobfeedback->initFeedback(34);
 		// Menu

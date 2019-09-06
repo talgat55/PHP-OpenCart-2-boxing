@@ -1,5 +1,5 @@
 <?php if (count($languages) > 1) { ?>
-<div class="pull-left">
+<div class="pull-left language-select">
 <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form-language">
   <div class="btn-group">
     <button class="btn btn-link dropdown-toggle" data-toggle="dropdown">
@@ -8,7 +8,7 @@
     <img src="catalog/language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" alt="<?php echo $language['name']; ?>" title="<?php echo $language['name']; ?>">
     <?php } ?>
     <?php } ?>
-    <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_language; ?></span> <i class="fa fa-caret-down"></i></button>
+    <span class="hidden-xs hidden-sm hidden-md  text-selected"><?php echo $text_language; ?></span> <i class="fa fa-caret-down"></i></button>
     <ul class="dropdown-menu">
       <?php foreach ($languages as $language) { ?>
       <li><button class="btn btn-link btn-block language-select" type="button" name="<?php echo $language['code']; ?>"><img src="catalog/language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" alt="<?php echo $language['name']; ?>" title="<?php echo $language['name']; ?>" /> <?php echo $language['name']; ?></button></li>

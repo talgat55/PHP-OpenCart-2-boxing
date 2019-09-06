@@ -13,13 +13,17 @@ class ControllerProductManufacturer extends Controller {
 
 		$data['text_index'] = $this->language->get('text_index');
 		$data['text_empty'] = $this->language->get('text_empty');
+		$data['text_title'] = $this->language->get('text_title');
+		$data['text_category'] = $this->language->get('text_category');
+		$data['text_category_no'] = $this->language->get('text_category_no');
+		$data['text_sku'] = $this->language->get('text_sku');
 
 		$data['button_continue'] = $this->language->get('button_continue');
 
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
+			'text' => $this->language->get('text_title'),
 			'href' => $this->url->link('common/home')
 		);
 
@@ -67,7 +71,11 @@ class ControllerProductManufacturer extends Controller {
 		$this->load->model('catalog/product');
 
 		$this->load->model('tool/image');
-
+        if($this->session->data['language'] =='en-gb'){
+            $redyCurrency = 'USD';
+        }else{
+            $redyCurrency = 'RUB';
+        }
 		if (isset($this->request->get['manufacturer_id'])) {
 			$manufacturer_id = (int)$this->request->get['manufacturer_id'];
 		} else {
@@ -101,7 +109,7 @@ class ControllerProductManufacturer extends Controller {
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
+            'text' => $this->language->get('text_title'),
 			'href' => $this->url->link('common/home')
 		);
 
@@ -206,19 +214,19 @@ class ControllerProductManufacturer extends Controller {
 				}
 
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $redyCurrency);
 				} else {
 					$price = false;
 				}
 
 				if ((float)$result['special']) {
-					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $redyCurrency);
 				} else {
 					$special = false;
 				}
 
 				if ($this->config->get('config_tax')) {
-					$tax = $this->currency->format((float)$result['special'] ? $result['special'] : $result['price'], $this->session->data['currency']);
+					$tax = $this->currency->format((float)$result['special'] ? $result['special'] : $result['price'], $redyCurrency);
 				} else {
 					$tax = false;
 				}

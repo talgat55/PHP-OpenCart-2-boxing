@@ -3,12 +3,18 @@ class ControllerProductProduct extends Controller {
 	private $error = array();
 
 	public function index() {
+
+        if($this->session->data['language'] =='en-gb'){
+            $redyCurrency = 'USD';
+        }else{
+            $redyCurrency = 'RUB';
+        }
 		$this->load->language('product/product');
 
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-            'text' => 'Главная',
+            'text' => $this->language->get('heading_title'),
 			'href' => $this->url->link('common/home')
 		);
 
@@ -302,6 +308,27 @@ class ControllerProductProduct extends Controller {
 			$data['button_continue'] = $this->language->get('button_continue');
 			$data['sku_text'] = $this->language->get('sku_text');
             $data['button_cart_new'] = $this->language->get('button_cart_new');
+            $data['text_end_promostion'] = $this->language->get('text_end_promostion');
+            $data['text_day_promotion'] = $this->language->get('text_day_promotion');
+            $data['text_hours_promotion'] = $this->language->get('text_hours_promotion');
+            $data['text_minuts_promotion'] = $this->language->get('text_minuts_promotion');
+            $data['text_seconds_promotion'] = $this->language->get('text_seconds_promotion');
+            $data['text_table_sizes'] = $this->language->get('text_table_sizes');
+            $data['text_no_have_item'] = $this->language->get('text_no_have_item');
+            $data['text_describe_item'] = $this->language->get('text_describe_item');
+            $data['text_category'] = $this->language->get('text_category');
+            $data['text_kind'] = $this->language->get('text_kind');
+            $data['text_country'] = $this->language->get('text_country');
+            $data['text_read_all'] = $this->language->get('text_read_all');
+            $data['text_delivery'] = $this->language->get('text_delivery');
+            $data['text_payment'] = $this->language->get('text_payment');
+            $data['text_build_size'] = $this->language->get('text_build_size');
+            $data['text_delivery_text'] = $this->language->get('text_delivery_text');
+            $data['text_demo_text'] = $this->language->get('text_demo_text');
+            $data['text_linked_items'] = $this->language->get('text_linked_items');
+
+
+
 
 			$this->load->model('catalog/review');
 
@@ -356,12 +383,12 @@ class ControllerProductProduct extends Controller {
 			}
 
 			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-				$data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+				$data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $redyCurrency);
 			} else {
 				$data['price'] = false;
 			}
 			if ((float)$product_info['special']) {
-				$data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+				$data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $redyCurrency);
 
                 $data['date_end_promotion'] = $product_info['date_end_promotion'];
 			} else {
@@ -370,7 +397,7 @@ class ControllerProductProduct extends Controller {
 			}
 
 			if ($this->config->get('config_tax')) {
-				$data['tax'] = $this->currency->format((float)$product_info['special'] ? $product_info['special'] : $product_info['price'], $this->session->data['currency']);
+				$data['tax'] = $this->currency->format((float)$product_info['special'] ? $product_info['special'] : $product_info['price'], $redyCurrency);
 			} else {
 				$data['tax'] = false;
 			}
@@ -382,7 +409,7 @@ class ControllerProductProduct extends Controller {
 			foreach ($discounts as $discount) {
 				$data['discounts'][] = array(
 					'quantity' => $discount['quantity'],
-					'price'    => $this->currency->format($this->tax->calculate($discount['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency'])
+					'price'    => $this->currency->format($this->tax->calculate($discount['price'], $product_info['tax_class_id'], $this->config->get('config_tax')),$redyCurrency)
 				);
 			}
 
@@ -394,7 +421,7 @@ class ControllerProductProduct extends Controller {
 				foreach ($option['product_option_value'] as $option_value) {
 					if (!$option_value['subtract'] || ($option_value['quantity'] > 0)) {
 						if ((($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) && (float)$option_value['price']) {
-							$price = $this->currency->format($this->tax->calculate($option_value['price'], $product_info['tax_class_id'], $this->config->get('config_tax') ? 'P' : false), $this->session->data['currency']);
+							$price = $this->currency->format($this->tax->calculate($option_value['price'], $product_info['tax_class_id'], $this->config->get('config_tax') ? 'P' : false), $redyCurrency);
 						} else {
 							$price = false;
 						}
@@ -472,19 +499,19 @@ class ControllerProductProduct extends Controller {
 				}
 
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $redyCurrency);
 				} else {
 					$price = false;
 				}
 
 				if ((float)$result['special']) {
-					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $redyCurrency);
 				} else {
 					$special = false;
 				}
 
 				if ($this->config->get('config_tax')) {
-					$tax = $this->currency->format((float)$result['special'] ? $result['special'] : $result['price'], $this->session->data['currency']);
+					$tax = $this->currency->format((float)$result['special'] ? $result['special'] : $result['price'], $redyCurrency);
 				} else {
 					$tax = false;
 				}
@@ -531,10 +558,14 @@ class ControllerProductProduct extends Controller {
             $results_products = $this->model_catalog_product->getProducts($data_args);
 
             $data['products_set'] = array();
-
+            if($this->session->data['language'] =='en-gb'){
+                $redyCurrency = 'USD';
+            }else{
+                $redyCurrency = 'RUB';
+            }
             foreach ($results_products as $product_item){
                 if($product_info['product_id'] != $product_item['product_id']) {
-                    $price = $this->currency->format($product_item['price'], $this->session->data['currency']);
+                    $price = $this->currency->format($product_item['price'], $redyCurrency);
                     $image = $this->model_tool_image->resize($product_item['image'], '231', '231');
                     $data['products_set'][] = array(
                         'thumb' => $image,
@@ -662,6 +693,7 @@ class ControllerProductProduct extends Controller {
 	}
 
 	public function review() {
+
 		$this->load->language('product/product');
 
 		$this->load->model('catalog/review');
@@ -703,6 +735,7 @@ class ControllerProductProduct extends Controller {
 	}
 
 	public function write() {
+
 		$this->load->language('product/product');
 
 		$json = array();
@@ -743,6 +776,11 @@ class ControllerProductProduct extends Controller {
 	}
 
 	public function getRecurringDescription() {
+        if($this->session->data['language'] =='en-gb'){
+            $redyCurrency = 'USD';
+        }else{
+            $redyCurrency = 'RUB';
+        }
 		$this->load->language('product/product');
 		$this->load->model('catalog/product');
 
@@ -780,13 +818,13 @@ class ControllerProductProduct extends Controller {
 				);
 
 				if ($recurring_info['trial_status'] == 1) {
-					$price = $this->currency->format($this->tax->calculate($recurring_info['trial_price'] * $quantity, $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					$price = $this->currency->format($this->tax->calculate($recurring_info['trial_price'] * $quantity, $product_info['tax_class_id'], $this->config->get('config_tax')), $redyCurrency);
 					$trial_text = sprintf($this->language->get('text_trial_description'), $price, $recurring_info['trial_cycle'], $frequencies[$recurring_info['trial_frequency']], $recurring_info['trial_duration']) . ' ';
 				} else {
 					$trial_text = '';
 				}
 
-				$price = $this->currency->format($this->tax->calculate($recurring_info['price'] * $quantity, $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+				$price = $this->currency->format($this->tax->calculate($recurring_info['price'] * $quantity, $product_info['tax_class_id'], $this->config->get('config_tax')), $redyCurrency);
 
 				if ($recurring_info['duration']) {
 					$text = $trial_text . sprintf($this->language->get('text_payment_description'), $price, $recurring_info['cycle'], $frequencies[$recurring_info['frequency']], $recurring_info['duration']);

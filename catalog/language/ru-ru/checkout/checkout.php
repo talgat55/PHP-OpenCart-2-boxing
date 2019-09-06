@@ -39,6 +39,7 @@ $_['text_week']                      = 'неделя';
 $_['text_semi_month']                = 'полмесяца';
 $_['text_month']                     = 'месяц';
 $_['text_year']                      = 'год';
+$_['head_main_title']                      = 'Главная ';
 
 // Column
 $_['column_name']                    = 'Наименование товара';

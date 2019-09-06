@@ -1,6 +1,9 @@
 <div class="block-title">
     <h2 class="sub-title"><?php echo $heading_title; ?></h2>
-    <a href="/new" class="link-to-all">Все новинки</a>
+    <a href="/new" class="link-to-all">
+        <?php echo $text_all_new;?>
+
+    </a>
 </div>
 
 <div class="row latest-block">
@@ -9,7 +12,7 @@
         <div class="product-thumb transition">
             <div class="top-block">
                 <div class="sku">
-                    Артикул: <?php echo $product['sku']; ?>
+                    <?php echo $text_sku;?>: <?php echo $product['sku']; ?>
                 </div>
                 <div class="wish">
                     <a href="#" onclick="wishlist.add('<?php echo $product['product_id']; ?>');">
@@ -23,7 +26,9 @@
                                                                               class="img-responsive"/></a></div>
             <div class="caption">
                 <div class="categories">
-                    <span>Новинки</span>
+                    <span>
+                        <?php echo $text_new;?>
+                    </span>
                 </div>
                 <h3 class="title"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h3>
 

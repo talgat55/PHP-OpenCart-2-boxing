@@ -42,7 +42,7 @@ class ControllerProductCategory extends Controller {
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => 'Главная',
+			'text' =>  $this->language->get('heading_title'),
 			'href' => $this->url->link('common/home')
 		);
 
@@ -125,6 +125,9 @@ class ControllerProductCategory extends Controller {
 			$data['button_continue'] = $this->language->get('button_continue');
 			$data['button_list'] = $this->language->get('button_list');
 			$data['button_grid'] = $this->language->get('button_grid');
+			$data['text_category'] = $this->language->get('text_category');
+			$data['text_no_category'] = $this->language->get('text_no_category');
+			$data['text_sku'] = $this->language->get('text_sku');
 
 			// Set the last category breadcrumb
 			$data['breadcrumbs'][] = array(
@@ -190,7 +193,11 @@ class ControllerProductCategory extends Controller {
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
 
 			$results = $this->model_catalog_product->getProducts($filter_data);
-
+            if($this->session->data['language'] =='en-gb'){
+                $redyCurrency = 'USD';
+            }else{
+                $redyCurrency = 'RUB';
+            }
 			foreach ($results as $result) {
 				if ($result['image']) {
 					$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
@@ -199,13 +206,13 @@ class ControllerProductCategory extends Controller {
 				}
 
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $redyCurrency);
 				} else {
 					$price = false;
 				}
 
 				if ((float)$result['special']) {
-					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $redyCurrency);
 				} else {
 					$special = false;
 				}
@@ -313,9 +320,12 @@ class ControllerProductCategory extends Controller {
 			);
 
             unset(  $data['sorts']['0'], $data['sorts']['2'], $data['sorts']['3'], $data['sorts']['6'], $data['sorts']['7'], $data['sorts']['8']);
-            $data['sorts']['1']['text'] = 'По имени';
-            $data['sorts']['4']['text'] = 'По цене';
-            $data['sorts']['5']['text'] = 'По рейтингу';
+
+
+
+            $data['sorts']['1']['text'] =  $this->language->get('text_name');
+            $data['sorts']['4']['text'] =  $this->language->get('text_price');
+            $data['sorts']['5']['text'] =  $this->language->get('text_rate');
 
 			$url = '';
 

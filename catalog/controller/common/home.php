@@ -26,9 +26,14 @@ class ControllerCommonHome extends Controller {
         $results_products = $this->model_catalog_product->getProducts($data_args);
 
         $data['products_set'] = array();
+        if($this->session->data['language'] =='en-gb'){
+            $redyCurrency = 'USD';
+        }else{
+            $redyCurrency = 'RUB';
+        }
         foreach ($results_products as $product_item){
 
-            $price = $this->currency->format($product_item['price'], $this->session->data['currency']);
+            $price = $this->currency->format($product_item['price'],$redyCurrency);
             $image = $this->model_tool_image->resize($product_item['image'], '231', '231');
             $data['products_set'][] = array(
                 'thumb'     => $image,
@@ -72,6 +77,7 @@ class ControllerCommonHome extends Controller {
 
             }
         }
+
         // banner
         $this->load->model('design/banner');
         $this->load->model('tool/image');
@@ -88,7 +94,25 @@ class ControllerCommonHome extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
+
         $data['text_category'] = $this->language->get('text_category');
+        $data['text_home_page'] = $this->language->get('text_home_page');
+        $data['text_sets'] = $this->language->get('text_sets');
+        $data['text_sets_all'] = $this->language->get('text_sets_all');
+        $data['text_articul'] = $this->language->get('text_articul');
+        $data['text_sub_inst'] = $this->language->get('text_sub_inst');
+        $data['text_want_subscribe'] = $this->language->get('text_want_subscribe');
+        $data['text_inst_gifts'] = $this->language->get('text_inst_gifts');
+        $data['text_video_views'] = $this->language->get('text_video_views');
+        $data['text_video_views_all'] = $this->language->get('text_video_views_all');
+        $data['text_part_one_title'] = $this->language->get('text_part_one_title');
+        $data['text_part_one_text_one'] = $this->language->get('text_part_one_text_one');
+        $data['text_part_one_title_two'] = $this->language->get('text_part_one_title_two');
+        $data['text_part_one_text_two'] = $this->language->get('text_part_one_text_two');
+        $data['text_sub_feed'] = $this->language->get('text_sub_feed');
+        $data['text_last_text'] = $this->language->get('text_last_text');
+
+
         $sobfeedback = new sobfeedback($this->registry);
         $data['sobfeedback_id33'] = $sobfeedback->initFeedback(33);
 

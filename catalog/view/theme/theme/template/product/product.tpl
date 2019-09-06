@@ -77,21 +77,24 @@
                         <li>
                             <h2 class="special-price"><?php echo $special; ?></h2>
                         </li>
+                        <?php if( $date_end_promotion  !='0000-00-00') : ?>
                         <li class="promotion-countdown">
                             <div class="promotion-block">
                                 <div class="heading">
-                                    До конца акции осталось:
+
+                                    <?php echo $text_end_promostion; ?>
                                 </div>
                                 <div id="countdown"></div>
                                 <div class="text-wrapper">
-                                    <div>дней</div>
-                                    <div>часов</div>
-                                    <div>минут</div>
-                                    <div>секунд</div>
+                                    <div><?php echo $text_day_promotion;?> </div>
+                                    <div><?php echo $text_hours_promotion; ?></div>
+                                    <div><?php echo $text_minuts_promotion; ?></div>
+                                    <div><?php echo $text_seconds_promotion; ?></div>
 
                                 </div>
                                 <?php
                                 $date=date_create($date_end_promotion);
+
                                 ?>
 
 
@@ -100,6 +103,7 @@
                             </div>
 
                         </li>
+                        <?php endif; ?>
                         <?php } ?>
                         <?php if ($tax) { ?>
                         <li class="no-dispaly"><?php echo $text_tax; ?> <?php echo $tax; ?></li>
@@ -297,7 +301,8 @@
                                     <a href="/table_sizes" class="link-to-all-size">
                                         <img src="/catalog/view/theme/theme/image/main/meter.png" alt="Иконка "/>
                                         <p>
-                                            Таблица размеров
+
+                                            <?php echo $text_table_sizes; ?>
                                         </p>
                                     </a>
 
@@ -320,8 +325,8 @@
                             <div>
                                 <?php if($quantity_available  == '0'){   ?>
                                 <p class="text-not-available">
-                                    Данного товара нет в наличии.<br>
-                                    Посмотрите похожие товары ниже
+                                    <?php echo $text_no_have_item; ?>
+
                                 </p>
 
                                 <?php } ?>
@@ -340,22 +345,26 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="tab-content  tab-first-block">
-                            <h3 class="title">Описание товара</h3>
+                            <h3 class="title">
+                                <?php echo $text_describe_item;?>
+                            </h3>
                             <?php if ($attribute_groups) { ?>
                             <div class="tab-pane active" id="tab-specification">
                                 <table class="table table-bordered">
                                     <tbody>
                                     <tr>
-                                        <td>Категория:</td>
+                                        <td>
+                                            <?php echo $text_category; ?>
+                                        </td>
                                         <td><a href="<?=$link_current_cat;?>"> <?=$current_cat; ?></a></td>
                                     </tr>
                                     <tr>
-                                        <td>Вид:</td>
+                                        <td><?php echo $text_kind; ?></td>
 
                                         <td><span><a href="<?=$model_link;?>"> <?=$model; ?></a></span></td>
                                     </tr>
                                     <tr>
-                                        <td>Страна:</td>
+                                        <td><?php echo $text_country; ?></td>
                                         <td><?=$location; ?></td>
                                     </tr>
 
@@ -382,72 +391,37 @@
                             <?php } ?>
 
                         </div>
-                        <a href="#" class="tab-link-read-more  black">Читать все</a>
+                        <a href="#" class="tab-link-read-more  black"><?php echo $text_read_all; ?></a>
                     </div>
                     <div class="col-md-6 col-sm-12  col-xs-12">
                         <div class="tab-second-block">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#tab-delivery" data-toggle="tab">Доставка</a></li>
-                                <li><a href="#tab-pay" data-toggle="tab">Оплата</a></li>
-                                <li><a href="#tab-fitsize" data-toggle="tab">Подобрать размер</a></li>
+                                <li class="active"><a href="#tab-delivery" data-toggle="tab"><?php echo $text_delivery; ?></a></li>
+                                <li><a href="#tab-pay" data-toggle="tab"><?php echo $text_payment;?></a></li>
+                                <li><a href="#tab-fitsize" data-toggle="tab"><?php echo $text_build_size; ?></a></li>
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab-delivery">
                                     <div class="content">
-                                        Оперативность наших менеджеров, скорость наших курьеров, а так же быстрота
-                                        доставки служб Почта России, EMS, СДЭК и пункты самозабора БоксБерри позволяют
-                                        нам радовать наших клиентов хорошим товаром в кратчайшие сроки!
-                                        <br>
-                                        Наши преимущества:<br>
+                                        <?php echo $text_delivery_text; ?>
 
-                                        - доставка за МКАД нашим курьером осуществляется при условии наличия метро не
-                                        далее 1,5 км. от адреса доставки;<br>
-
-                                        - доставка по Москве (в пределах МКАД) осуществляется в этот же день при
-                                        оформлении заказа до 16:00;<br>
-
-                                        - заказы в другие города России, принятые до 14:00, отправляются получателю в
-                                        этот же день скорыми службами Почта России, EMS, СДЭК (стоимость доставки
-                                        зависит от веса посылки и удаленности региона и рассчитывается автоматически на
-                                        нашем сайте);<br>
-
-                                        - заказы по странам СНГ отправляются только по предоплате Почтой России или
-                                        службой EMS без наложенного платежа. Стоимость и сроки доставки рассчитываются
-                                        менеджером после подтверждения заказа и зависят от веса и удаленности
-                                        страны;<br>
                                     </div>
                                 </div>
 
                                 <div class="tab-pane" id="tab-pay">
                                     <div class="content">
-                                        Товарищи! постоянный количественный рост и сфера нашей активности в значительной
-                                        степени обуславливает создание соответствующий условий активизации. Идейные
-                                        соображения высшего порядка, а также реализация намеченных плановых заданий
-                                        обеспечивает широкому кругу (специалистов) участие в формировании системы
-                                        обучения кадров, соответствует насущным потребностям.
+                                        <?php echo $text_demo_text; ?>
 
-                                        Разнообразный и богатый опыт рамки и место обучения кадров представляет собой
-                                        интересный эксперимент проверки модели развития. С другой стороны постоянное
-                                        информационно-пропагандистское обеспечение нашей деятельности способствует
-                                        подготовки и реализации
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="tab-fitsize">
                                     <div class="content">
-                                        Товарищи! постоянный количественный рост и сфера нашей активности в значительной
-                                        степени обуславливает создание соответствующий условий активизации. Идейные
-                                        соображения высшего порядка, а также реализация намеченных плановых заданий
-                                        обеспечивает широкому кругу (специалистов) участие в формировании системы
-                                        обучения кадров, соответствует насущным потребностям.
+                                        <?php echo $text_demo_text; ?>
 
-                                        Разнообразный и богатый опыт рамки и место обучения кадров представляет собой
-                                        интересный эксперимент проверки модели развития. С другой стороны постоянное
-                                        информационно-пропагандистское обеспечение нашей деятельности способствует
-                                        подготовки и реализации
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="tab-link-read-more">Читать все</a>
+                            <a href="#" class="tab-link-read-more"><?php echo $text_read_all; ?></a>
                         </div>
                     </div>
                 </div>
@@ -455,7 +429,8 @@
 
             <div class="linked-products">
                 <h3 class="title">
-                    Похожие товары
+
+                    <?php echo $text_linked_items; ?>
                 </h3>
                 <ul class="list-linked-products">
                     <?php  foreach($products_set as $product){ ?>
@@ -463,7 +438,7 @@
                         <div class="product-thumb transition">
                             <div class="top-block">
                                 <div class="sku">
-                                    Артикул: <?php echo $product['sku']; ?>
+                                    <?php echo $sku_text; ?>: <?php echo $product['sku']; ?>
                                 </div>
                                 <div class="wish">
 

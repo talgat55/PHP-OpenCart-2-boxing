@@ -245,17 +245,20 @@ header .bottom .search button.btn.btn-default.btn-lg {
     background-color: #df5a5a;
     border-color: #df5a5a; }
 
+.search-page .product-layout,
 .list-linked-products .product-layout,
 .category-page .product-layout,
 .list-specific-products .product-layout,
 .latest-block .product-layout {
   margin-bottom: 30px; }
+  .search-page .product-layout .product-thumb,
   .list-linked-products .product-layout .product-thumb,
   .category-page .product-layout .product-thumb,
   .list-specific-products .product-layout .product-thumb,
   .latest-block .product-layout .product-thumb {
     border: 1px solid #e8e8e8;
     padding: 30px 30px 20px 30px; }
+    .search-page .product-layout .product-thumb .top-block,
     .list-linked-products .product-layout .product-thumb .top-block,
     .category-page .product-layout .product-thumb .top-block,
     .list-specific-products .product-layout .product-thumb .top-block,
@@ -284,6 +287,7 @@ header .bottom .search button.btn.btn-default.btn-lg {
       -ms-flex-align: center;
       -webkit-box-align: center;
               align-items: center; }
+      .search-page .product-layout .product-thumb .top-block .sku,
       .list-linked-products .product-layout .product-thumb .top-block .sku,
       .category-page .product-layout .product-thumb .top-block .sku,
       .list-specific-products .product-layout .product-thumb .top-block .sku,
@@ -291,17 +295,20 @@ header .bottom .search button.btn.btn-default.btn-lg {
         color: #3f4047;
         font-size: 14px;
         font-family: "Gotham Pro"; }
+      .search-page .product-layout .product-thumb .top-block .wish a,
       .list-linked-products .product-layout .product-thumb .top-block .wish a,
       .category-page .product-layout .product-thumb .top-block .wish a,
       .list-specific-products .product-layout .product-thumb .top-block .wish a,
       .latest-block .product-layout .product-thumb .top-block .wish a {
         font-size: 16px;
         color: #df5a5a; }
+    .search-page .product-layout .product-thumb .caption,
     .list-linked-products .product-layout .product-thumb .caption,
     .category-page .product-layout .product-thumb .caption,
     .list-specific-products .product-layout .product-thumb .caption,
     .latest-block .product-layout .product-thumb .caption {
       padding-top: 30px; }
+      .search-page .product-layout .product-thumb .caption .title,
       .list-linked-products .product-layout .product-thumb .caption .title,
       .category-page .product-layout .product-thumb .caption .title,
       .list-specific-products .product-layout .product-thumb .caption .title,
@@ -312,6 +319,7 @@ header .bottom .search button.btn.btn-default.btn-lg {
         min-height: 85px;
         text-align: left;
         margin: 0; }
+        .search-page .product-layout .product-thumb .caption .title a,
         .list-linked-products .product-layout .product-thumb .caption .title a,
         .category-page .product-layout .product-thumb .caption .title a,
         .list-specific-products .product-layout .product-thumb .caption .title a,
@@ -321,12 +329,14 @@ header .bottom .search button.btn.btn-default.btn-lg {
           -webkit-transition: all .3s;
           -o-transition: all .3s;
           transition: all .3s; }
+          .search-page .product-layout .product-thumb .caption .title a:hover,
           .list-linked-products .product-layout .product-thumb .caption .title a:hover,
           .category-page .product-layout .product-thumb .caption .title a:hover,
           .list-specific-products .product-layout .product-thumb .caption .title a:hover,
           .latest-block .product-layout .product-thumb .caption .title a:hover {
             text-decoration: none;
             color: #df5a5a; }
+      .search-page .product-layout .product-thumb .caption .price,
       .list-linked-products .product-layout .product-thumb .caption .price,
       .category-page .product-layout .product-thumb .caption .price,
       .list-specific-products .product-layout .product-thumb .caption .price,
@@ -336,12 +346,14 @@ header .bottom .search button.btn.btn-default.btn-lg {
         font-size: 24px;
         color: #3f4047;
         margin-bottom: 0; }
+        .search-page .product-layout .product-thumb .caption .price .price-old,
         .list-linked-products .product-layout .product-thumb .caption .price .price-old,
         .category-page .product-layout .product-thumb .caption .price .price-old,
         .list-specific-products .product-layout .product-thumb .caption .price .price-old,
         .latest-block .product-layout .product-thumb .caption .price .price-old {
           font-size: .7vw;
           text-decoration: line-through; }
+      .search-page .product-layout .product-thumb .caption .categories span,
       .list-linked-products .product-layout .product-thumb .caption .categories span,
       .category-page .product-layout .product-thumb .caption .categories span,
       .list-specific-products .product-layout .product-thumb .caption .categories span,
@@ -722,6 +734,19 @@ header {
 .common-home #content {
   padding: 0; }
 
+.language-select .dropdown-menu {
+  padding-left: 0;
+  left: 0;
+  position: absolute !important;
+  top: 0; }
+
+.language-select .text-selected {
+  color: #fff; }
+
+.language-select .btn-group > .btn:first-child {
+  padding: 0;
+  margin-right: 10px; }
+
 .home-page #menu {
   -webkit-border-radius: 0 !important;
           border-radius: 0 !important; }
@@ -830,6 +855,9 @@ header {
       -webkit-transform: rotateZ(90deg);
           -ms-transform: rotate(90deg);
               transform: rotateZ(90deg); }
+
+#top-bar {
+  overflow: inherit !important; }
 
 .home-page .home-slider {
   margin: 0;

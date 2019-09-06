@@ -243,9 +243,16 @@ class ControllerProductSearch extends Controller {
 				} else {
 					$rating = false;
 				}
-
+                $categories = $this->model_catalog_product->getCategories($result['product_id']);
+                if($categories){
+                    $categories_info = $this->model_catalog_category->getCategory($categories[0]['category_id']);
+                    $category_title = $categories_info['name'];
+                }else{
+                    $category_title = '';
+                }
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
+                    'category_title'=> $category_title,
 					'thumb'       => $image,
 					'name'        => $result['name'],
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',

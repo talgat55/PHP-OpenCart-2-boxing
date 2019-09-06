@@ -1,15 +1,20 @@
 <?php
 class ControllerCheckoutCart extends Controller {
 	public function index() {
-		$this->load->language('checkout/cart');
 
+		$this->load->language('checkout/cart');
+        if($this->session->data['language'] =='en-gb'){
+            $redyCurrency = 'USD';
+        }else{
+            $redyCurrency = 'RUB';
+        }
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
 			'href' => $this->url->link('common/home'),
-			'text' => 'Главная'
+			'text' =>   $this->language->get('heading_title')
 		);
 
 		$data['breadcrumbs'][] = array(
@@ -119,8 +124,9 @@ class ControllerCheckoutCart extends Controller {
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
 					$unit_price = $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax'));
 					
-					$price = $this->currency->format($unit_price, $this->session->data['currency']);
-					$total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+					$price = $this->currency->format($unit_price,$redyCurrency);
+
+					$total = $this->currency->format($unit_price * $product['quantity'], $redyCurrency);
 				} else {
 					$price = false;
 					$total = false;
@@ -138,13 +144,13 @@ class ControllerCheckoutCart extends Controller {
 					);
 
 					if ($product['recurring']['trial']) {
-						$recurring = sprintf($this->language->get('text_trial_description'), $this->currency->format($this->tax->calculate($product['recurring']['trial_price'] * $product['quantity'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']), $product['recurring']['trial_cycle'], $frequencies[$product['recurring']['trial_frequency']], $product['recurring']['trial_duration']) . ' ';
+						$recurring = sprintf($this->language->get('text_trial_description'), $this->currency->format($this->tax->calculate($product['recurring']['trial_price'] * $product['quantity'], $product['tax_class_id'], $this->config->get('config_tax')), $redyCurrency), $product['recurring']['trial_cycle'], $frequencies[$product['recurring']['trial_frequency']], $product['recurring']['trial_duration']) . ' ';
 					}
 
 					if ($product['recurring']['duration']) {
-						$recurring .= sprintf($this->language->get('text_payment_description'), $this->currency->format($this->tax->calculate($product['recurring']['price'] * $product['quantity'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']), $product['recurring']['cycle'], $frequencies[$product['recurring']['frequency']], $product['recurring']['duration']);
+						$recurring .= sprintf($this->language->get('text_payment_description'), $this->currency->format($this->tax->calculate($product['recurring']['price'] * $product['quantity'], $product['tax_class_id'], $this->config->get('config_tax')), $redyCurrency), $product['recurring']['cycle'], $frequencies[$product['recurring']['frequency']], $product['recurring']['duration']);
 					} else {
-						$recurring .= sprintf($this->language->get('text_payment_cancel'), $this->currency->format($this->tax->calculate($product['recurring']['price'] * $product['quantity'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']), $product['recurring']['cycle'], $frequencies[$product['recurring']['frequency']], $product['recurring']['duration']);
+						$recurring .= sprintf($this->language->get('text_payment_cancel'), $this->currency->format($this->tax->calculate($product['recurring']['price'] * $product['quantity'], $product['tax_class_id'], $this->config->get('config_tax')), $redyCurrency), $product['recurring']['cycle'], $frequencies[$product['recurring']['frequency']], $product['recurring']['duration']);
 					}
 				}
 
@@ -172,7 +178,7 @@ class ControllerCheckoutCart extends Controller {
 					$data['vouchers'][] = array(
 						'key'         => $key,
 						'description' => $voucher['description'],
-						'amount'      => $this->currency->format($voucher['amount'], $this->session->data['currency']),
+						'amount'      => $this->currency->format($voucher['amount'], $redyCurrency),
 						'remove'      => $this->url->link('checkout/cart', 'remove=' . $key)
 					);
 				}
@@ -227,7 +233,7 @@ class ControllerCheckoutCart extends Controller {
 			foreach ($totals as $total) {
 				$data['totals'][] = array(
 					'title' => $total['title'],
-					'text'  => $this->currency->format($total['value'], $this->session->data['currency'])
+					'text'  => $this->currency->format($total['value'], $redyCurrency)
 				);
 			}
 
@@ -283,7 +289,11 @@ class ControllerCheckoutCart extends Controller {
 
 	public function add() {
 		$this->load->language('checkout/cart');
-
+        if($this->session->data['language'] =='en-gb'){
+            $redyCurrency = 'USD';
+        }else{
+            $redyCurrency = 'RUB';
+        }
 		$json = array();
 
 		if (isset($this->request->post['product_id'])) {
@@ -394,7 +404,7 @@ class ControllerCheckoutCart extends Controller {
 
 //				$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
                 $json['text_items_count'] = $this->cart->countProducts() ? $this->cart->countProducts() : '0';
-                $json['text_items'] = $this->currency->format($total, $this->session->data['currency']);
+                $json['text_items'] = $this->currency->format($total, $redyCurrency);
 
 			} else {
 				$json['redirect'] = str_replace('&amp;', '&', $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']));
@@ -433,7 +443,11 @@ class ControllerCheckoutCart extends Controller {
 
 	public function remove() {
 		$this->load->language('checkout/cart');
-
+        if($this->session->data['language'] =='en-gb'){
+            $redyCurrency = 'USD';
+        }else{
+            $redyCurrency = 'RUB';
+        }
 		$json = array();
 
 		// Remove
@@ -496,7 +510,7 @@ class ControllerCheckoutCart extends Controller {
 
 //			$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
             $json['text_items_count'] = $this->cart->countProducts() ? $this->cart->countProducts() : '0';
-            $json['text_items'] = $this->currency->format($total, $this->session->data['currency']);
+            $json['text_items'] = $this->currency->format($total, $redyCurrency);
 		}
 
 		$this->response->addHeader('Content-Type: application/json');

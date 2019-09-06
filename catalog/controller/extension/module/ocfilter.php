@@ -63,7 +63,11 @@ class ControllerExtensionModuleOCFilter extends Controller {
         }
       }
     }
-
+      if($this->session->data['language'] =='en-gb'){
+          $redyCurrency = 'USD';
+      }else{
+          $redyCurrency = 'RUB';
+      }
     // Get values counter
     $filter_data = array(
 			'filter_category_id' => $this->category_id,
@@ -163,6 +167,11 @@ class ControllerExtensionModuleOCFilter extends Controller {
   }
 
 	public function index($settings = array()) {
+        if($this->session->data['language'] =='en-gb'){
+            $redyCurrency = 'USD';
+        }else{
+            $redyCurrency = 'RUB';
+        }
     if (!$this->category_id) {
     	return;
     }
@@ -209,8 +218,8 @@ class ControllerExtensionModuleOCFilter extends Controller {
     $data['text_any']           	= $this->language->get('text_any');
     $data['text_cancel_all']      = $this->language->get('text_cancel_all');
 
-    $data['symbol_left']      		= $this->currency->getSymbolLeft($this->session->data['currency']);
-    $data['symbol_right']      		= $this->currency->getSymbolRight($this->session->data['currency']);
+    $data['symbol_left']      		= $this->currency->getSymbolLeft($redyCurrency);
+    $data['symbol_right']      		= $this->currency->getSymbolRight($redyCurrency);
 
     if ($this->min_price_get && $this->max_price_get) {
       $data['price'] = 'p' . $this->config->get('ocfilter_sep_opt') . $this->min_price_get . '-' . $this->max_price_get;
