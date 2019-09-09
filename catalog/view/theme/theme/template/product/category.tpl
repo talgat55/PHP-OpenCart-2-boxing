@@ -180,9 +180,17 @@
                                         href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h3>
 
                             <?php if ($product['price']) { ?>
-                            <p class="price">
-                                <?php echo $product['price']; ?>
-                            </p>
+                                <?php if ($product['special']) { ?>
+                                <p class="price">
+                                    <span class="price-new"><?php echo $product['special']; ?></span>
+                                    <span class="price-old"><?php echo $product['price']; ?></span>
+
+                                </p>
+                                <?php } else { ?>
+                                <p class="price">
+                                    <?php echo $product['price']; ?>
+                                </p>
+                                <?php } ?>
                             <?php } ?>
                         </div>
 

@@ -31,15 +31,23 @@ class ControllerCommonHome extends Controller {
         }else{
             $redyCurrency = 'RUB';
         }
+
         foreach ($results_products as $product_item){
 
             $price = $this->currency->format($product_item['price'],$redyCurrency);
+            if(!empty($product_item['special'])){
+                $special = $this->currency->format($product_item['special'],$redyCurrency);
+            }else{
+                $special = '';
+            }
+
             $image = $this->model_tool_image->resize($product_item['image'], '231', '231');
             $data['products_set'][] = array(
                 'thumb'     => $image,
                 'name'      => $product_item['name'],
                 'sku'      => $product_item['sku'],
                 'price'     => $price,
+                'special'     => $special,
                 'href'      => $this->url->link('product/product', 'product_id=' . $product_item['product_id'])
             );
 

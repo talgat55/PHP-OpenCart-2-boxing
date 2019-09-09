@@ -102,6 +102,7 @@
                                 <a href="/sets/" class="link-to-all"><?php echo $text_sets_all; ?></a>
                             </div>
                             <ul class="list-specific-products">
+
                                 <?php  foreach($products_set as $product){ ?>
                                 <li class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                     <div class="product-thumb transition">
@@ -126,9 +127,17 @@
                                             <h3 class="title"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h3>
 
                                             <?php if ($product['price']) { ?>
-                                            <p class="price">
-                                                <?php echo $product['price']; ?>
-                                            </p>
+                                                <?php if ($product['special']) { ?>
+                                                    <p class="price">
+                                                        <span class="price-new"><?php echo $product['special']; ?></span>
+                                                        <span class="price-old"><?php echo $product['price']; ?></span>
+
+                                                    </p>
+                                                <?php } else { ?>
+                                                    <p class="price">
+                                                        <?php echo $product['price']; ?>
+                                                    </p>
+                                                <?php } ?>
                                             <?php } ?>
                                         </div>
 
