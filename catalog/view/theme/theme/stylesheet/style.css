@@ -302,6 +302,28 @@ header .bottom .search button.btn.btn-default.btn-lg {
       .latest-block .product-layout .product-thumb .top-block .wish a {
         font-size: 16px;
         color: #df5a5a; }
+    .search-page .product-layout .product-thumb .image,
+    .list-linked-products .product-layout .product-thumb .image,
+    .category-page .product-layout .product-thumb .image,
+    .list-specific-products .product-layout .product-thumb .image,
+    .latest-block .product-layout .product-thumb .image {
+      position: relative; }
+      .search-page .product-layout .product-thumb .image .sale,
+      .list-linked-products .product-layout .product-thumb .image .sale,
+      .category-page .product-layout .product-thumb .image .sale,
+      .list-specific-products .product-layout .product-thumb .image .sale,
+      .latest-block .product-layout .product-thumb .image .sale {
+        background: url("/catalog/view/theme/theme/images/sale.png");
+        background-repeat: no-repeat !important;
+        width: 103px;
+        height: 61px;
+        position: absolute;
+        bottom: -22px;
+        right: 0;
+        padding-top: 17px;
+        text-align: center;
+        padding-left: 5px;
+        color: #fff; }
     .search-page .product-layout .product-thumb .caption,
     .list-linked-products .product-layout .product-thumb .caption,
     .category-page .product-layout .product-thumb .caption,
@@ -351,7 +373,7 @@ header .bottom .search button.btn.btn-default.btn-lg {
         .category-page .product-layout .product-thumb .caption .price .price-old,
         .list-specific-products .product-layout .product-thumb .caption .price .price-old,
         .latest-block .product-layout .product-thumb .caption .price .price-old {
-          font-size: .7vw;
+          font-size: 14px;
           text-decoration: line-through; }
       .search-page .product-layout .product-thumb .caption .categories span,
       .list-linked-products .product-layout .product-thumb .caption .categories span,

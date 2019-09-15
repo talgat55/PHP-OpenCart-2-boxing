@@ -169,9 +169,20 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="image"><a href="<?php echo $product['href']; ?>"><img
+                        <div class="image">
+                            <a href="<?php echo $product['href']; ?>">
+                                <img
                                         src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>"
-                                        title="<?php echo $product['name']; ?>" class="img-responsive"/></a></div>
+                                        title="<?php echo $product['name']; ?>" class="img-responsive"/>
+                            </a>
+                            <?php if ($product['special']) {
+                                $oldPrice = preg_replace("/[^0-9]/", '', $product['price']);
+                                $price = preg_replace("/[^0-9]/", '', $product['special']);
+                                $sale =  100 * ($oldPrice - $price) /$oldPrice;
+
+                                echo  '<div class="sale">-'.  intval($sale).'%</div>';
+                            } ?>
+                        </div>
                         <div class="caption">
                             <div class="categories">
                                 <span><?php  echo  $product['category_title']; ?></span>
