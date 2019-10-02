@@ -30,13 +30,13 @@
   font-style: normal; }
 
 body {
-  font-family: "Gotham Pro Light";
+  font-family: "Gotham Pro";
   font-size: 17px;
   line-height: 1.5; }
 
 .main-page .content *,
 .main-page .content {
-  font-family: "Gotham Pro Light" !important;
+  font-family: "Gotham Pro" !important;
   font-size: 17px !important;
   line-height: 1.5 !important; }
 
@@ -257,7 +257,7 @@ header .bottom .search button.btn.btn-default.btn-lg {
   .list-specific-products .product-layout .product-thumb,
   .latest-block .product-layout .product-thumb {
     border: 1px solid #e8e8e8;
-    padding: 30px 30px 20px 30px; }
+    padding: 30px 20px 20px 20px; }
     .search-page .product-layout .product-thumb .top-block,
     .list-linked-products .product-layout .product-thumb .top-block,
     .category-page .product-layout .product-thumb .top-block,
@@ -350,7 +350,8 @@ header .bottom .search button.btn.btn-default.btn-lg {
           text-decoration: none;
           -webkit-transition: all .3s;
           -o-transition: all .3s;
-          transition: all .3s; }
+          transition: all .3s;
+          font-weight: 600; }
           .search-page .product-layout .product-thumb .caption .title a:hover,
           .list-linked-products .product-layout .product-thumb .caption .title a:hover,
           .category-page .product-layout .product-thumb .caption .title a:hover,
@@ -368,6 +369,13 @@ header .bottom .search button.btn.btn-default.btn-lg {
         font-size: 24px;
         color: #3f4047;
         margin-bottom: 0; }
+        .search-page .product-layout .product-thumb .caption .price .price-new,
+        .list-linked-products .product-layout .product-thumb .caption .price .price-new,
+        .category-page .product-layout .product-thumb .caption .price .price-new,
+        .list-specific-products .product-layout .product-thumb .caption .price .price-new,
+        .latest-block .product-layout .product-thumb .caption .price .price-new {
+          font-size: 26px;
+          color: #df5a5a; }
         .search-page .product-layout .product-thumb .caption .price .price-old,
         .list-linked-products .product-layout .product-thumb .caption .price .price-old,
         .category-page .product-layout .product-thumb .caption .price .price-old,
@@ -403,6 +411,108 @@ header .bottom .search button.btn.btn-default.btn-lg {
     transition: all .3s; }
     .breadcrumb li a:hover {
       color: #df5a5a; }
+
+.instagram-two-section .img-inst {
+  vertical-align: top; }
+
+.instagram-two-section .title-inst {
+  display: inline-block;
+  font-family: "Gotham Pro Black";
+  font-size: 45px;
+  color: #000;
+  margin: 0 0 0 42px;
+  line-height: 57px; }
+
+.instagram-two-section .link-subscribe {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 45px;
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
+  line-height: 57px;
+  vertical-align: top;
+  padding: 15px 30px;
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0, #fb6f46), color-stop(1, #fb233f));
+  background-image: -webkit-repeating-linear-gradient(left, #fb6f46 0%, #fb233f 100%);
+  background-image: -o-repeating-linear-gradient(left, #fb6f46 0%, #fb233f 100%);
+  background-image: repeating-linear-gradient(to right, #fb6f46 0%, #fb233f 100%);
+  background-image: -ms-repeating-linear-gradient(left, #fb6f46 0%, #fb233f 100%);
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .instagram-two-section .link-subscribe:hover {
+    background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0, #000), color-stop(1, #000));
+    background-image: -webkit-repeating-linear-gradient(left, #000 0%, #000 100%);
+    background-image: -o-repeating-linear-gradient(left, #000 0%, #000 100%);
+    background-image: repeating-linear-gradient(to right, #000 0%, #000 100%);
+    background-image: -ms-repeating-linear-gradient(left, #000 0%, #000 100%); }
+
+.instagram-two-section #instagram-widget {
+  margin-top: 60px;
+  margin-bottom: 55px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #dddddd; }
+
+.instagram-two-section .slick-arrow::before {
+  display: none; }
+
+.instagram-two-section .slick-prev {
+  background: url("/catalog/view/theme/theme/images/arrow-inst-left.png"); }
+  .instagram-two-section .slick-prev:active, .instagram-two-section .slick-prev:focus, .instagram-two-section .slick-prev:hover {
+    background: url("/catalog/view/theme/theme/images/arrow-inst-left.png");
+    opacity: .5; }
+
+.instagram-two-section .slick-prev,
+.instagram-two-section .slick-next {
+  width: 66px;
+  height: 66px;
+  z-index: 9; }
+
+.instagram-two-section .slick-next {
+  background: url("/catalog/view/theme/theme/images/arrow-inst-right.png"); }
+  .instagram-two-section .slick-next:active, .instagram-two-section .slick-next:focus, .instagram-two-section .slick-next:hover {
+    background: url("/catalog/view/theme/theme/images/arrow-inst-right.png");
+    opacity: .5; }
+
+.instagram-two-section .title-gallery {
+  font-family: "Gotham Pro Medium";
+  font-size: 30px;
+  margin-bottom: 65px; }
+
+.instagram-two-section #widgetData {
+  margin: 0 -10px; }
+  .instagram-two-section #widgetData a {
+    height: 210px; }
+    .instagram-two-section #widgetData a img {
+      padding: 10px;
+      width: 100%; }
+
+.instagram-two-section .row-photo {
+  margin: 0 -7px; }
+  .instagram-two-section .row-photo .item {
+    height: 208px;
+    background-repeat: no-repeat !important;
+    -webkit-background-size: cover !important;
+            background-size: cover !important;
+    width: 16.666%;
+    background-position: center center !important;
+    padding: 7px; }
+    .instagram-two-section .row-photo .item .item-bg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      -webkit-background-size: cover !important;
+              background-size: cover !important;
+      background-position: center center !important; }
+    .instagram-two-section .row-photo .item.col {
+      float: left; }
+  .instagram-two-section .row-photo .item:nth-of-type(9n+2),
+  .instagram-two-section .row-photo .item:nth-of-type(9n+1) {
+    width: 37%;
+    height: 280px; }
+  .instagram-two-section .row-photo .item:nth-of-type(9n+3) {
+    width: 26%;
+    height: 280px; }
 
 .ui-slider {
   position: relative;
@@ -2137,6 +2247,26 @@ footer {
     margin-bottom: 0; } }
 
 @media (max-width: 768px) {
+  .instagram-two-section .title-inst {
+    font-size: 35px; }
+  .instagram-two-section .row-photo {
+    margin: 0 !important; }
+    .instagram-two-section .row-photo .item,
+    .instagram-two-section .row-photo .item:nth-of-type(9n+3),
+    .instagram-two-section .row-photo .item:nth-of-type(9n+2),
+    .instagram-two-section .row-photo .item:nth-of-type(9n+1) {
+      width: 50%; }
+  .instagram-two-section .slick-prev {
+    left: 15px; }
+  .instagram-two-section .slick-next {
+    right: 15px; }
+  .instagram-two-section .img-inst {
+    margin-left: 15px; }
+  .instagram-two-section .link-subscribe {
+    padding: 0 30px;
+    margin-left: 20px;
+    display: inline-block;
+    margin-top: 30px; }
   .video-section {
     padding-bottom: 60px !important; }
     .video-section p.padding-top-90.first {
@@ -2199,6 +2329,17 @@ footer {
     left: 15px !important; } }
 
 @media (max-width: 600px) {
+  .instagram-two-section #widgetData a {
+    height: auto !important; }
+  .instagram-two-section .title-inst {
+    font-size: 28px; }
+  .instagram-two-section .row-photo {
+    margin: 0 !important; }
+    .instagram-two-section .row-photo .item,
+    .instagram-two-section .row-photo .item:nth-of-type(9n+3),
+    .instagram-two-section .row-photo .item:nth-of-type(9n+2),
+    .instagram-two-section .row-photo .item:nth-of-type(9n+1) {
+      width: 100%; }
   .promotion-block .text-wrapper div {
     width: 55px; }
   #countdown {

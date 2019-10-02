@@ -12,7 +12,7 @@ $_['text_home_page'] = 'Home page';
 $_['text_sets'] = 'Sets';
 $_['text_sets_all'] = 'All Sets';
 $_['text_articul'] = 'SKU';
-$_['text_sub_inst'] = 'SUBSCRIBE <br> IN INSTAGRAM';
+$_['text_sub_inst'] = 'go in instagram';
 $_['text_want_subscribe'] = 'I want to subscribe';
 $_['text_inst_gifts'] = 'Subscribe and get a discount!';
 $_['text_video_views'] = 'Video reviews';
@@ -20,6 +20,7 @@ $_['text_video_views_all'] = 'All video reviews';
 $_['text_part_one_title'] = 'Sportswear for MMA';
 $_['text_part_one_text_one'] = 'Modern fashion for a healthy lifestyle and sports in one or another sport determines stable demand for special clothes, without which it is impossible to guarantee safety during time for training and all kinds of competitions. Despite the fact that many lay people  quite skeptical about choosing suitable T-shirts, shorts, boxing gloves and gloves for MMA,  and other equipment, properly selected equipment for martial arts plays a huge role, - in many  In some cases, the success of the MMA fight and the preservation of health in the process training in various types of martial arts.';
 $_['text_part_one_title_two'] = 'Where can one buy?';
+$_['title_look_photos'] = 'Look our photos';
 $_['text_part_one_text_two'] = 'Good Fighter online store offers fighting clothes for MMA from the best manufacturers in the world.  In our store you can find a large assortment of stylish clothes and equipment of the following brands:  Venum, Bad Boy, FixGear, RDX, UFC  Reebok, Twins Special and others!
                                     <br> The design of sportswear is developed by real experts, and in the production process the most advanced technologies are used, so athletes can not for a second doubt that they can adequately represent themselves and their team, without worrying about their own health and being confident in the reliability and convenience of equipment. Thus, in order to  to succeed in MMA, it makes sense to pay attention not only to improving physical skills, but also with all responsibility to approach the choice of clothing, especially since in our online store you will find high-quality T-shirts, shorts and gloves from famous brands,  designed to meet all the needs of athletes.';
 

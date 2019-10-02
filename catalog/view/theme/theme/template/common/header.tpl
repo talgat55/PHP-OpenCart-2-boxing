@@ -40,7 +40,7 @@
     <?php } ?>
     <!-- <link href="catalog/view/theme/theme/stylesheet/stylesheet.css" rel="stylesheet"> -->
     <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
-    <link href="catalog/view/theme/theme/stylesheet/style.css?ver=1.0" rel="stylesheet">
+    <link href="catalog/view/theme/theme/stylesheet/style.css?ver=2.0" rel="stylesheet">
 
 
     <?php foreach ($styles as $style) { ?>

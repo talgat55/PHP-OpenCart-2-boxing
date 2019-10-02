@@ -12,7 +12,8 @@ class ControllerCommonHome extends Controller {
         $data['text_all'] = $this->language->get('text_all');
 
 
-
+        $this->document->addStyle('catalog/view/theme/theme/stylesheet/lightbox.min.css');
+        $this->document->addScript('catalog/view/theme/theme/js/lightbox.min.js');
 		if (isset($this->request->get['route'])) {
 			$this->document->addLink($this->config->get('config_url'), 'canonical');
 		}
@@ -90,11 +91,24 @@ class ControllerCommonHome extends Controller {
         $this->load->model('design/banner');
         $this->load->model('tool/image');
         $results = $this->model_design_banner->getBanner('7');
+        $photo_banner = $this->model_design_banner->getBanner('9');
+        if ($this->request->server['HTTPS']) {
+            $image_path = $this->config->get('config_ssl') . 'image/';
+        } else {
+            $image_path = $this->config->get('config_url') . 'image/';
+        }
 
         foreach ($results as $key => $result){
-            $results[$key]['image'] = $this->model_tool_image->resize($result['image'], '1266', '585');
+            $results[$key]['image'] =  $this->model_tool_image->resize($result['image'], '1266', '585');
         }
         $data['banner'] = $results;
+
+
+        foreach ($photo_banner as $key => $result){
+            $results_per[$key]['image'] = $image_path . $result['image'];
+        }
+        $data['banner_photo'] = $results_per;
+
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
@@ -119,6 +133,7 @@ class ControllerCommonHome extends Controller {
         $data['text_part_one_text_two'] = $this->language->get('text_part_one_text_two');
         $data['text_sub_feed'] = $this->language->get('text_sub_feed');
         $data['text_last_text'] = $this->language->get('text_last_text');
+        $data['title_look_photos'] = $this->language->get('title_look_photos');
 
 
         $sobfeedback = new sobfeedback($this->registry);

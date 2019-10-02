@@ -130,9 +130,9 @@
                                         <?php if ($product['special']) {
                                             $oldPrice = preg_replace("/[^0-9]/", '', $product['price']);
                                             $price = preg_replace("/[^0-9]/", '', $product['special']);
-                                            $sale =  100 * ($oldPrice - $price) /$oldPrice;
+                                            $sale = 100 * ($oldPrice - $price) / $oldPrice;
 
-                                            echo  '<div class="sale">-'.  intval($sale).'%</div>';
+                                            echo '<div class="sale">-' . intval($sale) . '%</div>';
                                         } ?>
                                     </div>
                                     <div class="caption">
@@ -172,37 +172,44 @@
                 </div>
             </div>
         </section>
-        <section class="clearfix instagram-section">
+        <section class="clearfix instagram-two-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12 ">
-                        <h3 class="title">
-                            <?php echo $text_sub_inst; ?>
-                        </h3>
-                        <a href="https://www.instagram.com/good.vf_/?igshid=7qbl9zazhevz" target="_blank"
-                           class="link-subscribe">
-                            <?php echo $text_want_subscribe; ?>
-                        </a>
-                        <img class="img-glove" src="/catalog/view/theme/theme/image/main/glove.png" alt="Перчатка "/>
+                    <img class="img-inst" src="/catalog/view/theme/theme/image/main/instagram.png" alt="Перчатка "/>
+                    <h2 class="title-inst">Лента Instagram</h2>
+                    <a href="https://www.instagram.com/good_figter_shop" target="_blank"
+                       class="link-subscribe">
+                        <?php echo $text_sub_inst; ?>
+                    </a>
+                </div>
+                <div class="row">
+                    <div id="instagram-widget">
+                        <?php
+                        $c = curl_init('http://widget.stapico.ru/?q=good_figter_shop&s=20&w=12&h=1&b=0&p=5&title=good_figter_shop&profile=no&header=no&effect=0');
+                        curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
+                        $content = curl_exec($c);
+
+                        $pattern = "|href=\"[^\"]+\"|is";
+                        $content = preg_replace($pattern, "href=\"https://www.instagram.com/good_figter_shop\"", $content);
+                        echo $content;
+                        ?>
                     </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12 ">
-                        <div id="instagram-widget">
-                            <?php
-                            $c = curl_init('http://widget.stapico.ru/?q=good.vf_&s=20&w=3&h=2&b=0&p=5&title=good.vf_&profile=no&header=no&effect=0');
-                            curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
-                            $content = curl_exec($c);
-                            $pattern = "|href=\"[^\"]+\"|is";
-                            $content = preg_replace($pattern, "href=\"https://www.instagram.com/good.vf_\"", $content);
-                            echo $content;
-                            ?>
-                        </div>
-                        <p class="text-inst">
-                            <?php echo $text_inst_gifts; ?>
-                        </p>
+                </div>
+
+                <div class="row">
+                    <h3 class="title-gallery text-center"><?php echo $title_look_photos; ?></h3>
+                    <div class="w100 row-photo row">
+                        <?php foreach ($banner_photo as $key => $value) : ?>
+
+                            <div class="item col">
+                                <a href="<?php echo $value['image']; ?>"  data-lightbox="gallery" class="item-bg"  style="background: url('<?php echo $value['image']; ?>'); "></a>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
         </section>
+
         <section class="clearfix video-section">
             <div class="container">
                 <div class="row">
