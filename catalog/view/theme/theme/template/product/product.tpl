@@ -31,8 +31,12 @@
                                             src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>"
                                             alt="<?php echo $heading_title; ?>"/></a></div>
                             <?php } ?>
-
-                            <div class="image-additional-block col-sm-3 col-xs-12">
+                            <?php   if(count($images) > 5){
+                                $sliderClass = 'slider-product';
+                            } else{
+                                $sliderClass = '';
+                            } ?>
+                            <div class="image-additional-block <?=$sliderClass; ?> col-sm-3 col-xs-12">
                                 <?php if ($images) { ?>
                                 <?php foreach ($images as $image) { ?>
                                 <div class="image-additional "><a class="thumbnail"

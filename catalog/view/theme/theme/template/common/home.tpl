@@ -177,7 +177,7 @@
                 <div class="row">
                     <img class="img-inst" src="/catalog/view/theme/theme/image/main/instagram.png" alt="Перчатка "/>
                     <h2 class="title-inst">Лента Instagram</h2>
-                    <a href="https://www.instagram.com/good_figter_shop" target="_blank"
+                    <a href="https://www.instagram.com/good_fighter_shop" target="_blank"
                        class="link-subscribe">
                         <?php echo $text_sub_inst; ?>
                     </a>
@@ -185,12 +185,12 @@
                 <div class="row">
                     <div id="instagram-widget">
                         <?php
-                        $c = curl_init('http://widget.stapico.ru/?q=good_figter_shop&s=20&w=12&h=1&b=0&p=5&title=good_figter_shop&profile=no&header=no&effect=0');
+                        $c = curl_init('http://widget.stapico.ru/?q=good_fighter_shop&s=20&w=12&h=1&b=0&p=5&title=good_fighter_shop&profile=no&header=no&effect=0');
                         curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
                         $content = curl_exec($c);
 
                         $pattern = "|href=\"[^\"]+\"|is";
-                        $content = preg_replace($pattern, "href=\"https://www.instagram.com/good_figter_shop\"", $content);
+                        $content = preg_replace($pattern, "href=\"https://www.instagram.com/good_fighter_shop\"", $content);
                         echo $content;
                         ?>
                     </div>

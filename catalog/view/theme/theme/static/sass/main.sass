@@ -879,6 +879,38 @@
   .active-tab::after
     display: none!important
 
+  .slick-arrow
+    &::before
+      display: none
+
+  .slick-prev
+    display: none!important
+    background: url("/catalog/view/theme/theme/images/arrow-inst-left.png")
+    &:active,
+    &:focus,
+    &:hover
+      background: url("/catalog/view/theme/theme/images/arrow-inst-left.png")
+      opacity: .5
+
+  .slick-prev,
+  .slick-next
+    width: 66px
+    height: 66px
+    z-index: 9
+  .slick-next
+    right: 44px
+    transform: rotateZ(90deg)
+    bottom: -60px
+    top: auto
+    background: url("/catalog/view/theme/theme/images/arrow-inst-right.png")
+    &:active,
+    &:focus,
+    &:hover
+      background: url("/catalog/view/theme/theme/images/arrow-inst-right.png")
+      opacity: .5
+
+
+
 .select2-results
   font-family: $font_medium
 
