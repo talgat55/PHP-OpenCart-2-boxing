@@ -87,7 +87,7 @@
                         </div>
                         <div class="banner col-lg-5 col-md-12">
                             <ul class="banner-list clearfix">
-                                <?php foreach ($banner_home as $value) { ?>
+                                <?php foreach ($banner as $value) { ?>
                                     <li class="item">
                                         <a href="<?= $value['link']; ?>">
                                             <img src="<?= $value['image']; ?>" alt="Изображение">
@@ -96,10 +96,6 @@
                                 <?php } ?>
                             </ul>
                         </div>
-
-
-
-
                     </div>
                 </div>
             </div>

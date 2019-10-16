@@ -134,7 +134,9 @@ function homeSlider() {
 
         if (widthWindow > 1200) {
             sliderHomeSlick(homeClass);
-        } else {
+        } else if (widthWindow < 983) {
+            sliderHomeSlickOne(homeClass);
+        }else {
             homeClass.removeAttr('style');
             sliderHomeSlick(homeClass);
         }
@@ -150,8 +152,33 @@ function sliderHomeSlick(homeClass) {
         arrows: false,
         dots: true,
         autoplay: true,
+        fade: true,
+        pauseOnHover: false,
+        asNavFor: '.banner-list'
+    });
+
+    $('.banner-list').slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        asNavFor: '.home-slider',
+        vertical: true,
+        dots: false,
+        arrows: false
+    });
+
+}
+function sliderHomeSlickOne(homeClass) {
+    homeClass.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        autoplay: true,
+        fade: true,
         pauseOnHover: false
     });
+
+
 }
 
 //-------------------------------
