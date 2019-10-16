@@ -65,26 +65,41 @@
                             </nav>
                         <?php } ?>
                     </div>
-                    <div class="col-md-9  col-sm-12 col-xs-12  " style="position: relative;">
-                        <ul class="home-slider clearfix">
-                            <?php foreach ($banner as $value) { ?>
+                    <div class="home-slider-wrapper col-md-9  col-sm-12 col-xs-12  row " style="position: relative;">
+                        <div class="slider-home col-lg-7 col-md-12">
+                            <ul class="home-slider clearfix">
+                                <?php foreach ($banner as $value) { ?>
+                                    <li class="item">
+                                        <a href="<?= $value['link']; ?>">
+                                            <img src="<?= $value['image']; ?>" alt="Изображение">
+                                            <div class="text">
+                                                <?php
+                                                $array = explode(' ', $value['title']);
+                                                $array['1'] = '<span>' . $array['1'] . '</span>';
+                                                $arrayRedy = implode(" ", $array);
+                                                ?>
+                                                <?= $arrayRedy ?>
+                                            </div>
+                                        </a>
+                                    </li>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                        <div class="banner col-lg-5 col-md-12">
+                            <ul class="banner-list clearfix">
+                                <?php foreach ($banner_home as $value) { ?>
+                                    <li class="item">
+                                        <a href="<?= $value['link']; ?>">
+                                            <img src="<?= $value['image']; ?>" alt="Изображение">
+                                        </a>
+                                    </li>
+                                <?php } ?>
+                            </ul>
+                        </div>
 
-                                <li class="item">
-                                    <a href="<?= $value['link']; ?>">
-                                        <img src="<?= $value['image']; ?>" alt="Изображение">
-                                        <div class="text">
-                                            <?php
-                                            $array = explode(' ', $value['title']);
-                                            $array['1'] = '<span>' . $array['1'] . '</span>';
-                                            $arrayRedy = implode(" ", $array);
-                                            ?>
-                                            <?= $arrayRedy ?>
-                                        </div>
-                                    </a>
-                                </li>
 
-                            <?php } ?>
-                        </ul>
+
+
                     </div>
                 </div>
             </div>
