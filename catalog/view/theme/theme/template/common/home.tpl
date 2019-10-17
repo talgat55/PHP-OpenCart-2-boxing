@@ -65,7 +65,7 @@
                             </nav>
                         <?php } ?>
                     </div>
-                    <div class="home-slider-wrapper col-md-9  col-sm-12 col-xs-12  row " style="position: relative;">
+                    <div class="home-slider-wrapper col-md-9  col-sm-12 col-xs-12  " style="position: relative;">
                         <div class="slider-home col-lg-7 col-md-12">
                             <ul class="home-slider clearfix">
                                 <?php foreach ($banner as $value) { ?>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="banner col-lg-5 col-md-12">
                             <ul class="banner-list clearfix">
-                                <?php foreach ($banner as $value) { ?>
+                                <?php foreach ($banner_home as $value) { ?>
                                     <li class="item">
                                         <a href="<?= $value['link']; ?>">
                                             <img src="<?= $value['image']; ?>" alt="Изображение">
@@ -96,6 +96,10 @@
                                 <?php } ?>
                             </ul>
                         </div>
+
+
+
+
                     </div>
                 </div>
             </div>

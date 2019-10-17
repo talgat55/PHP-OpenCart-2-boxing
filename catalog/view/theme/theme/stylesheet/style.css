@@ -911,7 +911,7 @@ header {
         min-width: 186px; }
         .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li a {
           padding: 7px 27px;
-          font-size: 14px;
+          font-size: 16px;
           color: #000;
           -webkit-transition: all .3s;
           -o-transition: all .3s;
@@ -1072,18 +1072,14 @@ header {
     .home-page .home-slider-wrapper .home-slider .banner-list,
     .home-page .home-slider-wrapper .banner .banner-list {
       padding: 0;
-      margin: -11px 0 0 0; }
+      margin: 0; }
       .home-page .home-slider-wrapper .home-slider .banner-list li,
       .home-page .home-slider-wrapper .banner .banner-list li {
         list-style: none;
         padding: 0; }
         .home-page .home-slider-wrapper .home-slider .banner-list li img,
         .home-page .home-slider-wrapper .banner .banner-list li img {
-          height: 200px;
-          -o-object-fit: cover !important;
-             object-fit: cover !important;
-          width: 100%;
-          margin: 0px 0 15px; }
+          height: 200px; }
       .home-page .home-slider-wrapper .home-slider .banner-list .item:first-child,
       .home-page .home-slider-wrapper .banner .banner-list .item:first-child {
         padding-bottom: 15px; }
@@ -1091,8 +1087,7 @@ header {
     padding-left: 0;
     width: 60%; }
   .home-page .home-slider-wrapper .banner {
-    width: 40%;
-    margin: -5px 0; }
+    width: 40%; }
 
 .instagram-section {
   background: url("../image/main/bg-instagram.jpg");
@@ -2318,14 +2313,13 @@ footer {
     padding-left: 15px;
     width: 100%; }
     .home-page .home-slider-wrapper .slider-home .slick-dotted.slick-slider {
-      margin-bottom: 30px; }
+      margin-bottom: 0; }
   .home-page .home-slider-wrapper .banner {
-    display: none; }
-    .home-page .home-slider-wrapper .banner .banner-list {
-      margin-bottom: 30px; }
-      .home-page .home-slider-wrapper .banner .banner-list img {
-        width: 100%;
-        height: auto !important; } }
+    width: 100%;
+    padding: 0 15px; }
+    .home-page .home-slider-wrapper .banner .banner-list img {
+      width: 100%;
+      height: auto !important; } }
 
 @media (max-width: 768px) {
   .instagram-two-section .title-inst {
