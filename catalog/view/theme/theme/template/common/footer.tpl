@@ -151,7 +151,7 @@ if($pos !== false) {
 
 <script src="catalog/view/theme/theme/js/jquery.matchHeight.js" type="text/javascript"></script>
 <script src="catalog/view/theme/theme/js/load-more.js" type="text/javascript"></script>
-<script src="catalog/view/theme/theme/js/default.js?ver=1.0" type="text/javascript"></script>
+<script src="catalog/view/theme/theme/js/default.js?ver=2.0" type="text/javascript"></script>
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 
 <!--

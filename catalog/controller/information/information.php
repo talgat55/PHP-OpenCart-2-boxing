@@ -14,7 +14,8 @@ class ControllerInformationInformation extends Controller
             'text' => $this->language->get('heading_title'),
             'href' => $this->url->link('common/home')
         );
-
+        $this->document->addStyle('catalog/view/theme/theme/stylesheet/lightbox.min.css');
+        $this->document->addScript('catalog/view/theme/theme/js/lightbox.min.js');
         // if page review
         if (isset($_REQUEST['_route_']) && $_REQUEST['_route_'] == 'reviews') {
 

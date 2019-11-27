@@ -122,33 +122,54 @@ header .bottom .search::-webkit-input-placeholder {
   -webkit-border-radius: 0;
           border-radius: 0;
   font-size: 15px;
-  color: #8d8d8d; }
+  color: #000; }
 
 footer .search-block .search:-moz-placeholder,
 header .bottom .search:-moz-placeholder {
   border-radius: 0;
   font-size: 15px;
-  color: #8d8d8d; }
+  color: #000; }
 
 footer .search-block .search::-moz-placeholder,
 header .bottom .search::-moz-placeholder {
   border-radius: 0;
   font-size: 15px;
-  color: #8d8d8d; }
+  color: #000; }
 
 footer .search-block .search:-ms-input-placeholder,
 header .bottom .search:-ms-input-placeholder {
   border-radius: 0;
   font-size: 15px;
-  color: #8d8d8d; }
+  color: #000; }
 
 footer .search-block .search input,
 header .bottom .search input {
-  border: 1px solid #d6d6d6;
+  border: 1px solid #000;
   -webkit-border-radius: 0;
           border-radius: 0;
   font-size: 15px;
-  color: #8d8d8d; }
+  color: #000; }
+  footer .search-block .search input::-webkit-input-placeholder,
+  header .bottom .search input::-webkit-input-placeholder {
+    -webkit-border-radius: 0;
+            border-radius: 0;
+    font-size: 15px;
+    color: #000; }
+  footer .search-block .search input:-moz-placeholder,
+  header .bottom .search input:-moz-placeholder {
+    border-radius: 0;
+    font-size: 15px;
+    color: #000; }
+  footer .search-block .search input::-moz-placeholder,
+  header .bottom .search input::-moz-placeholder {
+    border-radius: 0;
+    font-size: 15px;
+    color: #000; }
+  footer .search-block .search input:-ms-input-placeholder,
+  header .bottom .search input:-ms-input-placeholder {
+    border-radius: 0;
+    font-size: 15px;
+    color: #000; }
   footer .search-block .search input:active, footer .search-block .search input:focus,
   header .bottom .search input:active,
   header .bottom .search input:focus {
@@ -221,17 +242,17 @@ header .bottom .search button.btn.btn-default.btn-lg {
   margin-top: 0;
   font-size: 30px;
   font-family: "Gotham Pro Medium";
-  color: #3f4047;
+  color: #000;
   margin-bottom: 0; }
 
 .block-title .link-to-all,
 .block-title-alternative .link-to-all {
   display: inline-block;
-  color: #3f4047;
+  color: #000;
   font-size: 16px;
   font-family: "Gotham Pro";
   padding: 10px 30px;
-  border: 1.5px solid #d0d0d0;
+  border: 1.5px solid #000;
   -webkit-border-radius: 25px;
           border-radius: 25px;
   margin-left: 40px;
@@ -292,7 +313,7 @@ header .bottom .search button.btn.btn-default.btn-lg {
       .category-page .product-layout .product-thumb .top-block .sku,
       .list-specific-products .product-layout .product-thumb .top-block .sku,
       .latest-block .product-layout .product-thumb .top-block .sku {
-        color: #3f4047;
+        color: #000;
         font-size: 14px;
         font-family: "Gotham Pro"; }
       .search-page .product-layout .product-thumb .top-block .wish a,
@@ -346,7 +367,7 @@ header .bottom .search button.btn.btn-default.btn-lg {
         .category-page .product-layout .product-thumb .caption .title a,
         .list-specific-products .product-layout .product-thumb .caption .title a,
         .latest-block .product-layout .product-thumb .caption .title a {
-          color: #3f4047;
+          color: #000;
           text-decoration: none;
           -webkit-transition: all .3s;
           -o-transition: all .3s;
@@ -367,7 +388,7 @@ header .bottom .search button.btn.btn-default.btn-lg {
         padding-top: 25px;
         font-family: "Gotham Pro Medium";
         font-size: 24px;
-        color: #3f4047;
+        color: #000;
         margin-bottom: 0; }
         .search-page .product-layout .product-thumb .caption .price .price-new,
         .list-linked-products .product-layout .product-thumb .caption .price .price-new,
@@ -404,7 +425,7 @@ header .bottom .search button.btn.btn-default.btn-lg {
   margin: 60px 0; }
   .breadcrumb li a {
     font-size: 15px;
-    color: #8d8d8d;
+    color: #000;
     text-decoration: none;
     -webkit-transition: all .3s;
     -o-transition: all .3s;
@@ -480,12 +501,15 @@ header .bottom .search button.btn.btn-default.btn-lg {
   margin-bottom: 65px; }
 
 .instagram-two-section #widgetData {
-  margin: 0 -10px; }
+  margin: 0 -10px;
+  padding: 0; }
   .instagram-two-section #widgetData a {
     height: 210px; }
     .instagram-two-section #widgetData a img {
       padding: 10px;
-      width: 100%; }
+      width: 100%;
+      -o-object-fit: cover;
+         object-fit: cover; }
 
 .instagram-two-section .row-photo {
   margin: 0 -7px; }
@@ -629,12 +653,11 @@ header .bottom .search button.btn.btn-default.btn-lg {
   margin: 0 auto; }
 
 #top-bar {
-  padding: 7px 0;
-  background-color: #3f4047;
+  background: url("/catalog/view/theme/theme/image/main/header-top.png");
   color: #fff;
   font-size: 15px;
   font-family: "Gotham Pro";
-  overflow: hidden; }
+  padding: 7px 0 30px; }
   #top-bar .list-information {
     margin: 0;
     padding: 0; }
@@ -645,6 +668,7 @@ header .bottom .search button.btn.btn-default.btn-lg {
       #top-bar .list-information li p {
         margin-bottom: 0;
         display: inline-block;
+        color: #fff200;
         vertical-align: middle;
         height: 19px; }
       #top-bar .list-information li a {
@@ -659,9 +683,10 @@ header .bottom .search button.btn.btn-default.btn-lg {
     #top-bar .list-information li:last-child {
       padding-right: 0; }
   #top-bar .work-time {
-    display: inline-block; }
+    display: inline-block;
+    color: #fff200; }
     #top-bar .work-time span {
-      color: #ffc770;
+      color: #fff200;
       font-family: "Gotham Pro Medium"; }
   #top-bar .navigation {
     margin: 0;
@@ -669,9 +694,10 @@ header .bottom .search button.btn.btn-default.btn-lg {
     display: inline-block;
     float: right; }
     #top-bar .navigation li {
+      color: #fff200;
       display: inline; }
       #top-bar .navigation li a {
-        color: #fff; }
+        color: #fff200; }
 
 header {
   padding: 20px 0; }
@@ -729,7 +755,7 @@ header {
           background-color: transparent !important; }
         header .top .cart-block #cart .dropdown-menu.pull-right a {
           text-decoration: none;
-          color: #3f4047;
+          color: #000;
           -webkit-transition: all .3s;
           -o-transition: all .3s;
           transition: all .3s; }
@@ -788,7 +814,7 @@ header {
     display: flex; }
 
 .top-category-page-category {
-  background-color: #3f4047;
+  background-color: #000;
   width: 510px;
   margin-right: 50px;
   position: relative; }
@@ -871,9 +897,12 @@ header {
   left: 0;
   position: absolute !important;
   top: 0; }
+  .language-select .dropdown-menu button,
+  .language-select .dropdown-menu a {
+    color: #fff200; }
 
 .language-select .text-selected {
-  color: #fff; }
+  color: #fff200; }
 
 .language-select .btn-group > .btn:first-child {
   padding: 0;
@@ -883,7 +912,7 @@ header {
   -webkit-border-radius: 0 !important;
           border-radius: 0 !important; }
   .home-page #menu .navbar-header {
-    background-color: #3f4047;
+    background-color: #000;
     padding: 15px 25px;
     width: 100%; }
     .home-page #menu .navbar-header .navbar-toggle {
@@ -897,12 +926,12 @@ header {
       font-size: 15px;
       text-transform: uppercase;
       font-family: "Gotham Pro";
-      color: #fff; }
+      color: #fff200; }
   .home-page #menu .navbar-collapse.collapse {
     border: 1px solid #d6d6d6;
     padding: 0; }
     .home-page #menu .navbar-collapse.collapse .nav.navbar-nav {
-      padding: 30px 0 24px;
+      padding: 30px 0 18px;
       width: 100%; }
       .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li {
         display: block;
@@ -910,7 +939,7 @@ header {
         position: relative;
         min-width: 186px; }
         .home-page #menu .navbar-collapse.collapse .nav.navbar-nav li a {
-          padding: 7px 27px;
+          padding: 12.5px 27px;
           font-size: 16px;
           color: #000;
           -webkit-transition: all .3s;
@@ -988,13 +1017,10 @@ header {
           -ms-transform: rotate(90deg);
               transform: rotateZ(90deg); }
 
-#top-bar {
-  overflow: inherit !important; }
-
 .home-page .home-slider {
   margin: 0;
   padding: 0;
-  height: 416px;
+  height: 510px;
   overflow: hidden;
   -webkit-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
@@ -1021,7 +1047,7 @@ header {
           color: #ffed55; }
     .home-page .home-slider li img {
       width: 100%;
-      height: 416px;
+      height: 510px;
       -o-object-fit: cover !important;
          object-fit: cover !important; }
   .home-page .home-slider .slick-dots {
@@ -1063,8 +1089,7 @@ header {
         background-color: #ffed55; }
 
 .home-page .home-slider-wrapper {
-  padding-left: 30px;
-  padding-right: 0; }
+  padding: 0; }
   .home-page .home-slider-wrapper .home-slider,
   .home-page .home-slider-wrapper .banner {
     padding: 0;
@@ -1250,8 +1275,8 @@ header {
     display: inline-block; }
     .category-page .sort-by-fields-block .list-sort-values li a {
       font-size: 16px;
-      color: #b6b6b6;
-      border-bottom: 1px solid #b6b6b6; }
+      color: #000;
+      border-bottom: 1px solid #000; }
       .category-page .sort-by-fields-block .list-sort-values li a.active {
         color: #df5a5a;
         border-color: #fff !important; }
@@ -1282,7 +1307,7 @@ header {
   display: inline-block;
   cursor: pointer; }
   .category-page .load-more-button:hover {
-    color: #3f4047; }
+    color: #000; }
 
 .accordion-block {
   padding: 40px 25px;
@@ -1299,7 +1324,7 @@ header {
     .accordion-block .title p {
       margin-bottom: 0;
       font-size: 24px;
-      color: #3f4047;
+      color: #000;
       font-family: "Gotham Pro Bold"; }
     .accordion-block .title .img-block {
       width: 18px !important;
@@ -1328,7 +1353,7 @@ header {
           position: relative;
           font-family: "Gotham Pro";
           font-size: 14px;
-          color: #3f4047;
+          color: #000;
           text-decoration: none;
           -webkit-transition: all .3s;
           -o-transition: all .3s;
@@ -1370,7 +1395,7 @@ header {
     padding: 0; }
   .accordion-block .option-name.alter {
     font-size: 24px;
-    color: #3f4047;
+    color: #000;
     font-family: "Gotham Pro Bold";
       font-family-margin-top: 20px;
     display: inline-block; }
@@ -1381,7 +1406,7 @@ header {
   .accordion-block .list-group-item {
     border: none; }
   .accordion-block .ocfilter-option label a {
-    color: #3f4047;
+    color: #000;
     font-family: "Gotham Pro";
     position: relative; }
   .accordion-block .ocfilter-option label small {
@@ -1418,7 +1443,7 @@ header {
     transition: all .3s;
     background-color: #df5a5a; }
     .accordion-block .ocfilter-option-popover button:hover {
-      background-color: #3f4047; }
+      background-color: #000; }
   .accordion-block div#option-m {
     margin-top: 30px;
     display: inline-block; }
@@ -1428,6 +1453,21 @@ header {
 
 #column-left .accordion-block:last-child {
   margin-bottom: 0; }
+
+.partners-section {
+  margin-top: 60px; }
+  .partners-section .item {
+    text-align: center; }
+    .partners-section .item .img-wrap {
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      overflow: hidden;
+      display: inline-block; }
+      .partners-section .item .img-wrap img {
+        width: 100px;
+        height: 100px;
+        -o-object-fit: cover;
+           object-fit: cover; }
 
 .product-page .thumbnails {
   display: -ms-flexbox;
@@ -1469,7 +1509,7 @@ header {
       margin-bottom: 0 !important; }
 
 .product-page .title {
-  color: #3f4047;
+  color: #000;
   font-size: 36px;
   font-family: "Gotham Pro Medium";
   margin-top: 50px; }
@@ -1529,7 +1569,7 @@ header {
     display: inline-block;
     font-size: 14px;
     font-family: "Gotham Pro";
-    color: #b6b6b6;
+    color: #000;
     text-decoration: none;
     -webkit-transition: all .3s;
     -o-transition: all .3s;
@@ -1586,7 +1626,7 @@ header {
   height: auto; }
   .product-page #product .select2-container--default .select2-selection--single .select2-selection__rendered {
     font-size: 15px;
-    color: #8d8d8d;
+    color: #000;
     font-family: "Gotham Pro Medium"; }
   .product-page #product .select2-container--default .select2-selection--single .select2-selection__arrow {
     top: 50%;
@@ -1646,7 +1686,7 @@ header {
       .product-page .tab-second-block .nav.nav-tabs li a {
         font-family: "Gotham Pro";
         font-size: 18px;
-        color: #3f4047;
+        color: #000;
         border: none;
         padding: 30px 66px;
         cursor: pointer; }
@@ -1830,7 +1870,7 @@ header {
     -webkit-transition: all .3s;
     -o-transition: all .3s;
     transition: all .3s;
-    color: #3f4047; }
+    color: #000; }
     .account-wishlist .cart-table a:hover,
     .cart-page .cart-table a:hover {
       color: #df5a5a; }
@@ -1847,7 +1887,7 @@ header {
 
 .page-checkout .panel-title a {
   font-family: "Gotham Pro Medium";
-  color: #3f4047; }
+  color: #000; }
 
 .page-register {
   margin-bottom: 40px; }
@@ -1919,7 +1959,7 @@ body[class*=" account-"] #column-right .list-group-item {
   margin-bottom: 150px; }
 
 .brend-block a {
-  color: #333; }
+  color: #000; }
   .brend-block a:hover {
     text-decoration: none;
     color: #df5a5a; }
@@ -2069,7 +2109,7 @@ footer {
        -moz-column-count: 2;
             column-count: 2; }
     footer .information-block .footer-list-links li a {
-      color: #3f4047;
+      color: #000;
       text-decoration: none;
       -webkit-transition: all .3s;
       -o-transition: all .3s;
@@ -2081,11 +2121,11 @@ footer {
     margin: 0 auto;
     display: table; }
     footer .email-block h4 {
-      color: #adadad; }
+      color: #000; }
     footer .email-block a {
       text-decoration: none;
       font-family: "Gotham Pro";
-      color: #3f4047; }
+      color: #000; }
   footer .search-block {
     padding: 30px 0; }
   footer .link-call {
@@ -2112,7 +2152,7 @@ footer {
           transition: all .3s;
           margin-right: 15px; }
           footer .social-block .list-soc-link li a i {
-            color: #b8b8b8;
+            color: #000;
             display: inline-block;
             vertical-align: bottom; }
           footer .social-block .list-soc-link li a:hover {
@@ -2138,7 +2178,7 @@ footer {
   footer .social-block h4 {
     font-family: "Gotham Pro Medium";
     font-size: 20px;
-    color: #3f4047;
+    color: #000;
     margin-bottom: 40px;
     margin-top: 0; }
   footer #search.search.input-group {
@@ -2154,7 +2194,7 @@ footer {
     -o-transition: all .3s;
     transition: all .3s; }
     footer .copyright a {
-      color: #3f4047; }
+      color: #000; }
       footer .copyright a span {
         font-weight: 700; }
       footer .copyright a:hover {
@@ -2380,7 +2420,7 @@ footer {
     padding-top: 30px;
     display: block; }
     header .bottom .top-category-page-category {
-      background-color: #3f4047;
+      background-color: #000;
       width: 100%;
       margin-right: 0;
       margin-bottom: 30px; }
@@ -2494,3 +2534,32 @@ footer {
   height: 20px;
   position: absolute;
   left: 155px; }
+
+.breadcrumb > li + li:before,
+.noUi-pips {
+  color: #000; }
+
+footer .search-block .search button.btn.btn-default.btn-lg,
+header .bottom .search button.btn.btn-default.btn-lg {
+  border-color: #000; }
+
+input::-webkit-input-placeholder {
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  font-size: 15px;
+  color: #000; }
+
+input:-moz-placeholder {
+  border-radius: 0;
+  font-size: 15px;
+  color: #000; }
+
+input::-moz-placeholder {
+  border-radius: 0;
+  font-size: 15px;
+  color: #000; }
+
+input:-ms-input-placeholder {
+  border-radius: 0;
+  font-size: 15px;
+  color: #000; }

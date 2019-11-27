@@ -96,7 +96,7 @@ class ControllerCommonHome extends Controller
         $results = $this->model_design_banner->getBanner('7');
         $photo_banner = $this->model_design_banner->getBanner('9');
         $slider_banner = $this->model_design_banner->getBanner('10');
-
+        $slider_partners = $this->model_design_banner->getBanner('11');
         if ($this->request->server['HTTPS']) {
             $image_path = $this->config->get('config_ssl') . 'image/';
         } else {
@@ -113,6 +113,14 @@ class ControllerCommonHome extends Controller
         }
 
         $data['banner_home'] = $results_bh;
+
+        foreach ($slider_partners as $key => $result) {
+            $results_ph[$key]['link'] =  $result['link'];
+            $results_ph[$key]['image'] = $image_path . $result['image'];
+        }
+
+        $data['sliderPartners'] = $results_ph;
+
 
 
         foreach ($photo_banner as $key => $result) {

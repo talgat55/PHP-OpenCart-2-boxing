@@ -15,9 +15,12 @@
     left: 0
     position: absolute!important
     top: 0
+    button,
+    a
+      color: #fff200
 
   .text-selected
-    color: #fff
+    color: #fff200
   .btn-group>.btn:first-child
     padding: 0
     margin-right: 10px
@@ -42,13 +45,13 @@
         font-size: 15px
         text-transform: uppercase
         font-family: $font_regular
-        color: #fff
+        color: #fff200
 
     .navbar-collapse.collapse
       border: 1px solid #d6d6d6
       padding: 0
       .nav.navbar-nav
-        padding: 30px 0 24px
+        padding: 30px 0 18px
         width: 100%
         li
           display: block
@@ -56,7 +59,7 @@
           position: relative
           min-width: 186px
           a
-            padding: 7px 27px
+            padding: 12.5px 27px
             font-size: 16px
             color: #000
             transition: all .3s
@@ -138,13 +141,11 @@
 //
 // Home slider
 //
-#top-bar
-  overflow: inherit!important
 .home-page
   .home-slider
     margin: 0
     padding: 0
-    height: 416px
+    height: 510px
     overflow: hidden
     transition: all .3s ease-in-out
     li
@@ -170,7 +171,7 @@
 
       img
         width: 100%
-        height: 416px
+        height: 510px
         object-fit: cover!important
     .slick-dots
       bottom: 45px
@@ -211,9 +212,7 @@
             background-color: #ffed55
 
   .home-slider-wrapper
-    padding-left: 30px
-    padding-right: 0
-
+    padding: 0
     .home-slider,
     .banner
       padding: 0
@@ -417,8 +416,8 @@
         display: inline-block
         a
           font-size: 16px
-          color: #b6b6b6
-          border-bottom: 1px solid #b6b6b6
+          color: #000
+          border-bottom: 1px solid #000
           &.active
             color: $main_color
             border-color: #fff!important
@@ -466,7 +465,7 @@
     p
       margin-bottom: 0
       font-size: 24px
-      color: #3f4047
+      color: #000
       font-family: $font_bold
     .img-block
       width: 18px!important
@@ -492,7 +491,7 @@
           position: relative
           font-family: $font_regular
           font-size: 14px
-          color: #3f4047
+          color: #000
           text-decoration: none
           transition:  all .3s
           &:hover
@@ -529,7 +528,7 @@
     padding: 0
   .option-name.alter
     font-size: 24px
-    color: #3f4047
+    color: #000
     font-family: $font_bold
       margin-top: 20px
     display: inline-block
@@ -540,7 +539,7 @@
   .list-group-item
     border: none
   .ocfilter-option label a
-    color: #3f4047
+    color: #000
     font-family: $font_regular
     position: relative
   .ocfilter-option label small
@@ -582,6 +581,22 @@
   .accordion-block:last-child
     margin-bottom: 0
 
+//
+//  Partners slider
+//
+.partners-section
+  margin-top: 60px
+  .item
+    text-align: center
+
+    .img-wrap
+      border-radius: 50%
+      overflow: hidden
+      display: inline-block
+      img
+        width: 100px
+        height: 100px
+        object-fit: cover
 
 //
 // Product page
@@ -619,7 +634,7 @@
         margin-bottom: 0!important
 
   .title
-    color: #3f4047
+    color: #000
     font-size: 36px
     font-family: $font_medium
     margin-top: 50px
@@ -675,7 +690,7 @@
         display: inline-block
         font-size: 14px
         font-family: $font_regular
-        color: #b6b6b6
+        color: #000
         text-decoration: none
         transition: all .3s
         border-bottom: 1px solid
@@ -726,7 +741,7 @@
         height: auto
         .select2-selection__rendered
           font-size: 15px
-          color: #8d8d8d
+          color: #000
           font-family: $font_medium
 
         .select2-selection__arrow
@@ -1064,7 +1079,7 @@ body[class*=" account-"] #column-right .list-group-item
     margin-bottom: 150px
 .brend-block
   a
-    color: #333
+    color: #000
     &:hover
       text-decoration: none
       color: $main_color

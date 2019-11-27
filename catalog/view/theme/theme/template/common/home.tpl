@@ -66,7 +66,7 @@
                         <?php } ?>
                     </div>
                     <div class="home-slider-wrapper col-md-9  col-sm-12 col-xs-12  " style="position: relative;">
-                        <div class="slider-home col-lg-7 col-md-12">
+                        <div class="  col-lg-12 col-md-12">
                             <ul class="home-slider clearfix">
                                 <?php foreach ($banner as $value) { ?>
                                     <li class="item">
@@ -85,21 +85,6 @@
                                 <?php } ?>
                             </ul>
                         </div>
-                        <div class="banner col-lg-5 col-md-12">
-                            <ul class="banner-list clearfix">
-                                <?php foreach ($banner_home as $value) { ?>
-                                    <li class="item">
-                                        <a href="<?= $value['link']; ?>">
-                                            <img src="<?= $value['image']; ?>" alt="Изображение">
-                                        </a>
-                                    </li>
-                                <?php } ?>
-                            </ul>
-                        </div>
-
-
-
-
                     </div>
                 </div>
             </div>
@@ -199,15 +184,24 @@
                 </div>
                 <div class="row">
                     <div id="instagram-widget">
-                        <?php
-                        $c = curl_init('http://widget.stapico.ru/?q=good_fighter_shop&s=20&w=12&h=1&b=0&p=5&title=good_fighter_shop&profile=no&header=no&effect=0');
-                        curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
-                        $content = curl_exec($c);
+                        <ul id="widgetData">
+                            <?php
+                            $instaResult = file_get_contents('https://www.instagram.com/good_fighter_shop/?__a=1');
+                            $insta = json_decode($instaResult);
+                            $instagram_photos = $insta->graphql->user->edge_owner_to_timeline_media->edges;
+                            //
+                            //                        $c = curl_init('http://widget.stapico.ru/?q=good_fighter_shop&s=20&w=12&h=1&b=0&p=5&title=good_fighter_shop&profile=no&header=no&effect=0');
+                            //                        curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
+                            //                        $content = curl_exec($c);
+                            //
+                            //                        $pattern = "|href=\"[^\"]+\"|is";
+                            //                        $content = preg_replace($pattern, "href=\"https://www.instagram.com/good_fighter_shop\"", $content);
 
-                        $pattern = "|href=\"[^\"]+\"|is";
-                        $content = preg_replace($pattern, "href=\"https://www.instagram.com/good_fighter_shop\"", $content);
-                        echo $content;
-                        ?>
+                            foreach ($instagram_photos as $photo) {
+                                echo '<li><a target="_blank" href="https://www.instagram.com/good_fighter_shop" > <img width="200" height="200"  src="' . $photo->node->display_url . '" /> </a></li>';
+                            }
+                            ?>
+                        </ul>
                     </div>
                 </div>
 
@@ -217,7 +211,8 @@
                         <?php foreach ($banner_photo as $key => $value) : ?>
 
                             <div class="item col">
-                                <a href="<?php echo $value['image']; ?>"  data-lightbox="gallery" class="item-bg"  style="background: url('<?php echo $value['image']; ?>'); "></a>
+                                <a href="<?php echo $value['image']; ?>" data-lightbox="gallery" class="item-bg"
+                                   style="background: url('<?php echo $value['image']; ?>'); "></a>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -225,6 +220,26 @@
             </div>
         </section>
 
+        <section class="clearfix partners-section">
+            <div class="container">
+                <div class="row">
+                    <div class="block-title">
+                        <h2 class="sub-title mt-4">Наши партнеры</h2>
+                    </div>
+                    <div class="partners-slider">
+                        <?php foreach ($sliderPartners as $partner) : ?>
+                            <div  class="item">
+                                <div class="img-wrap">
+                                    <a  target="_blank" href="<?php echo $partner['link']; ?> " >
+                                        <img src="<?php echo $partner['image'];?>" alt="Партнер" />
+                                    </a>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="clearfix video-section">
             <div class="container">
                 <div class="row">
