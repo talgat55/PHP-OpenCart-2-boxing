@@ -1,6 +1,6 @@
 <?php echo $header; ?>
 
-    <h1 class="hidden-title"><?php echo $text_home_page; ?></h1>
+    <h1 class="hidden-title">Goodfighter - магазин правильной экипировки</h1>
 
 <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -198,7 +198,8 @@
                             //                        $content = preg_replace($pattern, "href=\"https://www.instagram.com/good_fighter_shop\"", $content);
 
                             foreach ($instagram_photos as $photo) {
-                                echo '<li><a target="_blank" href="https://www.instagram.com/good_fighter_shop" > <img width="200" height="200"  src="' . $photo->node->display_url . '" /> </a></li>';
+
+                                echo '<li><a target="_blank" href="https://www.instagram.com/good_fighter_shop" > <img width="200" height="200"    src="' . $photo->node->display_url . '"  alt="Изображение инстаграмма ' . $photo->node->id . '" /> </a></li>';
                             }
                             ?>
                         </ul>

@@ -1,0 +1,70 @@
+button.boc_order_category_btn {
+	border: none;
+	border-top: 1px solid #ddd;
+	line-height: 2;
+	font-weight: bold;
+	background-color: #eee;
+	color: #888;
+	line-height: 38px;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}							
+#boc_order .modal-header {
+    padding: 10px;
+    border-bottom: 1px solid #000000;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #229ac8;
+    background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
+    background-repeat: repeat-x;
+    border-radius: 5px 5px 0 0;	
+}
+#boc_order .modal-header h2 {
+	color: #ffffff;
+}
+#boc_order .modal-header button.close {
+    color: #fff;
+    opacity: 1;
+}
+#boc_order .modal-content {
+}
+#boc_order h2#boc_order_title {
+	text-align: center;
+}
+#boc_order h2, #boc_order h3, #boc_order h4, #boc_order .h4, #boc_order h5 {
+	margin-top: 0;
+    font-weight: bold;
+    color: #333;
+}
+#boc_order .checkbox {
+	padding: 0.25em 0.5em;
+	border: 1px solid transparent;
+}
+#boc_order .checkbox label {
+	color:#ff9999;
+}
+#boc_order .checkbox label a {
+	color: #ff9999;
+	border-bottom: 1px dotted #ff9999;
+}
+#boc_order .input-group.has-error input, #boc_order .form-group.has-error textarea {
+   background: #ff6666;
+   color:#fff;
+}
+#boc_order .checkbox.has-error {
+	border: 1px solid #cc0000;
+	border-radius: 0.25em;
+}
+#boc_order .checkbox.has-error label {
+	color:#ff9999;
+}
+#boc_order .modal-footer {
+    padding: 0 10px 20px 10px;
+    text-align: right;
+    border-top: none;
+}
+#boc_order button {
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+}

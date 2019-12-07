@@ -246,14 +246,21 @@ class ControllerProductProduct extends Controller {
 				'href' => $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id'])
 			);
 
+            $this->load->model('catalog/category');
+
+            $product_cat = $this->model_catalog_product->getCategories($product_id);
+            $product_cat_parent = $this->model_catalog_category->getCategory($product_cat[0]['category_id']);
+
 			if ($product_info['meta_title']) {
 				$this->document->setTitle($product_info['meta_title']);
 			} else {
 				$this->document->setTitle($product_info['name']);
 			}
 
-			$this->document->setDescription($product_info['meta_description']);
-			$this->document->setKeywords($product_info['meta_keyword']);
+//			$this->document->setDescription($product_info['meta_description']);
+			$this->document->setDescription(mb_strimwidth(strip_tags(html_entity_decode($product_info['description'])), 0, 160, ""));
+//			$this->document->setKeywords($product_info['meta_keyword']);
+			$this->document->setKeywords('Купить '.$product_cat_parent['name'].', купить '.$product_info['name']);
 			$this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id']), 'canonical');
 
 //			$this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');

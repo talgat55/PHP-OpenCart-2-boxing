@@ -1845,6 +1845,27 @@ header {
     background: url("/catalog/view/theme/theme/images/arrow-inst-right.png");
     opacity: .5; }
 
+.boc_order_btn {
+  background: #333;
+  -webkit-border-radius: 25px;
+          border-radius: 25px; }
+  .boc_order_btn:hover, .boc_order_btn:active {
+    background: #df5a5a; }
+
+#boc_form .input-group-addon {
+  display: none; }
+
+#boc_form .input-group {
+  width: 100%; }
+
+#boc_form .btn-default {
+  background: #333;
+  -webkit-border-radius: 25px;
+          border-radius: 25px;
+  color: #fff; }
+  #boc_form .btn-default:hover, #boc_form .btn-default:active {
+    background: #df5a5a; }
+
 .select2-results {
   font-family: "Gotham Pro Medium"; }
 
